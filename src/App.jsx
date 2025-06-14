@@ -5,8 +5,8 @@ export default function HomePage() {
       <section className="text-center max-w-3xl mx-auto">
         <img
           src="/HeroPagelogo.png"
-          alt="SleeperOps Logo"
-          className="mx-auto mb-8 w-24 h-24"
+          alt="SleeperOps AI Consulting Logo"
+          className="mx-auto mb-8 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain"
         />
         <h1 className="text-5xl font-extrabold text-[#0f3d5f] leading-tight mb-6">
           AI Behind the Scenes,<br /> Business Results Up Front.
