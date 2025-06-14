@@ -4,7 +4,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="text-center max-w-3xl mx-auto">
         <img
-          src="/logo.png"
+          src="/HeroPagelogo.png"
           alt="SleeperOps Logo"
           className="mx-auto mb-8 w-24 h-24"
         />
