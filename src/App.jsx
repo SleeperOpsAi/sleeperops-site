@@ -57,7 +57,31 @@ export default function App() {
         <span className="block w-8 h-1 bg-white rounded"></span>
       </button>
 
-      {/* Page Routes */}
+      {/* Hero Section (example with button updated) */}
+      <header className="max-w-6xl mx-auto px-6 py-16 text-center">
+        <h1 className="text-5xl font-extrabold mb-6 text-[#0f3d5f]">
+          Smarter Systems for Small Business.
+        </h1>
+        <p className="mb-8 text-lg max-w-xl mx-auto text-gray-700">
+          SleeperOps helps founders save time, reduce friction, and grow faster—with high value, low maintenance solutions.
+        </p>
+        <div className="flex justify-center gap-4">
+          <Link
+            to="/contact"
+            className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
+          >
+            Book Your Free Consult — Limited Spots
+          </Link>
+          <Link
+            to="/what-we-do"
+            className="inline-block rounded-2xl border border-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0f3d5f] hover:text-white transition"
+          >
+            Learn More
+          </Link>
+        </div>
+      </header>
+
+      {/* Routes */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<Blog />} />
