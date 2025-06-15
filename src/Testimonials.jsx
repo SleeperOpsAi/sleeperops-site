@@ -15,12 +15,23 @@ export default function Testimonials() {
         style={{
           boxShadow: "0 8px 32px 0 rgba(255, 255, 255, 0.2)",
           border: "1px solid rgba(255, 255, 255, 0.15)",
+          zIndex: 10,
+          position: "relative",
         }}
       >
-        <Link to="/">
-<a href="/">
-  <img src="/HeroPagelogo.png" alt="Logo" />
-</a>
+        <Link to="/" style={{ pointerEvents: "auto" }}>
+          <img
+            src="/HeroPagelogo.png"
+            alt="SleeperOps AI Solutions Logo"
+            className="mx-auto mb-4 cursor-pointer"
+            style={{
+              maxWidth: "160px",
+              height: "auto",
+              filter:
+                "drop-shadow(0 0 6px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4))",
+            }}
+          />
+        </Link>
         <p
           className="text-center text-white font-semibold tracking-wide select-none"
           style={{ fontSize: "1.25rem", lineHeight: "1.5" }}
@@ -28,6 +39,7 @@ export default function Testimonials() {
           AI Solutions for Smarter Business Growth
         </p>
       </div>
+
       {/* Page Heading */}
       <h1 className="text-4xl font-bold mb-6 text-center drop-shadow-md">
         Testimonials & Case Studies
