@@ -32,8 +32,11 @@ export default function AboutUs() {
       </h1>
 
       {/* Page content */}
-      <p className="max-w-3xl mx-auto text-center text-lg leading-relaxed">
-        Learn more about SleeperOps, our mission, and how we help small businesses grow smarter with AI-powered solutions. Content coming soon!
+      <p
+        className="mt-4 text-center text-white font-semibold select-none"
+        style={{ fontSize: "1.125rem", fontWeight: "600", lineHeight: "1.4", padding: "8px 0" }}
+      >
+        AI Solutions for Smarter Business Growth
       </p>
     </main>
   );
