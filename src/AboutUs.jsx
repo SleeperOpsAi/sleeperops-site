@@ -21,9 +21,6 @@ export default function AboutUs() {
           className="mx-auto"
           style={{ maxWidth: "160px", height: "auto" }}
         />
-        <p className="mt-2 text-center text-white font-semibold text-sm select-none">
-          AI Solutions for Smarter Business Growth
-        </p>
       </div>
 
       {/* Page Heading */}
@@ -31,7 +28,7 @@ export default function AboutUs() {
         About Us
       </h1>
 
-      {/* Page content */}
+      {/* Description Text */}
       <p
         className="mt-4 text-center text-white font-semibold select-none"
         style={{ fontSize: "1.125rem", fontWeight: "600", lineHeight: "1.4", padding: "8px 0" }}
