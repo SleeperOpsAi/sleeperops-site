@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Blog() {
   return (
     <main className="relative min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
@@ -15,17 +17,19 @@ export default function Blog() {
           border: "1px solid rgba(255, 255, 255, 0.15)",
         }}
       >
-        <img
-          src="/HeroPagelogo.png"
-          alt="SleeperOps AI Solutions Logo"
-          className="mx-auto mb-4"
-          style={{
-            maxWidth: "160px",
-            height: "auto",
-            filter:
-              "drop-shadow(0 0 6px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4))",
-          }}
-        />
+        <Link to="/">
+          <img
+            src="/HeroPagelogo.png"
+            alt="SleeperOps AI Solutions Logo"
+            className="mx-auto mb-4 cursor-pointer"
+            style={{
+              maxWidth: "160px",
+              height: "auto",
+              filter:
+                "drop-shadow(0 0 6px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4))",
+            }}
+          />
+        </Link>
         <p
           className="text-center text-white font-semibold tracking-wide select-none"
           style={{ fontSize: "1.25rem", lineHeight: "1.5" }}
