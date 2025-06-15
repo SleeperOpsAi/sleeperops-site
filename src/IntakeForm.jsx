@@ -36,19 +36,21 @@ export default function IntakeForm() {
     "Custom Automation Implementation",
   ];
 
+  // Updated user-friendly sub-services with 'Other' and helper text
   const subServicesOptions = {
     "AI Stack Consulting": [
       "Strategy & Tool Recommendations",
     ],
     "Pre-Built Agents & Workflows": [
-      "Recruiting Automation",
-      "Lead Qualification GPTs",
-      "RAG Knowledge Systems",
+      "Recruiting Assistant",
+      "Lead Qualification Assistant",
+      "Knowledge Base Chatbot",
+      "Other (custom pre-built agent)",
     ],
     "Custom Automation Implementation": [
-      "Webhooks & Integrations (Zapier, n8n, Make)",
-      "File Transformation Pipelines",
-      "CRM/ATS Automation",
+      "Integration & Workflow Setup",
+      "Automated File Processing",
+      "CRM & Sales Automation",
     ],
   };
 
@@ -66,7 +68,6 @@ export default function IntakeForm() {
     "Flexible",
   ];
 
-  // Helper to toggle items in an array
   const toggleArrayItem = (array, item) =>
     array.includes(item)
       ? array.filter(i => i !== item)
@@ -77,13 +78,9 @@ export default function IntakeForm() {
 
     if (type === "checkbox") {
       if (name === "coreServices") {
-        // Update core services, also reset subservices not matching selected cores
         const updatedCoreServices = toggleArrayItem(formData.coreServices, value);
-
-        // Filter subservices to only those under selected cores
         const allowedSubs = updatedCoreServices.flatMap(core => subServicesOptions[core]);
         const updatedSubServices = formData.subServices.filter(sub => allowedSubs.includes(sub));
-
         setFormData(prev => ({
           ...prev,
           coreServices: updatedCoreServices,
@@ -307,6 +304,12 @@ export default function IntakeForm() {
                   </label>
                 ))}
               </div>
+              {/* Show helper text if 'Other (custom pre-built agent)' is selected */}
+              {formData.subServices.includes("Other (custom pre-built agent)") && (
+                <p className="mt-2 italic text-sm text-white/80">
+                  Need something else? We can whip up tailored pre-built agents quickly for your needs.
+                </p>
+              )}
             </fieldset>
           )}
 
