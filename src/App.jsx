@@ -259,27 +259,13 @@ export default function App() {
           className="flex flex-col items-start space-y-6 p-8 pt-20 text-white text-xl font-semibold"
           onClick={(e) => e.stopPropagation()}
         >
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-          <Link to="/blog" onClick={() => setMenuOpen(false)}>
-            Blog
-          </Link>
-          <Link to="/faq" onClick={() => setMenuOpen(false)}>
-            FAQ
-          </Link>
-          <Link to="/testimonials" onClick={() => setMenuOpen(false)}>
-            Testimonials
-          </Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            Book Now
-          </Link>
-          <Link to="/what-we-do" onClick={() => setMenuOpen(false)}>
-            Services
-          </Link>
-          <Link to="/about-us" onClick={() => setMenuOpen(false)}>
-            About Us
-          </Link>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/what-we-do" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link to="/about-us" onClick={() => setMenuOpen(false)}>About Us</Link>
+          <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          <Link to="/testimonials" onClick={() => setMenuOpen(false)}>Testimonials</Link>
+          <Link to="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Book Now</Link>
         </nav>
       </div>
 
