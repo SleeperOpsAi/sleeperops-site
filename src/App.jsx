@@ -3,6 +3,10 @@ import { Routes, Route, Link } from "react-router-dom";
 import IntakeForm from "./IntakeForm";
 import Services from "./Services";
 import AboutUs from "./AboutUs";
+import Blog from "./Blog";
+import FAQ from "./FAQ";
+import Testimonials from "./Testimonials";
+
 
 function HomePage() {
   return (
@@ -235,39 +239,6 @@ function HomePage() {
           text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
         }
       `}</style>
-    </main>
-  );
-}
-
-function Blog() {
-  return (
-    <main className="min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
-      <h1 className="text-4xl font-bold mb-6">Blog & Resources</h1>
-      <p className="max-w-3xl text-lg">
-        This page will host blog posts and useful resources to help you leverage AI for your business. Coming soon!
-      </p>
-    </main>
-  );
-}
-
-function FAQ() {
-  return (
-    <main className="min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
-      <h1 className="text-4xl font-bold mb-6">Frequently Asked Questions</h1>
-      <p className="max-w-3xl text-lg">
-        Answers to common questions about SleeperOps’ AI services and consulting. Coming soon!
-      </p>
-    </main>
-  );
-}
-
-function Testimonials() {
-  return (
-    <main className="min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
-      <h1 className="text-4xl font-bold mb-6">Testimonials & Case Studies</h1>
-      <p className="max-w-3xl text-lg">
-        This page will showcase client testimonials and detailed case studies. Coming soon!
-      </p>
     </main>
   );
 }
