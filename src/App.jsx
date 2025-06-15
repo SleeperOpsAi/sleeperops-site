@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import IntakeForm from "./IntakeForm";
 
 function HomePage() {
   return (
@@ -325,6 +326,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/contact" element={<IntakeForm />} />
         {/* Add more routes like /contact, /what-we-do, /about-us as you build */}
       </Routes>
     </>
