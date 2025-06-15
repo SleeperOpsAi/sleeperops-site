@@ -70,4 +70,38 @@ export default function HomePage() {
           <div className="mb-12 flex justify-center gap-4">
             <a
               href="#contact"
-              className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition
+              className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition"
+            >
+              Book Your Free Consult — Limited Spots
+            </a>
+            <a
+              href="#what-we-do"
+              className="inline-block rounded-2xl border border-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0f3d5f] hover:text-white transition"
+            >
+              Learn More
+            </a>
+          </div>
+        </section>
+
+        {/* What We Do */}
+        <section
+          id="what-we-do"
+          className="relative max-w-6xl mx-auto py-20 text-center"
+        >
+          <h2 className="mb-10 text-3xl font-bold text-white drop-shadow-md">
+            What We Do
+          </h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {/* Your service cards go here */}
+          </div>
+        </section>
+      </main>
+
+      <style jsx>{`
+        .text-shadow {
+          text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+        }
+      `}</style>
+    </>
+  );
+}
