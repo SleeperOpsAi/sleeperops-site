@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import HomePage from "./HomePage";
 import Blog from "./Blog";
 import FAQ from "./FAQ";
 import Testimonials from "./Testimonials";
@@ -83,7 +82,8 @@ export default function App() {
 
       {/* Routes */}
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        {/* Temporary placeholder for Home route */}
+        <Route path="/" element={<div className="text-center p-20">Welcome to SleeperOps</div>} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/testimonials" element={<Testimonials />} />
