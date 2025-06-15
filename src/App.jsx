@@ -6,7 +6,7 @@ export default function HomePage() {
         <img
           src="/HeroPagelogo.png"
           alt="SleeperOps AI Consulting Logo"
-          className="mx-auto mb-8 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 object-contain"
+          className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain opacity-0 animate-fadeIn"
         />
         <h1 className="text-5xl font-extrabold text-[#0f3d5f] leading-tight mb-6">
           AI Behind the Scenes,<br /> Business Results Up Front.
