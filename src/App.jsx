@@ -30,12 +30,6 @@ export default function HomePage() {
       </div>
 
       <main className="relative min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
-        {/* Pattern overlay */}
-        <div
-          className="absolute inset-0 bg-[url('/pattern-tech.svg')] bg-repeat opacity-25 bg-[length:400px_400px]"
-          aria-hidden="true"
-        />
-
         {/* Hamburger Icon */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -60,7 +54,8 @@ export default function HomePage() {
             Smarter Systems for Small Business.
           </h1>
           <p className="mb-8 max-w-xl mx-auto text-lg text-white/90">
-            SleeperOps helps founders save time, reduce friction, and grow faster—with high value, low maintenance solutions.
+            SleeperOps helps founders save time, reduce friction, and grow
+            faster—with high value, low maintenance solutions.
           </p>
           <div className="mb-12 flex justify-center gap-4">
             <a
@@ -140,11 +135,17 @@ export default function HomePage() {
                     strokeLinejoin="round"
                     viewBox="0 0 24 24"
                   >
-                    {/* Gear icon for automation */}
+                    {/* New gear icon */}
                     <circle cx="12" cy="12" r="10" />
-                    <path d="M15.31 8.031a3.001 3.001 0 0 0-6.62 0l-2.59 1.5 1 1.73 2.58-1.5a3 3 0 0 0 5.63 1.56l2.58 1.5 1-1.73-2.59-1.5z" />
-                    <path d="M12 15v2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M12 7v1" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M15 12a3 3 0 0 1-6 0 3 3 0 0 1 6 0z" />
+                    <path d="M12 8v1" />
+                    <path d="M12 15v1" />
+                    <path d="M8 12h1" />
+                    <path d="M15 12h1" />
+                    <path d="M10.5 10.5l.5.5" />
+                    <path d="M13.5 13.5l.5.5" />
+                    <path d="M10.5 13.5l.5-.5" />
+                    <path d="M13.5 10.5l.5-.5" />
                   </svg>
                 ),
               },
