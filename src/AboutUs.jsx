@@ -16,7 +16,7 @@ export default function AboutUs() {
         }}
       >
         <img
-          src="//HeroPagelogo.png"
+          src="/HeroPagelogo.png"
           alt="SleeperOps AI Solutions Logo"
           className="mx-auto"
           style={{ maxWidth: "160px", height: "auto" }}
