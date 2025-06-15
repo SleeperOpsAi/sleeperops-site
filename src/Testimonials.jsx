@@ -18,18 +18,9 @@ export default function Testimonials() {
         }}
       >
         <Link to="/">
-          <img
-            src="/HeroPagelogo.png"
-            alt="SleeperOps AI Solutions Logo"
-            className="mx-auto mb-4 cursor-pointer"
-            style={{
-              maxWidth: "160px",
-              height: "auto",
-              filter:
-                "drop-shadow(0 0 6px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4))",
-            }}
-          />
-        </Link>
+<a href="/">
+  <img src="/HeroPagelogo.png" alt="Logo" />
+</a>
         <p
           className="text-center text-white font-semibold tracking-wide select-none"
           style={{ fontSize: "1.25rem", lineHeight: "1.5" }}
