@@ -30,16 +30,11 @@ export default function HomePage() {
       </div>
 
       <main className="relative min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
-        {/* Background pattern using PNG */}
+        {/* Background pattern overlay using PNG */}
         <div
-          className="absolute inset-0 opacity-25"
-          style={{
-            backgroundImage: "url('/background-pattern.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "400px 400px",
-            zIndex: -1,
-          }}
+          className="absolute inset-0 bg-[url('/background-pattern.png')] bg-repeat opacity-25 bg-[length:300px_300px]"
           aria-hidden="true"
+          style={{ zIndex: 0 }}
         />
 
         {/* Hamburger Icon */}
@@ -59,15 +54,14 @@ export default function HomePage() {
             <img
               src="/HeroPagelogo.png"
               alt="SleeperOps AI Consulting Logo"
-              className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain drop-shadow-lg"
+              className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
             />
           </div>
           <h1 className="mb-4 text-4xl font-extrabold leading-tight text-shadow sm:text-5xl">
             Smarter Systems for Small Business.
           </h1>
           <p className="mb-8 max-w-xl mx-auto text-lg text-white/90">
-            SleeperOps helps founders save time, reduce friction, and grow
-            faster—with high value, low maintenance solutions.
+            SleeperOps helps founders save time, reduce friction, and grow faster—with high value, low maintenance solutions.
           </p>
           <div className="mb-12 flex justify-center gap-4">
             <a
@@ -147,17 +141,13 @@ export default function HomePage() {
                     strokeLinejoin="round"
                     viewBox="0 0 24 24"
                   >
-                    {/* New gear icon */}
+                    {/* Updated gear icon */}
                     <circle cx="12" cy="12" r="10" />
-                    <path d="M15 12a3 3 0 0 1-6 0 3 3 0 0 1 6 0z" />
-                    <path d="M12 8v1" />
-                    <path d="M12 15v1" />
-                    <path d="M8 12h1" />
-                    <path d="M15 12h1" />
-                    <path d="M10.5 10.5l.5.5" />
-                    <path d="M13.5 13.5l.5.5" />
-                    <path d="M10.5 13.5l.5-.5" />
-                    <path d="M13.5 10.5l.5-.5" />
+                    <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path d="M12 15v2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 7v1" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 12h6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 9v6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
