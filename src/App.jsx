@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import IntakeForm from "./IntakeForm";
+import Services from "./Services";
+import AboutUs from "./AboutUs";
 
 function HomePage() {
   return (
@@ -323,10 +325,12 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/what-we-do" element={<Services />} />  
+        <Route path="/contact" element={<IntakeForm />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/contact" element={<IntakeForm />} />
         {/* Add more routes like /contact, /what-we-do, /about-us as you build */}
       </Routes>
     </>
