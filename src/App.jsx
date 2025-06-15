@@ -1,8 +1,18 @@
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#b2d4eb] to-[#1f4e78] text-gray-900 px-6 py-16 scroll-smooth">
+    <main className="relative min-h-screen text-gray-900 px-6 py-16">
+      {/* Background layers */}
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-[#0a2c4d] to-[#153e75] opacity-95"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-[url('/pattern-tech.svg')] bg-repeat opacity-10"
+        aria-hidden="true"
+      />
+
       {/* Hero Section */}
-      <section className="text-center max-w-3xl mx-auto">
+      <section className="relative max-w-3xl mx-auto text-center">
         <img
           src="/HeroPagelogo.png"
           alt="SleeperOps AI Consulting Logo"
@@ -31,9 +41,9 @@ export default function HomePage() {
       </section>
 
       {/* What We Do */}
-      <section id="what-we-do" className="py-20">
-        <h2 className="text-3xl font-bold text-center text-[#0f3d5f] mb-10">What We Do</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <section id="what-we-do" className="relative py-20 max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-10">What We Do</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
               title: "AI Stack Consulting",
@@ -106,9 +116,9 @@ export default function HomePage() {
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 bg-[#f5faff]">
-        <h2 className="text-3xl font-bold text-center text-[#0f3d5f] mb-10">Use Cases</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <section className="relative py-20 bg-[#f5faff] max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-10">Use Cases</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
               title: "Recruiting Funnel Automation",
@@ -144,9 +154,9 @@ export default function HomePage() {
       </section>
 
       {/* Why SleeperOps */}
-      <section className="py-20">
-        <h2 className="text-3xl font-bold text-center text-[#0f3d5f] mb-10">Why SleeperOps</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <section className="relative py-20 max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-10">Why SleeperOps</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white p-4 rounded-2xl shadow text-center font-semibold">
             Fast Deployments – 7–10 day builds
           </div>
@@ -163,8 +173,13 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="text-center py-16">
-        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-4">Let’s build something smarter.</h2>
+      <section
+        id="contact"
+        className="relative text-center py-16 max-w-3xl mx-auto"
+      >
+        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-4">
+          Let’s build something smarter.
+        </h2>
         <a
           href="#"
           className="inline-block px-6 py-3 bg-[#0f3d5f] text-white font-semibold rounded-2xl shadow hover:bg-[#0d3554] transition"
@@ -174,7 +189,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center text-sm py-6 text-gray-600">
+      <footer className="relative text-center text-sm py-6 text-gray-600">
         SleeperOps © 2025 •
         <a href="mailto:info@sleeperops.com" className="text-[#0f3d5f] mx-2">
           Email
