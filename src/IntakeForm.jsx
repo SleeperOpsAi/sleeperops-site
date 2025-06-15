@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 
 export default function IntakeForm() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     company: "",
+    companyUrl: "",
+    linkedInUrl: "",
     role: "",
     industry: "",
-    services: [],
+    coreServices: [],
+    subServices: [],
     budget: "",
     timeline: "",
     referral: "",
@@ -26,13 +30,27 @@ export default function IntakeForm() {
     "Other",
   ];
 
-  const servicesOptions = [
-    "AI Consulting",
-    "Automation",
-    "CRM Sync",
-    "Custom Workflows",
-    "Other",
+  const coreServicesOptions = [
+    "AI Stack Consulting",
+    "Pre-Built Agents & Workflows",
+    "Custom Automation Implementation",
   ];
+
+  const subServicesOptions = {
+    "AI Stack Consulting": [
+      "Strategy & Tool Recommendations",
+    ],
+    "Pre-Built Agents & Workflows": [
+      "Recruiting Automation",
+      "Lead Qualification GPTs",
+      "RAG Knowledge Systems",
+    ],
+    "Custom Automation Implementation": [
+      "Webhooks & Integrations (Zapier, n8n, Make)",
+      "File Transformation Pipelines",
+      "CRM/ATS Automation",
+    ],
+  };
 
   const budgets = [
     "< $1,000",
@@ -48,17 +66,35 @@ export default function IntakeForm() {
     "Flexible",
   ];
 
+  // Helper to toggle items in an array
+  const toggleArrayItem = (array, item) =>
+    array.includes(item)
+      ? array.filter(i => i !== item)
+      : [...array, item];
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
     if (type === "checkbox") {
-      setFormData((prev) => {
-        const services = prev.services.includes(value)
-          ? prev.services.filter((s) => s !== value)
-          : [...prev.services, value];
-        return { ...prev, services };
-      });
+      if (name === "coreServices") {
+        // Update core services, also reset subservices not matching selected cores
+        const updatedCoreServices = toggleArrayItem(formData.coreServices, value);
+
+        // Filter subservices to only those under selected cores
+        const allowedSubs = updatedCoreServices.flatMap(core => subServicesOptions[core]);
+        const updatedSubServices = formData.subServices.filter(sub => allowedSubs.includes(sub));
+
+        setFormData(prev => ({
+          ...prev,
+          coreServices: updatedCoreServices,
+          subServices: updatedSubServices,
+        }));
+      } else if (name === "subServices") {
+        const updatedSubServices = toggleArrayItem(formData.subServices, value);
+        setFormData(prev => ({ ...prev, subServices: updatedSubServices }));
+      }
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+      setFormData(prev => ({ ...prev, [name]: value }));
     }
   };
 
@@ -105,18 +141,33 @@ export default function IntakeForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <h2 className="text-3xl font-bold mb-6 text-center">Contact Us</h2>
 
+          {/* First Name */}
           <label className="block">
-            <span className="block mb-1">Name *</span>
+            <span className="block mb-1">First Name *</span>
             <input
-              name="name"
+              name="firstName"
               type="text"
               required
-              value={formData.name}
+              value={formData.firstName}
               onChange={handleChange}
               className="w-full rounded px-3 py-2 text-black"
             />
           </label>
 
+          {/* Last Name */}
+          <label className="block">
+            <span className="block mb-1">Last Name *</span>
+            <input
+              name="lastName"
+              type="text"
+              required
+              value={formData.lastName}
+              onChange={handleChange}
+              className="w-full rounded px-3 py-2 text-black"
+            />
+          </label>
+
+          {/* Email */}
           <label className="block">
             <span className="block mb-1">Email *</span>
             <input
@@ -129,6 +180,7 @@ export default function IntakeForm() {
             />
           </label>
 
+          {/* Phone */}
           <label className="block">
             <span className="block mb-1">Phone</span>
             <input
@@ -141,6 +193,7 @@ export default function IntakeForm() {
             />
           </label>
 
+          {/* Company Name */}
           <label className="block">
             <span className="block mb-1">Company Name</span>
             <input
@@ -153,6 +206,37 @@ export default function IntakeForm() {
             />
           </label>
 
+          {/* Company URL */}
+          <label className="block">
+            <span className="block mb-1">Company Website URL</span>
+            <input
+              name="companyUrl"
+              type="url"
+              value={formData.companyUrl}
+              onChange={handleChange}
+              className="w-full rounded px-3 py-2 text-black"
+              placeholder="https://example.com"
+              pattern="https?://.+"
+              title="Please enter a valid URL starting with http:// or https://"
+            />
+          </label>
+
+          {/* LinkedIn URL */}
+          <label className="block">
+            <span className="block mb-1">LinkedIn Profile URL</span>
+            <input
+              name="linkedInUrl"
+              type="url"
+              value={formData.linkedInUrl}
+              onChange={handleChange}
+              className="w-full rounded px-3 py-2 text-black"
+              placeholder="https://linkedin.com/in/yourprofile"
+              pattern="https?://.+"
+              title="Please enter a valid URL starting with http:// or https://"
+            />
+          </label>
+
+          {/* Role/Title */}
           <label className="block">
             <span className="block mb-1">Role/Title</span>
             <input
@@ -165,6 +249,7 @@ export default function IntakeForm() {
             />
           </label>
 
+          {/* Industry */}
           <label className="block">
             <span className="block mb-1">Industry</span>
             <select
@@ -182,18 +267,20 @@ export default function IntakeForm() {
             </select>
           </label>
 
-          <fieldset>
-            <legend className="block mb-1 font-semibold">Services Interested In</legend>
-            <div className="flex flex-wrap gap-4">
-              {servicesOptions.map((service) => (
+          {/* Core Services */}
+          <fieldset className="mb-4">
+            <legend className="block mb-2 font-semibold text-white">Services Interested In *</legend>
+            <div className="flex flex-col space-y-2">
+              {coreServicesOptions.map((service) => (
                 <label key={service} className="flex items-center space-x-2">
                   <input
                     type="checkbox"
-                    name="services"
+                    name="coreServices"
                     value={service}
-                    checked={formData.services.includes(service)}
+                    checked={formData.coreServices.includes(service)}
                     onChange={handleChange}
                     className="text-black"
+                    required={formData.coreServices.length === 0}
                   />
                   <span>{service}</span>
                 </label>
@@ -201,6 +288,29 @@ export default function IntakeForm() {
             </div>
           </fieldset>
 
+          {/* Sub Services (show only if relevant core selected) */}
+          {formData.coreServices.length > 0 && (
+            <fieldset className="mb-6">
+              <legend className="block mb-2 font-semibold text-white">Specific Interests</legend>
+              <div className="flex flex-wrap gap-4">
+                {formData.coreServices.flatMap(core => subServicesOptions[core]).map(subService => (
+                  <label key={subService} className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      name="subServices"
+                      value={subService}
+                      checked={formData.subServices.includes(subService)}
+                      onChange={handleChange}
+                      className="text-black"
+                    />
+                    <span>{subService}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          )}
+
+          {/* Budget */}
           <label className="block">
             <span className="block mb-1">Budget Range</span>
             <select
@@ -218,6 +328,7 @@ export default function IntakeForm() {
             </select>
           </label>
 
+          {/* Timeline */}
           <label className="block">
             <span className="block mb-1">Project Timeline</span>
             <select
@@ -235,6 +346,7 @@ export default function IntakeForm() {
             </select>
           </label>
 
+          {/* Referral */}
           <label className="block">
             <span className="block mb-1">How did you hear about us?</span>
             <input
@@ -247,6 +359,7 @@ export default function IntakeForm() {
             />
           </label>
 
+          {/* Message */}
           <label className="block">
             <span className="block mb-1">Brief Description / Message *</span>
             <textarea
