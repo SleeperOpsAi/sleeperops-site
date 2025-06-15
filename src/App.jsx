@@ -16,25 +16,21 @@ export default function HomePage() {
           className="flex flex-col items-start space-y-6 p-8 pt-20 text-white text-xl font-semibold"
           onClick={(e) => e.stopPropagation()}
         >
-          <a href="#about-us" onClick={() => setMenuOpen(false)}>
-            About Us
-          </a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
-            Book Now
-          </a>
-          <a href="#what-we-do" onClick={() => setMenuOpen(false)}>
-            Services
-          </a>
-          {/* Add any other menu links here */}
+          <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
+          <a href="/Testimonials" onClick={() => setMenuOpen(false)}>Testimonials</a>
+          <a href="/Blog" onClick={() => setMenuOpen(false)}>Blog</a>
+          <a href="/FAQ" onClick={() => setMenuOpen(false)}>FAQ</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Book Now</a>
+          <a href="#what-we-do" onClick={() => setMenuOpen(false)}>Services</a>
+          <a href="#about-us" onClick={() => setMenuOpen(false)}>About Us</a>
         </nav>
       </div>
 
       <main className="relative min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
-        {/* Background pattern overlay using PNG */}
+        {/* Pattern overlay */}
         <div
-          className="absolute inset-0 bg-[url('/background-pattern.png')] bg-repeat opacity-25 bg-[length:300px_300px]"
+          className="absolute inset-0 bg-[url('/background-pattern.png')] bg-repeat opacity-25 bg-[length:400px_400px]"
           aria-hidden="true"
-          style={{ zIndex: 0 }}
         />
 
         {/* Hamburger Icon */}
@@ -141,13 +137,11 @@ export default function HomePage() {
                     strokeLinejoin="round"
                     viewBox="0 0 24 24"
                   >
-                    {/* Updated gear icon */}
+                    {/* Gear icon for automation */}
                     <circle cx="12" cy="12" r="10" />
-                    <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path d="M15.31 8.031a3.001 3.001 0 0 0-6.62 0l-2.59 1.5 1 1.73 2.58-1.5a3 3 0 0 0 5.63 1.56l2.58 1.5 1-1.73-2.59-1.5z" />
                     <path d="M12 15v2" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M12 7v1" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M9 12h6" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M12 9v6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
@@ -250,30 +244,14 @@ export default function HomePage() {
         </section>
 
         {/* Footer */}
-        <footer className="relative py-6 text-center text-sm text-white/80">
-          SleeperOps © 2025 •
-          <a
-            href="mailto:info@sleeperops.com"
-            className="mx-2 text-white/90 underline-offset-2 hover:underline"
-          >
-            Email
-          </a>
-          •
-          <a
-            href="#"
-            aria-label="LinkedIn (placeholder)"
-            className="mx-2 text-white/90 underline-offset-2 hover:underline"
-          >
-            LinkedIn
-          </a>
-          •
-          <a
-            href="#"
-            aria-label="Fiverr (placeholder)"
-            className="mx-2 text-white/90 underline-offset-2 hover:underline"
-          >
-            Fiverr
-          </a>
+        <footer className="relative py-6 text-center text-sm text-white/80 space-x-4">
+          <a href="/" className="underline-offset-2 hover:underline">Home</a>
+          <a href="/Testimonials" className="underline-offset-2 hover:underline">Testimonials</a>
+          <a href="/Blog" className="underline-offset-2 hover:underline">Blog</a>
+          <a href="/FAQ" className="underline-offset-2 hover:underline">FAQ</a>
+          <a href="mailto:info@sleeperops.com" className="underline-offset-2 hover:underline">Email</a>
+          <a href="#" aria-label="LinkedIn" className="underline-offset-2 hover:underline">LinkedIn</a>
+          <a href="#" aria-label="Fiverr" className="underline-offset-2 hover:underline">Fiverr</a>
         </footer>
 
         <style jsx>{`
