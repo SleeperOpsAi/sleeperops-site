@@ -12,7 +12,7 @@ export default function AboutUs() {
           <img
             src="/HeroPagelogo.png"
             alt="SleeperOps AI Consulting Logo"
-            className="mx-auto w-40 sm:w-56"
+            className="mx-auto w-40 sm:w-56 logo-glow"
           />
         </Link>
 
@@ -23,6 +23,13 @@ export default function AboutUs() {
           Learn more about SleeperOps, our mission, and how we help small businesses grow smarter with AI-powered solutions. Content coming soon!
         </p>
       </div>
+
+      
+      <style jsx>{`
+        .logo-glow {
+          filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+        }
+      `}</style>
     </main>
   );
 }
