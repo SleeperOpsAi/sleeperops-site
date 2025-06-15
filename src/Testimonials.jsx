@@ -37,7 +37,6 @@ export default function Testimonials() {
           AI Solutions for Smarter Business Growth
         </p>
       </div>
-
       {/* Page Heading */}
       <h1 className="text-4xl font-bold mb-6 text-center drop-shadow-md">
         Testimonials & Case Studies
