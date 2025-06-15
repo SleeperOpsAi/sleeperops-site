@@ -185,4 +185,157 @@ export default function HomePage() {
                 desc: "Automate recruiting workflows to save hours of manual work.",
               },
               {
-                title: "RAG Knowledge System
+                title: "RAG Knowledge System",
+                desc: "Build robust retrieval-augmented generation knowledge bases.",
+              },
+              {
+                title: "Lead Qualification GPTs",
+                desc: "Use AI to pre-qualify leads efficiently and accurately.",
+              },
+              {
+                title: "File Transformation Pipelines",
+                desc: "Streamline data processing with intelligent file workflows.",
+              },
+              {
+                title: "Webhooks & Integrations",
+                desc: "Connect your systems with Zapier, Make, n8n, and more.",
+              },
+              {
+                title: "CRM/ATS Automation",
+                desc: "Sync and automate your CRM/ATS with platforms like AgentZoom, Notion, Airtable.",
+              },
+            ].map(({ title, desc }) => (
+              <div
+                key={title}
+                className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md"
+              >
+                <h3 className="mb-2 font-semibold drop-shadow text-white">
+                  {title}
+                </h3>
+                <p className="text-white/90">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="relative max-w-5xl mx-auto py-20 text-center text-white">
+          <h2 className="mb-10 text-3xl font-bold drop-shadow-md">What Clients Say</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {/* Placeholder testimonial cards */}
+            {[
+              {
+                name: "Jane Doe",
+                quote:
+                  "SleeperOps transformed our operations with smart automation. Highly recommend!",
+                role: "Founder, FinTech Startup",
+              },
+              {
+                name: "John Smith",
+                quote:
+                  "Fast, effective, and easy to work with. Our team is saving hours daily.",
+                role: "Operations Manager, Recruiting Agency",
+              },
+              {
+                name: "Samantha Lee",
+                quote:
+                  "Their AI solutions gave us a clear competitive edge in lead qualification.",
+                role: "Sales Director, Real Estate",
+              },
+            ].map(({ name, quote, role }) => (
+              <div
+                key={name}
+                className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md"
+              >
+                <p className="mb-4 italic text-white/90">"{quote}"</p>
+                <p className="font-semibold text-white">{name}</p>
+                <p className="text-sm text-white/70">{role}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Why SleeperOps */}
+        <section className="relative max-w-5xl mx-auto py-20 text-center text-white">
+          <h2 className="mb-10 text-3xl font-bold drop-shadow-md">Why SleeperOps</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              Fast Deployments – 7–10 day builds
+            </div>
+            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              Business-First AI – No hype, just impact
+            </div>
+            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              Modular Systems – Prebuilt or tailored
+            </div>
+            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              Integrated & Scalable – Built to grow with your ops
+            </div>
+          </div>
+        </section>
+
+        {/* Contact & Scheduling */}
+        <section
+          id="contact"
+          className="relative max-w-3xl mx-auto py-20 text-center text-white"
+        >
+          <h2 className="mb-4 text-3xl font-bold drop-shadow-md">
+            Let’s build something smarter.
+          </h2>
+          {/* Placeholder for Calendly or scheduling widget */}
+          <p className="mb-8 max-w-xl mx-auto text-white/80">
+            Book your free consultation today and start automating your business!
+          </p>
+          <a
+            href="#"
+            className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
+          >
+            Book Free Consult
+          </a>
+          <p className="mt-6 text-sm text-white/70">
+            Or email us at{" "}
+            <a
+              href="mailto:info@sleeperops.com"
+              className="underline hover:text-white"
+            >
+              info@sleeperops.com
+            </a>
+          </p>
+        </section>
+
+        {/* Footer */}
+        <footer className="relative py-6 text-center text-sm text-white/80">
+          SleeperOps © 2025 •
+          <a
+            href="mailto:info@sleeperops.com"
+            className="mx-2 text-white/90 underline-offset-2 hover:underline"
+          >
+            Email
+          </a>
+          •
+          <a
+            href="#"
+            aria-label="LinkedIn (placeholder)"
+            className="mx-2 text-white/90 underline-offset-2 hover:underline"
+          >
+            LinkedIn
+          </a>
+          •
+          <a
+            href="#"
+            aria-label="Fiverr (placeholder)"
+            className="mx-2 text-white/90 underline-offset-2 hover:underline"
+          >
+            Fiverr
+          </a>
+        </footer>
+
+        <style jsx>{`
+          .text-shadow {
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+          }
+        `}</style>
+      </main>
+    </>
+  );
+}
