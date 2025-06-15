@@ -1,27 +1,29 @@
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen text-gray-900 px-6 py-16">
+    <main className="relative min-h-screen px-6 py-16 text-white">
       {/* Background layers */}
       <div
         className="absolute inset-0 bg-gradient-to-br from-[#0a2c4d] to-[#153e75] opacity-95"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-[url('/pattern-tech.svg')] bg-repeat opacity-10"
+        className="absolute inset-0 bg-[url('/pattern-tech.svg')] bg-repeat opacity-25 bg-[length:400px_400px]"
         aria-hidden="true"
       />
 
       {/* Hero Section */}
-      <section className="relative max-w-3xl mx-auto text-center">
-        <img
-          src="/HeroPagelogo.png"
-          alt="SleeperOps AI Consulting Logo"
-          className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain opacity-0 animate-fadeIn"
-        />
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0f3d5f] leading-tight mb-4">
+      <section className="relative max-w-3xl mx-auto text-center bg-white bg-opacity-20 p-10 rounded-lg shadow-lg backdrop-blur-sm">
+        <div className="inline-block p-1 rounded-md shadow-md">
+          <img
+            src="/HeroPagelogo.png"
+            alt="SleeperOps AI Consulting Logo"
+            className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+          />
+        </div>
+        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4 text-shadow">
           Smarter Systems for Small Business.
         </h1>
-        <p className="text-lg text-gray-800 mb-8 max-w-xl mx-auto">
+        <p className="max-w-xl mx-auto mb-8 text-lg text-white/90">
           SleeperOps helps founders save time, reduce friction, and grow faster—with high value, low maintenance solutions.
         </p>
         <div className="flex justify-center gap-4 mb-12">
@@ -33,7 +35,7 @@ export default function HomePage() {
           </a>
           <a
             href="#what-we-do"
-            className="inline-block px-6 py-3 border border-[#0f3d5f] text-[#0f3d5f] font-semibold rounded-2xl shadow hover:bg-[#0f3d5f] hover:text-white transition"
+            className="inline-block px-6 py-3 border border-[#0f3d5f] text-white font-semibold rounded-2xl shadow hover:bg-[#0f3d5f] hover:text-white transition"
           >
             Learn More
           </a>
@@ -41,9 +43,14 @@ export default function HomePage() {
       </section>
 
       {/* What We Do */}
-      <section id="what-we-do" className="relative py-20 max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-10">What We Do</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section
+        id="what-we-do"
+        className="relative max-w-6xl mx-auto py-20 text-center text-white"
+      >
+        <h2 className="mb-10 text-3xl font-bold text-white drop-shadow-md">
+          What We Do
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {[
             {
               title: "AI Stack Consulting",
@@ -51,7 +58,7 @@ export default function HomePage() {
               cost: "Free",
               icon: (
                 <svg
-                  className="w-10 h-10 mb-4 mx-auto text-[#0f3d5f]"
+                  className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -70,7 +77,7 @@ export default function HomePage() {
               cost: "$149–$499",
               icon: (
                 <svg
-                  className="w-10 h-10 mb-4 mx-auto text-[#0f3d5f]"
+                  className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -89,7 +96,7 @@ export default function HomePage() {
               cost: "$750–$3.5k + optional retainer",
               icon: (
                 <svg
-                  className="w-10 h-10 mb-4 mx-auto text-[#0f3d5f]"
+                  className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -105,20 +112,29 @@ export default function HomePage() {
               ),
             },
           ].map(({ title, desc, cost, icon }) => (
-            <div key={title} className="bg-white p-6 rounded-2xl shadow-md text-center">
+            <div
+              key={title}
+              className="rounded-2xl bg-white bg-opacity-10 p-6 text-center shadow-md backdrop-blur-md"
+            >
               {icon}
-              <h3 className="text-xl font-semibold text-[#0f3d5f] mb-2">{title}</h3>
-              <p>{desc}</p>
-              <p className="mt-4 text-sm font-medium text-gray-700">💰 Cost: {cost}</p>
+              <h3 className="mb-2 text-xl font-semibold text-white drop-shadow">
+                {title}
+              </h3>
+              <p className="text-white/90">{desc}</p>
+              <p className="mt-4 text-sm font-medium text-white/80">
+                💰 Cost: {cost}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Use Cases */}
-      <section className="relative py-20 bg-[#f5faff] max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-10">Use Cases</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="relative max-w-5xl mx-auto py-20 bg-white/10 backdrop-blur-md text-center text-white">
+        <h2 className="mb-10 text-3xl font-bold drop-shadow-md text-white">
+          Use Cases
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {[
             {
               title: "Recruiting Funnel Automation",
@@ -145,28 +161,33 @@ export default function HomePage() {
               desc: "Sync and automate your CRM/ATS with platforms like AgentZoom, Notion, Airtable.",
             },
           ].map(({ title, desc }) => (
-            <div key={title} className="bg-white p-6 rounded-2xl shadow text-center">
-              <h3 className="font-semibold text-[#0f3d5f] mb-2">{title}</h3>
-              <p>{desc}</p>
+            <div
+              key={title}
+              className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md"
+            >
+              <h3 className="mb-2 font-semibold drop-shadow text-white">
+                {title}
+              </h3>
+              <p className="text-white/90">{desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Why SleeperOps */}
-      <section className="relative py-20 max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-10">Why SleeperOps</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-4 rounded-2xl shadow text-center font-semibold">
+      <section className="relative max-w-5xl mx-auto py-20 text-center text-white">
+        <h2 className="mb-10 text-3xl font-bold drop-shadow-md">Why SleeperOps</h2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
             Fast Deployments – 7–10 day builds
           </div>
-          <div className="bg-white p-4 rounded-2xl shadow text-center font-semibold">
+          <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
             Business-First AI – No hype, just impact
           </div>
-          <div className="bg-white p-4 rounded-2xl shadow text-center font-semibold">
+          <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
             Modular Systems – Prebuilt or tailored
           </div>
-          <div className="bg-white p-4 rounded-2xl shadow text-center font-semibold">
+          <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
             Integrated & Scalable – Built to grow with your ops
           </div>
         </div>
@@ -175,34 +196,51 @@ export default function HomePage() {
       {/* CTA */}
       <section
         id="contact"
-        className="relative text-center py-16 max-w-3xl mx-auto"
+        className="relative max-w-3xl mx-auto py-16 text-center text-white"
       >
-        <h2 className="text-3xl font-bold text-[#0f3d5f] mb-4">
+        <h2 className="mb-4 text-3xl font-bold drop-shadow-md">
           Let’s build something smarter.
         </h2>
         <a
           href="#"
-          className="inline-block px-6 py-3 bg-[#0f3d5f] text-white font-semibold rounded-2xl shadow hover:bg-[#0d3554] transition"
+          className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
         >
           Book Free Consult
         </a>
       </section>
 
       {/* Footer */}
-      <footer className="relative text-center text-sm py-6 text-gray-600">
+      <footer className="relative py-6 text-center text-sm text-white/80">
         SleeperOps © 2025 •
-        <a href="mailto:info@sleeperops.com" className="text-[#0f3d5f] mx-2">
+        <a
+          href="mailto:info@sleeperops.com"
+          className="mx-2 text-white/90 underline-offset-2 hover:underline"
+        >
           Email
         </a>
         •
-        <a href="#" className="text-[#0f3d5f] mx-2" aria-label="LinkedIn (placeholder)">
+        <a
+          href="#"
+          aria-label="LinkedIn (placeholder)"
+          className="mx-2 text-white/90 underline-offset-2 hover:underline"
+        >
           LinkedIn
         </a>
         •
-        <a href="#" className="text-[#0f3d5f] mx-2" aria-label="Fiverr (placeholder)">
+        <a
+          href="#"
+          aria-label="Fiverr (placeholder)"
+          className="mx-2 text-white/90 underline-offset-2 hover:underline"
+        >
           Fiverr
         </a>
       </footer>
+
+      <style jsx>{`
+        .text-shadow {
+          text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+        }
+      `}</style>
     </main>
   );
 }
