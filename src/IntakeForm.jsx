@@ -95,11 +95,27 @@ export default function IntakeForm() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    // Future: send formData to backend or webhook
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("https://sleeperops.app.n8n.cloud/webhook/intake-form", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit form");
+    }
+
+    setSubmitted(true); // set after successful submission
+  } catch (error) {
+    alert("Error submitting form, please try again.");
+    console.error("Submit error:", error);
+  }
+};
+
 
   if (submitted) {
     return (
