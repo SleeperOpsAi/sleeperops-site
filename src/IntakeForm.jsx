@@ -308,4 +308,100 @@ export default function IntakeForm() {
           {/* Sub Services */}
           {formData.coreServices.length > 0 && (
             <fieldset className="mb-6">
-              <legend className="block
+              <legend className="block mb-2 font-semibold text-white">Specific Interests</legend>
+              <div className="flex flex-wrap gap-4">
+                {formData.coreServices.flatMap(core => subServicesOptions[core]).map(subService => (
+                  <label key={subService} className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      name="subServices"
+                      value={subService}
+                      checked={formData.subServices.includes(subService)}
+                      onChange={handleChange}
+                      className="text-black"
+                    />
+                    <span>{subService}</span>
+                  </label>
+                ))}
+              </div>
+              {formData.subServices.includes("Other (custom pre-built agent)") && (
+                <p className="mt-2 italic text-sm text-white/80">
+                  Need something else? We can whip up tailored pre-built agents quickly for your needs.
+                </p>
+              )}
+            </fieldset>
+          )}
+
+          {/* Budget */}
+          <label className="block">
+            <span className="block mb-1">Budget Range</span>
+            <select
+              name="budget"
+              value={formData.budget}
+              onChange={handleChange}
+              className="w-full rounded px-3 py-2 text-black"
+            >
+              <option value="">Select budget</option>
+              {budgets.map((b) => (
+                <option key={b} value={b}>
+                  {b}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          {/* Timeline */}
+          <label className="block">
+            <span className="block mb-1">Project Timeline</span>
+            <select
+              name="timeline"
+              value={formData.timeline}
+              onChange={handleChange}
+              className="w-full rounded px-3 py-2 text-black"
+            >
+              <option value="">Select timeline</option>
+              {timelines.map((t) => (
+                <option key={t} value={t}>
+                  {t}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          {/* Referral */}
+          <label className="block">
+            <span className="block mb-1">How did you hear about us?</span>
+            <input
+              name="referral"
+              type="text"
+              value={formData.referral}
+              onChange={handleChange}
+              className="w-full rounded px-3 py-2 text-black"
+              placeholder="Optional"
+            />
+          </label>
+
+          {/* Message */}
+          <label className="block">
+            <span className="block mb-1">Brief Description / Message *</span>
+            <textarea
+              name="message"
+              rows="4"
+              required
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full rounded px-3 py-2 text-black"
+            />
+          </label>
+
+          <button
+            type="submit"
+            className="w-full rounded bg-[#0f3d5f] py-3 font-semibold hover:bg-[#0d3554] transition"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </main>
+  );
+}
