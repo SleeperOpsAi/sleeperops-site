@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+const USE_TEST_WEBHOOK = true; // true = test webhook, false = production webhook
+
+const WEBHOOK_URL = USE_TEST_WEBHOOK
+  ? "https://sleeperops.app.n8n.cloud/webhook-test/intake-form"
+  : "https://sleeperops.app.n8n.cloud/webhook/intake-form";
+
 export default function IntakeForm() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -36,7 +42,6 @@ export default function IntakeForm() {
     "Custom Automation Implementation",
   ];
 
-  // Updated user-friendly sub-services with 'Other' and helper text
   const subServicesOptions = {
     "AI Stack Consulting": [
       "Strategy & Tool Recommendations",
@@ -74,7 +79,7 @@ export default function IntakeForm() {
       : [...array, item];
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type } = e.target;
 
     if (type === "checkbox") {
       if (name === "coreServices") {
@@ -95,27 +100,26 @@ export default function IntakeForm() {
     }
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    const response = await fetch("https://sleeperops.app.n8n.cloud/webhook/intake-form", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    if (!response.ok) {
-      throw new Error("Failed to submit form");
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      alert("Error submitting form, please try again.");
+      console.error("Submit error:", error);
     }
-
-    setSubmitted(true); // set after successful submission
-  } catch (error) {
-    alert("Error submitting form, please try again.");
-    console.error("Submit error:", error);
-  }
-};
-
+  };
 
   if (submitted) {
     return (
@@ -301,104 +305,7 @@ const handleSubmit = async (e) => {
             </div>
           </fieldset>
 
-          {/* Sub Services (show only if relevant core selected) */}
+          {/* Sub Services */}
           {formData.coreServices.length > 0 && (
             <fieldset className="mb-6">
-              <legend className="block mb-2 font-semibold text-white">Specific Interests</legend>
-              <div className="flex flex-wrap gap-4">
-                {formData.coreServices.flatMap(core => subServicesOptions[core]).map(subService => (
-                  <label key={subService} className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="subServices"
-                      value={subService}
-                      checked={formData.subServices.includes(subService)}
-                      onChange={handleChange}
-                      className="text-black"
-                    />
-                    <span>{subService}</span>
-                  </label>
-                ))}
-              </div>
-              {/* Show helper text if 'Other (custom pre-built agent)' is selected */}
-              {formData.subServices.includes("Other (custom pre-built agent)") && (
-                <p className="mt-2 italic text-sm text-white/80">
-                  Need something else? We can whip up tailored pre-built agents quickly for your needs.
-                </p>
-              )}
-            </fieldset>
-          )}
-
-          {/* Budget */}
-          <label className="block">
-            <span className="block mb-1">Budget Range</span>
-            <select
-              name="budget"
-              value={formData.budget}
-              onChange={handleChange}
-              className="w-full rounded px-3 py-2 text-black"
-            >
-              <option value="">Select budget</option>
-              {budgets.map((b) => (
-                <option key={b} value={b}>
-                  {b}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          {/* Timeline */}
-          <label className="block">
-            <span className="block mb-1">Project Timeline</span>
-            <select
-              name="timeline"
-              value={formData.timeline}
-              onChange={handleChange}
-              className="w-full rounded px-3 py-2 text-black"
-            >
-              <option value="">Select timeline</option>
-              {timelines.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          {/* Referral */}
-          <label className="block">
-            <span className="block mb-1">How did you hear about us?</span>
-            <input
-              name="referral"
-              type="text"
-              value={formData.referral}
-              onChange={handleChange}
-              className="w-full rounded px-3 py-2 text-black"
-              placeholder="Optional"
-            />
-          </label>
-
-          {/* Message */}
-          <label className="block">
-            <span className="block mb-1">Brief Description / Message *</span>
-            <textarea
-              name="message"
-              rows="4"
-              required
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full rounded px-3 py-2 text-black"
-            />
-          </label>
-
-          <button
-            type="submit"
-            className="w-full rounded bg-[#0f3d5f] py-3 font-semibold hover:bg-[#0d3554] transition"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-    </main>
-  );
-}
+              <legend className="block
