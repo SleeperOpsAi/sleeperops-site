@@ -6,7 +6,6 @@ import AboutUs from "./AboutUs";
 import Blog from "./Blog";
 import FAQ from "./FAQ";
 
-
 function HomePage() {
   return (
     <main className="relative min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
@@ -28,21 +27,31 @@ function HomePage() {
         <h1 className="mb-4 text-4xl font-extrabold leading-tight text-shadow sm:text-5xl">
           Smarter Systems for Small Business.
         </h1>
-        <p className="mb-8 max-w-xl mx-auto text-lg text-white/90">
+        <p className="mb-6 max-w-xl mx-auto text-lg text-white/90">
           SleeperOps helps founders save time, reduce friction, and grow faster—with high value, low maintenance solutions.
+          <br />
+          Say goodbye to manual work, scattered data, and slow processes.
         </p>
+
+        <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
+          Ready to see how AI can streamline your business?{" "}
+          <Link to="/contact" className="underline font-semibold">
+            Start with a quick intake form.
+          </Link>
+        </div>
+
         <div className="mb-12 flex justify-center gap-4">
           <Link
             to="/contact"
             className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition"
           >
-            Book Your Free Consult — Limited Spots
+            Claim Your Free Consult Spot
           </Link>
           <Link
             to="/what-we-do"
             className="inline-block rounded-2xl border border-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0f3d5f] hover:text-white transition"
           >
-            Learn More
+            Discover How AI Can Work For You
           </Link>
         </div>
       </section>
@@ -146,8 +155,8 @@ function HomePage() {
               desc: "Automate recruiting workflows to save hours of manual work.",
             },
             {
-              title: "RAG Knowledge System",
-              desc: "Build robust retrieval-augmented generation knowledge bases.",
+              title: "Knowledge Base Chatbots",
+              desc: "Build smart chatbots that answer FAQs and retrieve key info.",
             },
             {
               title: "Lead Qualification GPTs",
@@ -208,85 +217,4 @@ function HomePage() {
         </h2>
         <a
           href="#"
-          className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
-        >
-          Book Free Consult
-        </a>
-      </section>
-
-      {/* Footer */}
-      <footer className="relative py-6 text-center text-sm text-white/80 space-x-4">
-        SleeperOps © 2025 •
-        <a
-          href="mailto:info@sleeperops.com"
-          className="mx-2 text-white/90 underline-offset-2 hover:underline"
-        >
-          Email
-        </a>
-        •
-        <a href="#" className="mx-2 text-white/90 underline-offset-2 hover:underline">
-          LinkedIn
-        </a>
-        •
-        <a href="#" className="mx-2 text-white/90 underline-offset-2 hover:underline">
-          Fiverr
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .text-shadow {
-          text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
-        }
-      `}</style>
-    </main>
-  );
-}
-
-export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <>
-      {/* Hamburger Menu Overlay */}
-      <div
-        className={`fixed inset-0 bg-[#0a2c4d] bg-opacity-95 backdrop-blur-sm z-40 transition-transform duration-300 ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-        onClick={() => setMenuOpen(false)}
-      >
-        <nav
-          className="flex flex-col items-start space-y-6 p-8 pt-20 text-white text-xl font-semibold"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/what-we-do" onClick={() => setMenuOpen(false)}>Services</Link>
-          <Link to="/about-us" onClick={() => setMenuOpen(false)}>About Us</Link>
-          <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
-          <Link to="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>Book Now</Link>
-        </nav>
-      </div>
-
-      {/* Hamburger Icon */}
-      <button
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle Menu"
-        className="fixed top-6 left-6 z-50 flex flex-col space-y-1.5"
-      >
-        <span className="block w-8 h-1 bg-white rounded"></span>
-        <span className="block w-8 h-1 bg-white rounded"></span>
-        <span className="block w-8 h-1 bg-white rounded"></span>
-      </button>
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/what-we-do" element={<Services />} />  
-        <Route path="/contact" element={<IntakeForm />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/faq" element={<FAQ />} />
-        {/* Add more routes like /contact, /what-we-do, /about-us as you build */}
-      </Routes>
-    </>
-  );
-}
+          className="inline-block rounded-
