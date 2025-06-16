@@ -225,7 +225,7 @@ export default function IntakeForm() {
 
           {/* Company URL */}
           <label className="block">
-            <span className="block mb-1">Company Website URL</span>
+            <span className="block mb-1">Company Website URL *</span>
             <input
               name="companyUrl"
               type="url"
