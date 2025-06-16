@@ -5,7 +5,6 @@ import Services from "./Services";
 import AboutUs from "./AboutUs";
 import Blog from "./Blog";
 import FAQ from "./FAQ";
-import Testimonials from "./Testimonials";
 
 
 function HomePage() {
@@ -263,7 +262,6 @@ export default function App() {
           <Link to="/what-we-do" onClick={() => setMenuOpen(false)}>Services</Link>
           <Link to="/about-us" onClick={() => setMenuOpen(false)}>About Us</Link>
           <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
-          <Link to="/testimonials" onClick={() => setMenuOpen(false)}>Testimonials</Link>
           <Link to="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
           <Link to="/contact" onClick={() => setMenuOpen(false)}>Book Now</Link>
         </nav>
@@ -287,7 +285,6 @@ export default function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/faq" element={<FAQ />} />
-        <Route path="/testimonials" element={<Testimonials />} />
         {/* Add more routes like /contact, /what-we-do, /about-us as you build */}
       </Routes>
     </>
