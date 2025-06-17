@@ -236,16 +236,20 @@ function HomePage() {
           aria-label="About Adam and SleeperOps"
           className="relative max-w-4xl mx-auto py-20 px-8 text-center"
         >
-          <h2 className="mb-8 text-3xl font-bold text-[#3787b9]">About Adam and SleeperOps</h2>
-          <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed">
-            Hi, I’m Adam — a small business owner and systems enthusiast who’s completely obsessed with the possibilities of AI.
-            After years of hands-on experience streamlining operations, I’ve seen firsthand how the right tools can transform a business.
-          </p>
-          <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed mt-4">
-            SleeperOps is my full-time passion project where I’m dedicated to bringing practical, easy-to-use AI solutions to small businesses like yours.
-            I truly believe this technology will revolutionize how we work and live every day.
-            I’m constantly learning and excited to help you get the most value out of AI — no hype, just real impact that empowers your business to thrive.
-          </p>
+          <div className="bg-white bg-opacity-80 rounded-xl p-8 shadow-lg backdrop-blur-sm">
+            <h2 className="mb-8 text-3xl font-bold text-[#153e75] drop-shadow">
+              About Adam and SleeperOps
+            </h2>
+            <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed">
+              Hi, I’m Adam — a small business owner and systems enthusiast who’s completely obsessed with the possibilities of AI.
+              After years of hands-on experience streamlining operations, I’ve seen firsthand how the right tools can transform a business.
+            </p>
+            <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed mt-4">
+              SleeperOps is my full-time passion project where I’m dedicated to bringing practical, easy-to-use AI solutions to small businesses like yours.
+              I truly believe this technology will revolutionize how we work and live every day.
+              I’m constantly learning and excited to help you get the most value out of AI — no hype, just real impact that empowers your business to thrive.
+            </p>
+          </div>
         </section>
 
         {/* CTA */}
