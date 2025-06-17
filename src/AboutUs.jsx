@@ -8,40 +8,47 @@ export default function AboutUs() {
         <title>About Adam & SleeperOps | AI Consulting for Small Business</title>
         <meta
           name="description"
-          content="Learn about Adam, the founder of SleeperOps, his passion for automation, and the mission to empower small businesses with AI solutions."
+          content="Discover the story of Adam, founder of SleeperOps, his passion for automation, and dedication to empowering small businesses."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://sleeperops-site.vercel.app/about-us" />
       </Helmet>
 
-      <main className="relative min-h-screen px-6 py-20 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
+      <main className="relative min-h-screen px-6 py-20 text-[#0a2c4d] bg-gradient-to-br from-[#d9e9ff] to-[#a1c1ff]">
         {/* Pattern Overlay */}
         <div
-          className="absolute inset-0 bg-[url('/background-pattern.png')] bg-repeat opacity-25 bg-[length:400px_400px] pointer-events-none"
+          className="absolute inset-0 bg-[url('/background-pattern.png')] bg-repeat opacity-10 pointer-events-none"
           aria-hidden="true"
         />
 
-        <section className="relative max-w-4xl mx-auto text-center z-10">
+        <section className="relative max-w-6xl mx-auto bg-white bg-opacity-90 rounded-3xl shadow-lg p-10 flex flex-col md:flex-row items-center gap-10 z-10">
           <img
-            src="/family-photo.png"
+            src="/family-photo.jpg"
             alt="Adam and Family"
-            className="mx-auto mb-10 rounded-lg shadow-lg max-w-xs sm:max-w-md"
+            className="rounded-lg shadow-lg max-w-xs sm:max-w-md object-cover"
           />
-          <h1 className="text-4xl font-extrabold mb-6 drop-shadow">
-            About Adam & SleeperOps
-          </h1>
-          <p className="text-lg max-w-xl mx-auto mb-6 text-white/90 leading-relaxed">
-            Hi, I’m Adam — the founder of SleeperOps. I’m deeply passionate about automation and firmly believe it’s the future of how small businesses can work smarter, not harder.
-          </p>
-          <p className="text-lg max-w-xl mx-auto mb-6 text-white/90 leading-relaxed">
-            I started SleeperOps out of love — for this incredible technology, for my family, and for a hope that one day this will become my full-time career. 
-          </p>
-          <p className="text-lg max-w-xl mx-auto mb-6 text-white/90 leading-relaxed">
-            My core motivation is simple: all I truly care about is my family and their future. Through SleeperOps, I aim to help small business owners reclaim their time, reduce friction, and build workflows that empower their teams and lives.
-          </p>
-          <p className="text-lg max-w-xl mx-auto mb-10 text-white/90 leading-relaxed">
-            Thank you for being part of this journey. Let’s build smarter systems together.
-          </p>
+
+          <div className="text-[#0a2c4d] flex flex-col justify-center">
+            <h1 className="text-4xl font-extrabold mb-6">
+              Meet Adam, Founder of SleeperOps
+            </h1>
+
+            <p className="mb-6 leading-relaxed text-lg">
+              I’m Adam, and I started SleeperOps driven by a passion for automation and a belief that this technology is the future for small businesses.
+            </p>
+
+            <p className="mb-6 leading-relaxed text-lg">
+              This isn’t just a business — it’s a labor of love, fueled by the dream to turn this into my full-time work and to build a better future for my family.
+            </p>
+
+            <p className="mb-6 leading-relaxed text-lg">
+              My goal is simple: to empower fellow small business owners with smart, practical AI solutions that save time, reduce stress, and unlock growth.
+            </p>
+
+            <p className="leading-relaxed text-lg">
+              Thanks for stopping by. If you’re curious or ready to transform your business, let’s connect and build something great together.
+            </p>
+          </div>
         </section>
       </main>
     </>
