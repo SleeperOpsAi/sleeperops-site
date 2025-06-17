@@ -25,72 +25,63 @@ function HomePage() {
         <link rel="canonical" href="https://sleeperops-site.vercel.app/" />
       </Helmet>
 
-      <main
-        className="relative min-h-screen px-6 py-16 bg-gradient-to-br from-[#d2ecf9] to-[#3787b9] text-gray-900"
-        role="main"
-      >
+      <main className="relative min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
         {/* Pattern overlay */}
         <div
-          className="absolute inset-0 bg-[url('/background-pattern.png')] bg-repeat opacity-10 bg-[length:400px_400px]"
+          className="absolute inset-0 bg-[url('/background-pattern.png')] bg-repeat opacity-25 bg-[length:400px_400px]"
           aria-hidden="true"
         />
 
         {/* Hero Section */}
-        <header
-          className="relative max-w-4xl mx-auto text-center bg-white bg-opacity-80 p-12 rounded-lg shadow-lg backdrop-blur-sm z-10"
-          aria-label="Introduction"
-        >
+        <section className="relative max-w-3xl mx-auto text-center bg-white bg-opacity-20 p-10 rounded-lg shadow-lg backdrop-blur-sm z-10">
           <div className="inline-block p-1 rounded-md shadow-md">
             <img
               src="/HeroPagelogo.png"
               alt="SleeperOps AI Consulting Logo"
-              className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain drop-shadow-lg"
+              className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
             />
           </div>
-          <h1 className="mb-6 text-4xl font-extrabold leading-tight sm:text-5xl">
-            Smarter Systems for Small Business
+          <h1 className="mb-4 text-4xl font-extrabold leading-tight text-shadow sm:text-5xl">
+            Smarter Systems for Small Business.
           </h1>
-          <p className="mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
-            At SleeperOps, we believe AI is a powerful tool—not a magic wand. Our expert AI automation
-            and consulting services help small businesses reduce manual work, eliminate data friction,
-            and grow sustainably. The key is smart setups that save you hours every day.
+          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90">
+            At SleeperOps, we believe AI is a powerful tool—not a magic wand. Our expert AI automation and consulting services help small businesses reduce manual work, eliminate data friction, and grow sustainably. The key is smart setups that save you hours every day.
           </p>
-          <p className="mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
-            From custom RAG systems that optimize your data search to AI-powered lead qualification and
-            sales chatbots, we build practical solutions that pay off long term.
+          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90">
+            From custom RAG systems that optimize your data search to AI-powered lead qualification and sales chatbots, we build practical solutions that pay off long term.
           </p>
 
-          <nav className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+          <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
+            Ready to see how AI can streamline your business?{" "}
+            <Link to="/contact" className="underline font-semibold">
+              Start with a quick intake form.
+            </Link>
+          </div>
+
+          <div className="mb-12 flex justify-center gap-4">
             <Link
               to="/contact"
-              className="inline-block rounded-full bg-[#3787b9] px-8 py-4 text-white font-semibold shadow hover:bg-[#2c638f] transition"
-              aria-label="Start with a quick intake form"
+              className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition"
             >
-              Start with a Quick Intake Form
+              Claim Your Free Consult Spot
             </Link>
             <Link
               to="/what-we-do"
-              className="inline-block rounded-full border-2 border-[#3787b9] px-8 py-4 text-[#3787b9] font-semibold shadow hover:bg-[#3787b9] hover:text-white transition"
-              aria-label="Discover how AI can work for you"
+              className="inline-block rounded-2xl border border-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0f3d5f] hover:text-white transition"
             >
-              Discover How AI Can Work for You
+              Discover How AI Can Work For You
             </Link>
-          </nav>
-        </header>
+          </div>
+        </section>
 
-        {/* What We Do Section */}
+        {/* What We Do */}
         <section
           id="what-we-do"
-          className="relative max-w-7xl mx-auto py-20 text-center"
-          aria-labelledby="what-we-do-title"
+          className="relative max-w-6xl mx-auto py-20 text-center"
         >
-          <h2
-            id="what-we-do-title"
-            className="mb-12 text-3xl font-bold text-[#3787b9]"
-          >
+          <h2 className="mb-10 text-3xl font-bold text-white drop-shadow-md">
             What We Do
           </h2>
-
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
@@ -99,7 +90,7 @@ function HomePage() {
                 cost: "Free",
                 icon: (
                   <svg
-                    className="mx-auto mb-4 w-10 h-10 text-[#3787b9]"
+                    className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -120,7 +111,7 @@ function HomePage() {
                 cost: "$149–$499",
                 icon: (
                   <svg
-                    className="mx-auto mb-4 w-10 h-10 text-[#3787b9]"
+                    className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -141,7 +132,7 @@ function HomePage() {
                 cost: "$750–$3.5k + optional retainer",
                 icon: (
                   <svg
-                    className="mx-auto mb-4 w-10 h-10 text-[#3787b9]"
+                    className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -159,96 +150,85 @@ function HomePage() {
                 ),
               },
             ].map(({ title, desc, cost, icon }) => (
-              <article
+              <div
                 key={title}
                 className="rounded-2xl bg-white bg-opacity-10 p-6 text-center shadow-md backdrop-blur-md"
-                aria-label={title}
               >
                 {icon}
-                <h3 className="mb-2 text-xl font-semibold text-[#3787b9]">{title}</h3>
-                <p className="text-gray-900">{desc}</p>
-                <p className="mt-4 text-sm font-medium text-gray-800">💰 Cost: {cost}</p>
-              </article>
+                <h3 className="mb-2 text-xl font-semibold text-white drop-shadow">
+                  {title}
+                </h3>
+                <p className="text-white/90">{desc}</p>
+                <p className="mt-4 text-sm font-medium text-white/80">
+                  💰 Cost: {cost}
+                </p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* Use Cases Section */}
-        <section
-          aria-labelledby="use-cases-title"
-          className="relative max-w-7xl mx-auto py-20 px-8 bg-[#3787b9]/20 rounded-xl backdrop-blur-md text-center"
-        >
-          <h2
-            id="use-cases-title"
-            className="mb-10 text-3xl font-bold text-[#3787b9]"
-          >
+        {/* Use Cases */}
+        <section className="relative max-w-6xl mx-auto py-20 px-8 bg-blue-900/40 rounded-xl backdrop-blur-md text-center text-white">
+          <h2 className="mb-10 text-3xl font-bold drop-shadow-md text-white">
             Use Cases
           </h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 text-gray-900">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {[
               {
-                title: "Automate Your Hiring Process",
-                desc: "Have a digital assistant screen candidates, schedule interviews, and answer common questions—freeing you from repetitive emails and calls.",
+                title: "Recruiting Funnel Automation",
+                desc: "Automate recruiting workflows to save hours of manual work.",
               },
               {
-                title: "Smart Customer Service Chatbots",
-                desc: "Chatbots handle FAQs 24/7, instantly giving customers the info they need, improving satisfaction and letting your team focus on important tasks.",
+                title: "Knowledge Base Chatbots",
+                desc: "Build smart chatbots that answer FAQs and retrieve key info.",
               },
               {
-                title: "Lead Qualification Made Simple",
-                desc: "Our AI systems sift through incoming leads to identify those most likely to convert so you can focus your efforts where it counts.",
+                title: "Lead Qualification GPTs",
+                desc: "Use AI to pre-qualify leads efficiently and accurately.",
               },
               {
-                title: "Effortless Data Processing",
-                desc: "Automatically clean and organize your data from spreadsheets and files, helping you make faster, better decisions.",
+                title: "File Transformation Pipelines",
+                desc: "Streamline data processing with intelligent file workflows.",
               },
               {
-                title: "Seamless Integration of Your Tools",
-                desc: "Connect your calendars, CRMs, and email apps so they talk to each other—automating follow-ups and record updates without lifting a finger.",
+                title: "Webhooks & Integrations",
+                desc: "Connect your systems with Zapier, Make, n8n, and more.",
               },
               {
-                title: "Automate Your Sales Pipeline",
-                desc: "Keep your sales funnel updated in real-time with automated reminders and tasks to help you close deals faster with less effort.",
+                title: "CRM/ATS Automation",
+                desc: "Sync and automate your CRM/ATS with platforms like AgentZoom, Notion, Airtable.",
               },
             ].map(({ title, desc }) => (
-              <article
+              <div
                 key={title}
                 className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md"
-                aria-label={title}
               >
-                <h3 className="mb-2 font-semibold text-[#3787b9]">{title}</h3>
-                <p>{desc}</p>
-              </article>
+                <h3 className="mb-2 font-semibold drop-shadow text-white">
+                  {title}
+                </h3>
+                <p className="text-white/90">{desc}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* Why SleeperOps Section */}
-        <section
-          aria-labelledby="why-sleeperops-title"
-          className="relative max-w-5xl mx-auto py-20 text-center"
-        >
-          <h2
-            id="why-sleeperops-title"
-            className="mb-10 text-3xl font-bold text-[#3787b9]"
-          >
-            Why SleeperOps
-          </h2>
-          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 list-none text-gray-900">
-            {[
-              "Fast Deployments – 7–10 day builds",
-              "Business-First AI – No hype, just impact",
-              "Modular Systems – Prebuilt or tailored",
-              "Integrated & Scalable – Built to grow with your ops",
-            ].map((item) => (
-              <li
-                key={item}
-                className="rounded-2xl bg-white bg-opacity-20 p-6 shadow-md backdrop-blur-md font-semibold"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+        {/* Why SleeperOps */}
+        <section className="relative max-w-5xl mx-auto py-20 text-center text-white">
+          <h2 className="mb-10 text-3xl font-bold drop-shadow-md">Why SleeperOps</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              Fast Deployments – 7–10 day builds
+            </div>
+            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              Business-First AI – No hype, just impact
+            </div>
+            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              Modular Systems – Prebuilt or tailored
+            </div>
+            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              Integrated & Scalable – Built to grow with your ops
+            </div>
+          </div>
         </section>
 
         {/* Personal Note Section */}
@@ -268,25 +248,20 @@ function HomePage() {
           </p>
         </section>
 
-        {/* Call to Action */}
+        {/* CTA */}
         <section
           id="contact"
-          className="relative max-w-3xl mx-auto py-16 text-center"
-          aria-label="Call to action"
+          className="relative max-w-3xl mx-auto py-16 text-center text-white"
         >
-          <h2 className="mb-6 text-3xl font-bold text-[#3787b9]">
-            Let’s build something smarter together.
+          <h2 className="mb-4 text-3xl font-bold drop-shadow-md">
+            Let’s build something smarter.
           </h2>
           <Link
             to="/contact"
-            className="inline-block rounded-full bg-[#3787b9] px-8 py-4 font-semibold shadow hover:bg-[#2c638f] transition text-white"
-            aria-label="Book your free consultation with SleeperOps"
+            className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
           >
-            Book Your Free Consult
+            Book Free Consult
           </Link>
-          <p className="mt-4 max-w-md mx-auto text-gray-700 text-sm">
-            Not sure where to start? Our experts will help you identify your biggest automation opportunities.
-          </p>
         </section>
       </main>
     </>
@@ -309,24 +284,12 @@ export default function App() {
           className="flex flex-col items-start space-y-6 p-8 pt-20 text-white text-xl font-semibold"
           onClick={(e) => e.stopPropagation()}
         >
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-          <Link to="/what-we-do" onClick={() => setMenuOpen(false)}>
-            Services
-          </Link>
-          <Link to="/about-us" onClick={() => setMenuOpen(false)}>
-            About Us
-          </Link>
-          <Link to="/blog" onClick={() => setMenuOpen(false)}>
-            Blog
-          </Link>
-          <Link to="/faq" onClick={() => setMenuOpen(false)}>
-            FAQ
-          </Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            Book Now
-          </Link>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/what-we-do" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link to="/about-us" onClick={() => setMenuOpen(false)}>About Us</Link>
+          <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          <Link to="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Book Now</Link>
         </nav>
       </div>
 
@@ -343,7 +306,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/what-we-do" element={<Services />} />
+        <Route path="/what-we-do" element={<Services />} />  
         <Route path="/contact" element={<IntakeForm />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
