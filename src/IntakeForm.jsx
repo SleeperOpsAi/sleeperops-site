@@ -212,10 +212,11 @@ export default function IntakeForm() {
 
           {/* Company Name */}
           <label className="block">
-            <span className="block mb-1">Company Name</span>
+            <span className="block mb-1">Company Name *</span>
             <input
               name="company"
               type="text"
+              required
               value={formData.company}
               onChange={handleChange}
               className="w-full rounded px-3 py-2 text-black"
