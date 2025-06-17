@@ -147,11 +147,13 @@ export default function Services() {
 
         {/* Hero Section */}
         <section className="relative max-w-3xl mx-auto text-center bg-white bg-opacity-20 p-10 rounded-lg shadow-lg backdrop-blur-sm z-10 mb-16">
-          <img
-            src="/HeroPagelogo.png"
-            alt="SleeperOps AI Consulting Logo"
-            className="mx-auto mb-6 w-36 h-36 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
-          />
+          <Link to="/">
+            <img
+              src="/HeroPagelogo.png"
+              alt="SleeperOps AI Consulting Logo"
+              className="mx-auto mb-6 w-36 h-36 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+            />
+          </Link>
           <h1 className="text-4xl font-extrabold mb-4 drop-shadow">
             What We Do
           </h1>
