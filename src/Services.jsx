@@ -222,13 +222,13 @@ export default function Services() {
           <h2 className="text-3xl font-bold mb-6 drop-shadow text-white">
             Ready to get started?
           </h2>
-          <Link
-            to="/contact"
-            className="inline-block rounded-2xl bg-[#0f3d5f] px-8 py-4 font-semibold shadow hover:bg-[#0d3554] transition text-white"
-            aria-label="Book a free consultation with SleeperOps"
-          >
-            Book Your Free Consult
-          </Link>
+            <Link
+              to="/contact"
+              className="pointer-events-auto inline-block rounded-2xl bg-[#0f3d5f] px-8 py-4 font-semibold shadow hover:bg-[#0d3554] transition text-white"
+              aria-label="Book a free consultation with SleeperOps"
+            >
+              Book Your Free Consult
+            </Link>
         </section>
       </main>
     </>
