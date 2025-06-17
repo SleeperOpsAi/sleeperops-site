@@ -241,13 +241,13 @@ function HomePage() {
               About Adam and SleeperOps
             </h2>
             <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed">
-              Hi, I’m Adam — a small business owner and systems enthusiast who’s completely obsessed with the possibilities of AI.
-              After years of hands-on experience streamlining operations, I’ve seen firsthand how the right tools can transform a business.
+              Hi, my name's Adam. I started SleeperOps because I saw how small businesses struggle with time-consuming admin and disorganized systems — and I knew AI could help.
             </p>
             <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed mt-4">
-              SleeperOps is my full-time passion project where I’m dedicated to bringing practical, easy-to-use AI solutions to small businesses like yours.
-              I truly believe this technology will revolutionize how we work and live every day.
-              I’m constantly learning and excited to help you get the most value out of AI — no hype, just real impact that empowers your business to thrive.
+              With years of experience building business systems, I’m passionate about creating practical AI tools that make daily work easier and free you up to focus on growing your business.
+            </p>
+            <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed mt-4">
+              SleeperOps is my full-time passion project where I help small businesses unlock the real power of AI — no hype, just smart solutions designed to save time and boost productivity. I’m constantly learning, and I’m excited to share what AI can do for you.
             </p>
           </div>
         </section>
