@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 export default function AboutUs() {
@@ -15,6 +16,19 @@ export default function AboutUs() {
       </Helmet>
 
       <main className="relative min-h-screen px-6 py-20 text-[#0a2c4d] bg-gradient-to-br from-[#d9e9ff] to-[#a1c1ff]">
+        {/* Logo Link */}
+        <Link
+          to="/"
+          className="absolute top-6 left-6 z-50 inline-block p-2 bg-white rounded-lg shadow hover:shadow-lg transition"
+          aria-label="Go to homepage"
+        >
+          <img
+            src="/HeroPagelogo.png"
+            alt="SleeperOps Logo"
+            className="w-12 h-12 object-contain"
+          />
+        </Link>
+
         {/* Pattern Overlay */}
         <div
           className="absolute inset-0 bg-[url('/background-pattern.png')] bg-repeat opacity-10 pointer-events-none"
