@@ -1,3 +1,12 @@
+import { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import IntakeForm from "./IntakeForm";
+import Services from "./Services";
+import AboutUs from "./AboutUs";
+import Blog from "./Blog";
+import FAQ from "./FAQ";
+import { Helmet } from "react-helmet";
+
 function HomePage() {
   return (
     <>
@@ -35,22 +44,15 @@ function HomePage() {
           <h1 className="mb-2 text-4xl font-extrabold leading-tight text-shadow sm:text-5xl">
             Smarter Systems for Small Business.
           </h1>
-          <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 font-semibold">
-            Custom AI tools to automate your sales, recruiting, and daily workflows.
-          </p>
-          <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            At SleeperOps, we believe AI is a powerful tool—not a magic wand.
-          </p>
-          <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            We help small businesses reduce manual work, eliminate data friction, and grow sustainably.
-          </p>
-          <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            Our smart setups save you hours every day.
+          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
+            AI tools that save you time and help your business grow.
           </p>
           <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            Whether you want to automate lead qualification, recruiting, sales follow-ups, appointment scheduling, customer support, document management, or other routine tasks, we build custom AI tools tailored to your needs that deliver real results and save you time.
+            From lead qualification to recruiting, sales, scheduling, and support, we build custom AI solutions tailored to your needs.
           </p>
-
+          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
+            No fluff. Just smart automations that work.
+          </p>
 
           <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
             Ready to see how AI can streamline your business?{" "}
@@ -84,7 +86,87 @@ function HomePage() {
             What We Do
           </h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {/* unchanged */}
+            {[
+              {
+                title: "AI Tool Recommendations",
+                desc: "We start by understanding your daily work and recommend easy-to-use AI tools tailored to save you time and hassle. This first consultation is free.",
+                cost: "Free",
+                icon: (
+                  <svg
+                    className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4l3 3" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Prebuilt Smart Helpers",
+                desc: "Plug-and-play AI assistants that handle recruiting, lead checking, intake forms, and repetitive tasks so you can focus on growing your business.",
+                cost: "$149–$499",
+                icon: (
+                  <svg
+                    className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 3v4M8 3v4M3 11h18" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Custom Workflow Builds",
+                desc: "Tailored AI-powered automations designed to fit your unique processes perfectly, saving you hours every week.",
+                cost: "$750–$3.5k + optional retainer",
+                icon: (
+                  <svg
+                    className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M15.31 8.031a3.001 3.001 0 0 0-6.62 0l-2.59 1.5 1 1.73 2.58-1.5a3 3 0 0 0 5.63 1.56l2.58 1.5 1-1.73-2.59-1.5z" />
+                    <path d="M12 15v2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 7v1" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                ),
+              },
+            ].map(({ title, desc, cost, icon }) => (
+              <div
+                key={title}
+                className="rounded-2xl bg-white bg-opacity-10 p-6 text-center shadow-md backdrop-blur-md"
+              >
+                {icon}
+                <h3 className="mb-2 text-xl font-semibold text-white drop-shadow">
+                  {title}
+                </h3>
+                <p className="text-white/90">{desc}</p>
+                <p className="mt-4 text-sm font-medium text-white/80">
+                  💰 Cost: {cost}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -97,7 +179,42 @@ function HomePage() {
             Here are some common ways we help small businesses automate and grow.
           </p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            {/* unchanged */}
+            {[
+              {
+                title: "Recruiting Funnel Automation",
+                desc: "Automate recruiting workflows to save hours of manual work.",
+              },
+              {
+                title: "Knowledge Base Chatbots",
+                desc: "Build smart chatbots that answer FAQs and retrieve key info.",
+              },
+              {
+                title: "Lead Qualification GPTs",
+                desc: "Use AI to pre-qualify leads efficiently and accurately.",
+              },
+              {
+                title: "File Transformation Pipelines",
+                desc: "Streamline data processing with intelligent file workflows.",
+              },
+              {
+                title: "Webhooks & Integrations",
+                desc: "Connect your systems with Zapier, Make, n8n, and more.",
+              },
+              {
+                title: "CRM/ATS Automation",
+                desc: "Sync and automate your CRM/ATS with platforms like AgentZoom, Notion, Airtable.",
+              },
+            ].map(({ title, desc }) => (
+              <div
+                key={title}
+                className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md"
+              >
+                <h3 className="mb-2 font-semibold drop-shadow text-white">
+                  {title}
+                </h3>
+                <p className="text-white/90">{desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -124,11 +241,90 @@ function HomePage() {
         </section>
 
         {/* Personal Note Section */}
-        {/* unchanged */}
+        <section
+          aria-label="About Adam and SleeperOps"
+          className="relative max-w-4xl mx-auto py-20 px-8 text-center"
+        >
+          <div className="bg-white bg-opacity-80 rounded-xl p-8 shadow-lg backdrop-blur-sm">
+            <h2 className="mb-8 text-3xl font-bold text-[#153e75] drop-shadow">
+              About Adam and SleeperOps
+            </h2>
+            <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed">
+              Hi, my name's Adam. I started SleeperOps because I saw how small businesses struggle with time-consuming admin and disorganized systems — and I knew AI could help.
+            </p>
+            <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed mt-4">
+              With years of experience building business systems, I’m passionate about creating practical AI tools that make daily work easier and free you up to focus on growing your business.
+            </p>
+            <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed mt-4">
+              SleeperOps is my full-time passion project where I help small businesses unlock the real power of AI — no hype, just smart solutions designed to save time and boost productivity. I’m constantly learning, and I’m excited to share what AI can do for you.
+            </p>
+          </div>
+        </section>
 
         {/* CTA */}
-        {/* unchanged */}
+        <section
+          id="contact"
+          className="relative max-w-3xl mx-auto py-16 text-center text-white"
+        >
+          <h2 className="mb-4 text-3xl font-bold drop-shadow-md">
+            Let’s build something smarter.
+          </h2>
+          <Link
+            to="/contact"
+            className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
+          >
+            Book Free Consult
+          </Link>
+        </section>
       </main>
+    </>
+  );
+}
+
+export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <>
+      {/* Hamburger Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-[#0a2c4d] bg-opacity-95 backdrop-blur-sm z-40 transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+        onClick={() => setMenuOpen(false)}
+      >
+        <nav
+          className="flex flex-col items-start space-y-6 p-8 pt-20 text-white text-xl font-semibold"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/what-we-do" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link to="/about-us" onClick={() => setMenuOpen(false)}>About Us</Link>
+          <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          <Link to="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Book Now</Link>
+        </nav>
+      </div>
+
+      {/* Hamburger Icon */}
+      <button
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle Menu"
+        className="fixed top-6 left-6 z-50 flex flex-col space-y-1.5"
+      >
+        <span className="block w-8 h-1 bg-white rounded"></span>
+        <span className="block w-8 h-1 bg-white rounded"></span>
+        <span className="block w-8 h-1 bg-white rounded"></span>
+      </button>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/what-we-do" element={<Services />} />  
+        <Route path="/contact" element={<IntakeForm />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/faq" element={<FAQ />} />
+      </Routes>
     </>
   );
 }
