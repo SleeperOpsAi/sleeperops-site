@@ -191,7 +191,7 @@ export default function Services() {
         {/* Workflow Visual */}
         <section
           aria-labelledby="workflow-title"
-          className="max-w-7xl mx-auto text-center mb-24 px-6"
+          className="max-w-7xl mx-auto text-center mb-12 px-6"
         >
           <h2
             id="workflow-title"
@@ -199,7 +199,9 @@ export default function Services() {
           >
             How We Work
           </h2>
-          <div className="flex flex-col md:flex-row justify-between gap-10">
+
+          {/* Workflow cards */}
+          <div className="flex flex-col md:flex-row justify-between gap-10 mb-16">
             {steps.map(({ title, desc, icon }, idx) => (
               <div
                 key={title}
@@ -212,6 +214,65 @@ export default function Services() {
               </div>
             ))}
           </div>
+
+          {/* Visual Workflow Diagram */}
+          <svg
+            className="mx-auto mb-12 max-w-full"
+            width="90%"
+            height="120"
+            viewBox="0 0 900 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            role="img"
+          >
+            {[...Array(5)].map((_, i) => {
+              const cx = 90 + i * 180;
+              return (
+                <React.Fragment key={i}>
+                  <circle cx={cx} cy="60" r="40" stroke="#0f3d5f" strokeWidth="4" fill="#0a2c4d" />
+                  {i < 4 && (
+                    <path
+                      d={`M${cx + 40} 60 L${cx + 90} 60`}
+                      stroke="#0f3d5f"
+                      strokeWidth="4"
+                      markerEnd="url(#arrowhead)"
+                    />
+                  )}
+                </React.Fragment>
+              );
+            })}
+            <defs>
+              <marker
+                id="arrowhead"
+                markerWidth="10"
+                markerHeight="7"
+                refX="0"
+                refY="3.5"
+                orient="auto"
+                fill="#0f3d5f"
+              >
+                <polygon points="0 0, 10 3.5, 0 7" />
+              </marker>
+            </defs>
+            <text x="90" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Discovery</text>
+            <text x="270" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Recommend</text>
+            <text x="450" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Prebuilt Bots</text>
+            <text x="630" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Custom Builds</text>
+            <text x="810" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Ongoing</text>
+          </svg>
+
+          {/* Mini Case Study */}
+          <article className="max-w-4xl mx-auto bg-white bg-opacity-10 rounded-2xl p-8 shadow-md backdrop-blur-md text-left text-white">
+            <h3 className="text-2xl font-bold mb-4">Example: How We Help a Local Realtor</h3>
+            <ul className="list-disc list-inside space-y-2 text-lg">
+              <li>Discovery call to understand lead generation challenges</li>
+              <li>Recommend a lead qualification chatbot tailored to their needs</li>
+              <li>Deploy prebuilt intake and follow-up workflows for faster response</li>
+              <li>Build a custom integration syncing leads with their CRM</li>
+              <li>Provide ongoing support and optimization as their business grows</li>
+            </ul>
+          </article>
         </section>
 
         {/* CTA Section */}
