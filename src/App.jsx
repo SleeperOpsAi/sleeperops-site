@@ -38,12 +38,19 @@ function HomePage() {
           <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 font-semibold">
             Custom AI tools to automate your sales, recruiting, and daily workflows.
           </p>
-          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            At SleeperOps, we believe AI is a powerful tool—not a magic wand. Our expert AI automation and consulting services help small businesses reduce manual work, eliminate data friction, and grow sustainably.
+          <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
+            At SleeperOps, we believe AI is a powerful tool—not a magic wand.
+          </p>
+          <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
+            We help small businesses reduce manual work, eliminate data friction, and grow sustainably.
+          </p>
+          <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
+            Our smart setups save you hours every day.
           </p>
           <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            The key is smart setups that save you hours every day. No matter what you want to automate—whether it’s qualifying leads, managing recruiting, streamlining sales follow-ups, scheduling appointments, handling customer support, organizing documents, or processing other routine tasks—we build custom AI tools tailored to your needs that deliver real results and save you time.
+            Whether you want to automate lead qualification, recruiting, sales follow-ups, appointment scheduling, customer support, document management, or other routine tasks, we build custom AI tools tailored to your needs that deliver real results and save you time.
           </p>
+
 
           <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
             Ready to see how AI can streamline your business?{" "}
