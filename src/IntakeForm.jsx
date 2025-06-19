@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const USE_TEST_WEBHOOK = false; // true = test webhook, false = production webhook
@@ -26,7 +26,26 @@ export default function IntakeForm() {
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  // Effect to auto-add "Other" to subServices if Custom Automation Implementation selected
+  useEffect(() => {
+    if (
+      formData.coreServices.includes("Custom Automation Implementation") &&
+      !formData.subServices.includes("Other")
+    ) {
+      setFormData((prev) => ({
+        ...prev,
+        subServices: [...prev.subServices, "Other"],
+      }));
+    } else if (
+      !formData.coreServices.includes("Custom Automation Implementation") &&
+      formData.subServices.includes("Other")
+    ) {
+      setFormData((prev) => ({
+        ...prev,
+        subServices: prev.subServices.filter((s) => s !== "Other"),
+      }));
+    }
+  }, [formData.coreServices, formData.subServices]);
 
   const industries = [
     "Real Estate",
@@ -43,9 +62,7 @@ export default function IntakeForm() {
   ];
 
   const subServicesOptions = {
-    "AI Stack Consulting": [
-      "Strategy & Tool Recommendations",
-    ],
+    "AI Stack Consulting": ["Strategy & Tool Recommendations"],
     "Pre-Built Agents & Workflows": [
       "Recruiting Assistant",
       "Lead Qualification Assistant",
@@ -56,26 +73,17 @@ export default function IntakeForm() {
       "Integration & Workflow Setup",
       "Automated File Processing",
       "CRM & Sales Automation",
+      "Other",
     ],
   };
 
-  const budgets = [
-    "< $1,000",
-    "$1,000 - $5,000",
-    "$5,000 - $10,000",
-    "$10,000+",
-  ];
+  const budgets = ["< $1,000", "$1,000 - $5,000", "$5,000 - $10,000", "$10,000+"];
 
-  const timelines = [
-    "ASAP",
-    "1 - 3 months",
-    "3 - 6 months",
-    "Flexible",
-  ];
+  const timelines = ["ASAP", "1 - 3 months", "3 - 6 months", "Flexible"];
 
   const toggleArrayItem = (array, item) =>
     array.includes(item)
-      ? array.filter(i => i !== item)
+      ? array.filter((i) => i !== item)
       : [...array, item];
 
   const handleChange = (e) => {
@@ -84,36 +92,42 @@ export default function IntakeForm() {
     if (type === "checkbox") {
       if (name === "coreServices") {
         const updatedCoreServices = toggleArrayItem(formData.coreServices, value);
-        const allowedSubs = updatedCoreServices.flatMap(core => subServicesOptions[core]);
-        const updatedSubServices = formData.subServices.filter(sub => allowedSubs.includes(sub));
-        setFormData(prev => ({
+        const allowedSubs = updatedCoreServices.flatMap(
+          (core) => subServicesOptions[core]
+        );
+        const updatedSubServices = formData.subServices.filter((sub) =>
+          allowedSubs.includes(sub)
+        );
+        setFormData((prev) => ({
           ...prev,
           coreServices: updatedCoreServices,
           subServices: updatedSubServices,
         }));
       } else if (name === "subServices") {
         const updatedSubServices = toggleArrayItem(formData.subServices, value);
-        setFormData(prev => ({ ...prev, subServices: updatedSubServices }));
+        setFormData((prev) => ({ ...prev, subServices: updatedSubServices }));
       }
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
+  };
+
+  const normalizeUrl = (url) => {
+    const trimmed = url.trim();
+    if (!trimmed) return "";
+    if (/^https?:\/\//i.test(trimmed)) {
+      return trimmed;
+    }
+    return "https://" + trimmed;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Normalize companyUrl before sending
-    let normalizedUrl = formData.companyUrl.trim();
-    if (normalizedUrl && !normalizedUrl.match(/^https?:\/\//i)) {
-      normalizedUrl = "https://" + normalizedUrl;
-    }
-
-    // Also optionally normalize LinkedIn URL if needed (optional)
-
     const dataToSend = {
       ...formData,
-      companyUrl: normalizedUrl,
+      companyUrl: normalizeUrl(formData.companyUrl),
+      linkedInUrl: normalizeUrl(formData.linkedInUrl),
     };
 
     try {
@@ -133,6 +147,8 @@ export default function IntakeForm() {
       console.error("Submit error:", error);
     }
   };
+
+  const [submitted, setSubmitted] = useState(false);
 
   if (submitted) {
     return (
@@ -242,7 +258,7 @@ export default function IntakeForm() {
             <span className="block mb-1">Company Website URL *</span>
             <input
               name="companyUrl"
-              type="text"  // Changed from "url" to "text"
+              type="text"
               required
               value={formData.companyUrl}
               onChange={handleChange}
@@ -256,13 +272,11 @@ export default function IntakeForm() {
             <span className="block mb-1">LinkedIn Profile URL</span>
             <input
               name="linkedInUrl"
-              type="url"
+              type="text" // changed from url to text for flexible input
               value={formData.linkedInUrl}
               onChange={handleChange}
               className="w-full rounded px-3 py-2 text-black"
-              placeholder="https://linkedin.com/in/yourprofile"
-              pattern="https?://.+"
-              title="Please enter a valid URL starting with http:// or https://"
+              placeholder="linkedin.com/in/yourprofile"
             />
           </label>
 
@@ -299,7 +313,9 @@ export default function IntakeForm() {
 
           {/* Core Services */}
           <fieldset className="mb-4">
-            <legend className="block mb-2 font-semibold text-white">Services Interested In *</legend>
+            <legend className="block mb-2 font-semibold text-white">
+              Services Interested In *
+            </legend>
             <div className="flex flex-col space-y-2">
               {coreServicesOptions.map((service) => (
                 <label key={service} className="flex items-center space-x-2">
@@ -321,25 +337,39 @@ export default function IntakeForm() {
           {/* Sub Services */}
           {formData.coreServices.length > 0 && (
             <fieldset className="mb-6">
-              <legend className="block mb-2 font-semibold text-white">Specific Interests</legend>
+              <legend className="block mb-2 font-semibold text-white">
+                Specific Interests
+              </legend>
               <div className="flex flex-wrap gap-4">
-                {formData.coreServices.flatMap(core => subServicesOptions[core]).map(subService => (
-                  <label key={subService} className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="subServices"
-                      value={subService}
-                      checked={formData.subServices.includes(subService)}
-                      onChange={handleChange}
-                      className="text-black"
-                    />
-                    <span>{subService}</span>
-                  </label>
-                ))}
+                {formData.coreServices
+                  .flatMap((core) => subServicesOptions[core])
+                  .map((subService) => (
+                    <label
+                      key={subService}
+                      className="flex items-center space-x-2"
+                    >
+                      <input
+                        type="checkbox"
+                        name="subServices"
+                        value={subService}
+                        checked={formData.subServices.includes(subService)}
+                        onChange={handleChange}
+                        className="text-black"
+                        disabled={
+                          subService === "Other" &&
+                          !formData.coreServices.includes(
+                            "Custom Automation Implementation"
+                          )
+                        }
+                      />
+                      <span>{subService}</span>
+                    </label>
+                  ))}
               </div>
               {formData.subServices.includes("Other (custom pre-built agent)") && (
                 <p className="mt-2 italic text-sm text-white/80">
-                  Need something else? We can whip up tailored pre-built agents quickly for your needs.
+                  Need something else? We can whip up tailored pre-built agents
+                  quickly for your needs.
                 </p>
               )}
             </fieldset>
