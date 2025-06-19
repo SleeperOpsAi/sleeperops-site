@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const USE_TEST_WEBHOOK = false; // true = test webhook, false = production webhook
@@ -25,27 +25,6 @@ export default function IntakeForm() {
     referral: "",
     message: "",
   });
-
-  // Effect to auto-add "Other" to subServices if Custom Automation Implementation selected
-  useEffect(() => {
-    if (
-      formData.coreServices.includes("Custom Automation Implementation") &&
-      !formData.subServices.includes("Other")
-    ) {
-      setFormData((prev) => ({
-        ...prev,
-        subServices: [...prev.subServices, "Other"],
-      }));
-    } else if (
-      !formData.coreServices.includes("Custom Automation Implementation") &&
-      formData.subServices.includes("Other")
-    ) {
-      setFormData((prev) => ({
-        ...prev,
-        subServices: prev.subServices.filter((s) => s !== "Other"),
-      }));
-    }
-  }, [formData.coreServices, formData.subServices]);
 
   const industries = [
     "Real Estate",
@@ -272,7 +251,7 @@ export default function IntakeForm() {
             <span className="block mb-1">LinkedIn Profile URL</span>
             <input
               name="linkedInUrl"
-              type="text" // changed from url to text for flexible input
+              type="text"
               value={formData.linkedInUrl}
               onChange={handleChange}
               className="w-full rounded px-3 py-2 text-black"
@@ -355,12 +334,6 @@ export default function IntakeForm() {
                         checked={formData.subServices.includes(subService)}
                         onChange={handleChange}
                         className="text-black"
-                        disabled={
-                          subService === "Other" &&
-                          !formData.coreServices.includes(
-                            "Custom Automation Implementation"
-                          )
-                        }
                       />
                       <span>{subService}</span>
                     </label>
