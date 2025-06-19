@@ -48,8 +48,7 @@ function HomePage() {
             At SleeperOps, we believe AI is a powerful tool—not a magic wand. Our expert AI automation and consulting services help small businesses reduce manual work, eliminate data friction, and grow sustainably. The key is smart setups that save you hours every day.
           </p>
           <p className="mb-6 max-w-xl mx-auto text-lg text-white/90">
-            From custom systems that help you find and organize important data to AI tools that qualify leads and support your sales team, we build practical solutions that deliver lasting results.
-          </p>
+            No matter what you want to automate—whether it’s qualifying leads, managing recruiting, streamlining sales follow-ups, scheduling appointments, handling customer support, organizing documents, or other routine tasks—we build custom AI tools tailored to your needs that deliver real results and save you time.          </p>
 
           <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
             Ready to see how AI can streamline your business?{" "}
