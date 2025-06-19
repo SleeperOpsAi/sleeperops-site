@@ -8,7 +8,7 @@ const steps = [
     desc: "We start with a free consult to understand your business and pain points.",
     icon: (
       <svg
-        className="w-12 h-12 mb-3 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-white"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -28,7 +28,7 @@ const steps = [
     desc: "We recommend easy-to-use AI tools that fit your workflow and goals.",
     icon: (
       <svg
-        className="w-12 h-12 mb-3 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-white"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -48,7 +48,7 @@ const steps = [
     desc: "Plug-and-play AI assistants that handle recruiting, lead qualification, intake, and more.",
     icon: (
       <svg
-        className="w-12 h-12 mb-3 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-white"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -68,7 +68,7 @@ const steps = [
     desc: "End-to-end tailored AI automations and integrations built to fit your unique needs.",
     icon: (
       <svg
-        className="w-12 h-12 mb-3 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-white"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -90,7 +90,7 @@ const steps = [
     desc: "Continuous improvement and scaling to keep your AI systems running smoothly.",
     icon: (
       <svg
-        className="w-12 h-12 mb-3 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-white"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -299,54 +299,17 @@ export default function Services() {
 
           <div className="flex flex-col md:flex-row gap-16">
             {/* Visual Workflow - Left Side */}
-            <div className="flex flex-col items-center gap-10 flex-1">
-              {steps.map(({ icon, title }, idx) => (
-                <div key={idx} className="flex flex-col items-center">
+            <div
+              className="flex flex-col items-center gap-10 flex-1 bg-[rgba(10,44,77,0.85)] rounded-2xl p-10"
+              aria-label="Workflow steps"
+            >
+              {steps.map(({ icon, title, desc }, idx) => (
+                <div key={idx} className="flex flex-col items-center text-white text-center max-w-[280px]">
                   {icon}
-                  <h3 className="text-lg font-semibold text-white mt-2">{title}</h3>
+                  <h3 className="text-lg font-semibold mt-2">{title}</h3>
+                  <p className="text-white/80 mt-1">{desc}</p>
                 </div>
               ))}
-
-              {/* Connecting arrows */}
-              <svg
-                className="w-full max-w-md mt-6"
-                height="60"
-                viewBox="0 0 600 60"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                {[...Array(4)].map((_, i) => {
-                  const startX = 50 + i * 140;
-                  const endX = startX + 90;
-                  return (
-                    <React.Fragment key={i}>
-                      <line
-                        x1={startX}
-                        y1="30"
-                        x2={endX}
-                        y2="30"
-                        stroke="#0f3d5f"
-                        strokeWidth="4"
-                        markerEnd="url(#arrowhead)"
-                      />
-                    </React.Fragment>
-                  );
-                })}
-                <defs>
-                  <marker
-                    id="arrowhead"
-                    markerWidth="10"
-                    markerHeight="7"
-                    refX="0"
-                    refY="3.5"
-                    orient="auto"
-                    fill="#0f3d5f"
-                  >
-                    <polygon points="0 0, 10 3.5, 0 7" />
-                  </marker>
-                </defs>
-              </svg>
             </div>
 
             {/* Lead Intake Explanation - Right Side */}
