@@ -263,9 +263,16 @@ export default function Services() {
           </svg>
 
           {/* Mini Case Study */}
-          <article className="max-w-4xl mx-auto bg-white bg-opacity-10 rounded-2xl p-8 shadow-md backdrop-blur-md text-left text-white">
-            <h3 className="text-2xl font-bold mb-4">Example: How We Help a Local Realtor</h3>
-            <ul className="list-disc list-inside space-y-2 text-lg">
+          <article
+            className="max-w-4xl mx-auto rounded-2xl p-10 shadow-lg backdrop-blur-md text-left text-white"
+            style={{
+              backgroundColor: "rgba(30, 58, 110, 0.95)",
+              lineHeight: 1.6,
+              boxShadow: "0 4px 12px rgba(0,0,0,0.4)"
+            }}
+          >
+            <h3 className="text-2xl font-bold mb-6">Example: How We Help a Local Realtor</h3>
+            <ul className="list-disc list-inside space-y-3 text-lg">
               <li>Discovery call to understand lead generation challenges</li>
               <li>Recommend a lead qualification chatbot tailored to their needs</li>
               <li>Deploy prebuilt intake and follow-up workflows for faster response</li>
