@@ -112,7 +112,7 @@ const intakeSteps = [
     header: "Lead Submission",
     icon: (
       <svg
-        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        className="w-10 h-10 text-white mb-2"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -130,7 +130,7 @@ const intakeSteps = [
     header: "Data Capture",
     icon: (
       <svg
-        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        className="w-10 h-10 text-white mb-2"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -149,7 +149,7 @@ const intakeSteps = [
     header: "AI Lead Scoring",
     icon: (
       <svg
-        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        className="w-10 h-10 text-white mb-2"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -168,7 +168,7 @@ const intakeSteps = [
     header: "Email Drafting",
     icon: (
       <svg
-        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        className="w-10 h-10 text-white mb-2"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -187,7 +187,7 @@ const intakeSteps = [
     header: "CRM Sync & Notification",
     icon: (
       <svg
-        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        className="w-10 h-10 text-white mb-2"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
