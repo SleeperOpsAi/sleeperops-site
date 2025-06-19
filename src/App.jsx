@@ -19,7 +19,7 @@ function HomePage() {
         />
         <meta
           name="keywords"
-          content="AI automation for small business, AI consulting services, AI lead qualification, AI sales chatbot, RAG systems for business, custom AI workflows, AI voice agents"
+          content="AI automation for small business, AI consulting services, AI lead qualification, AI sales chatbot, custom AI workflows, AI voice agents"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://sleeperops-site.vercel.app/" />
@@ -41,19 +41,23 @@ function HomePage() {
               className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
             />
           </div>
-          <h1 className="mb-4 text-4xl font-extrabold leading-tight text-shadow sm:text-5xl">
+          <h1 className="mb-2 text-4xl font-extrabold leading-tight text-shadow sm:text-5xl">
             Smarter Systems for Small Business.
           </h1>
-          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90">
+          <p className="mb-4 max-w-xl mx-auto text-lg text-white/90 font-semibold">
+            Custom AI tools to automate your sales, recruiting, and daily workflows.
+          </p>
+          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
             At SleeperOps, we believe AI is a powerful tool—not a magic wand. Our expert AI automation and consulting services help small businesses reduce manual work, eliminate data friction, and grow sustainably. The key is smart setups that save you hours every day.
           </p>
-          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90">
-            No matter what you want to automate—whether it’s qualifying leads, managing recruiting, streamlining sales follow-ups, scheduling appointments, handling customer support, organizing documents, or other routine tasks—we build custom AI tools tailored to your needs that deliver real results and save you time.          </p>
+          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
+            No matter what you want to automate—whether it’s qualifying leads, managing recruiting, streamlining sales follow-ups, scheduling appointments, handling customer support, organizing documents, or processing other routine tasks—we build custom AI tools tailored to your needs that deliver real results and save you time.
+          </p>
 
           <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
             Ready to see how AI can streamline your business?{" "}
             <Link to="/contact" className="underline font-semibold">
-              Start with a quick intake form.
+              Book your free consult now.
             </Link>
           </div>
 
@@ -84,7 +88,7 @@ function HomePage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
-                title: "AI Stack Consulting",
+                title: "AI Tool Recommendations",
                 desc: "We start by understanding your daily work and recommend easy-to-use AI tools tailored to save you time and hassle. This first consultation is free.",
                 cost: "Free",
                 icon: (
@@ -168,9 +172,12 @@ function HomePage() {
 
         {/* Use Cases */}
         <section className="relative max-w-6xl mx-auto py-20 px-8 bg-blue-900/40 rounded-xl backdrop-blur-md text-center text-white">
-          <h2 className="mb-10 text-3xl font-bold drop-shadow-md text-white">
+          <h2 className="mb-6 text-3xl font-bold drop-shadow-md text-white">
             Use Cases
           </h2>
+          <p className="mb-10 max-w-2xl mx-auto text-white/90 leading-relaxed">
+            Here are some common ways we help small businesses automate and grow.
+          </p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {[
               {
@@ -214,18 +221,21 @@ function HomePage() {
         {/* Why SleeperOps */}
         <section className="relative max-w-5xl mx-auto py-20 text-center text-white">
           <h2 className="mb-10 text-3xl font-bold drop-shadow-md">Why SleeperOps</h2>
+          <p className="mb-10 max-w-2xl mx-auto text-white/90 leading-relaxed">
+            Why small businesses choose SleeperOps.
+          </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              Fast Deployments – 7–10 day builds
+              Get results fast — 7–10 day AI build timelines
             </div>
             <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              Business-First AI – No hype, just impact
+              AI solutions focused on real business impact, not hype
             </div>
             <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
               Modular Systems – Prebuilt or tailored
             </div>
             <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              Integrated & Scalable – Built to grow with your ops
+              Integrated & scalable — built to grow with your operations
             </div>
           </div>
         </section>
