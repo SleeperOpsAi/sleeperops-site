@@ -103,11 +103,24 @@ export default function IntakeForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Normalize companyUrl before sending
+    let normalizedUrl = formData.companyUrl.trim();
+    if (normalizedUrl && !normalizedUrl.match(/^https?:\/\//i)) {
+      normalizedUrl = "https://" + normalizedUrl;
+    }
+
+    // Also optionally normalize LinkedIn URL if needed (optional)
+
+    const dataToSend = {
+      ...formData,
+      companyUrl: normalizedUrl,
+    };
+
     try {
       const response = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(dataToSend),
       });
 
       if (!response.ok) {
@@ -229,14 +242,12 @@ export default function IntakeForm() {
             <span className="block mb-1">Company Website URL *</span>
             <input
               name="companyUrl"
-              type="url"
+              type="text"  // Changed from "url" to "text"
               required
               value={formData.companyUrl}
               onChange={handleChange}
               className="w-full rounded px-3 py-2 text-black"
-              placeholder="https://example.com"
-              pattern="https?://.+"
-              title="Please enter a valid URL starting with http:// or https://"
+              placeholder="example.com"
             />
           </label>
 
