@@ -262,23 +262,32 @@ export default function Services() {
             <text x="810" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Ongoing</text>
           </svg>
 
-          {/* Mini Case Study */}
+          {/* Updated Example Lead Intake Flow */}
           <article
-            className="max-w-4xl mx-auto rounded-2xl p-10 shadow-lg backdrop-blur-md text-left text-white"
+            className="max-w-5xl mx-auto rounded-2xl p-10 shadow-lg backdrop-blur-md text-left text-white"
             style={{
               backgroundColor: "rgba(30, 58, 110, 0.95)",
               lineHeight: 1.6,
               boxShadow: "0 4px 12px rgba(0,0,0,0.4)"
             }}
           >
-            <h3 className="text-2xl font-bold mb-6">Example: How We Help a Local Realtor</h3>
+            <h3 className="text-2xl font-bold mb-6">Example Lead Intake Flow</h3>
+            <p className="mb-4">
+              Here’s how a lead moves through our AI-powered intake and qualification system:
+            </p>
             <ul className="list-disc list-inside space-y-3 text-lg">
-              <li>Discovery call to understand lead generation challenges</li>
-              <li>Recommend a lead qualification chatbot tailored to their needs</li>
-              <li>Deploy prebuilt intake and follow-up workflows for faster response</li>
-              <li>Build a custom integration syncing leads with their CRM</li>
-              <li>Provide ongoing support and optimization as their business grows</li>
+              <li>A lead submits their info via your website or intake form (name, company, contact, industry, budget, timeline, etc.).</li>
+              <li>Our webhook captures the form data and appends it to your Google Sheet for record-keeping.</li>
+              <li>The lead details are sent to an AI agent that scores the lead based on readiness, fit, and engagement using GPT-4o-mini.</li>
+              <li>The AI generates a summary and notes for your sales team to quickly understand the lead’s needs.</li>
+              <li>A personalized follow-up email draft is automatically created by an AI email agent using the lead’s info and score.</li>
+              <li>Lead data, scores, summaries, and email drafts are synced to Airtable for easy CRM tracking.</li>
+              <li>The personalized email draft is queued as a Gmail draft ready for review and sending.</li>
+              <li>You get notified via Slack or Google Chat when a hot lead scores highly for timely outreach.</li>
             </ul>
+            <p className="mt-6 italic text-white/70">
+              This automated workflow saves you hours of manual lead management and boosts your chances of closing deals faster with AI-assisted insights and follow-ups.
+            </p>
           </article>
         </section>
 
