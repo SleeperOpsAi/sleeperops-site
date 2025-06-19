@@ -8,7 +8,7 @@ const steps = [
     desc: "We start with a free consult to understand your business and pain points.",
     icon: (
       <svg
-        className="w-10 h-10 mx-auto mb-2 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-[#0f3d5f]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -28,7 +28,7 @@ const steps = [
     desc: "We recommend easy-to-use AI tools that fit your workflow and goals.",
     icon: (
       <svg
-        className="w-10 h-10 mx-auto mb-2 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-[#0f3d5f]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -48,7 +48,7 @@ const steps = [
     desc: "Plug-and-play AI assistants that handle recruiting, lead qualification, intake, and more.",
     icon: (
       <svg
-        className="w-10 h-10 mx-auto mb-2 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-[#0f3d5f]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -68,7 +68,7 @@ const steps = [
     desc: "End-to-end tailored AI automations and integrations built to fit your unique needs.",
     icon: (
       <svg
-        className="w-10 h-10 mx-auto mb-2 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-[#0f3d5f]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -90,7 +90,7 @@ const steps = [
     desc: "Continuous improvement and scaling to keep your AI systems running smoothly.",
     icon: (
       <svg
-        className="w-10 h-10 mx-auto mb-2 text-[#0f3d5f]"
+        className="w-12 h-12 mb-3 text-[#0f3d5f]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -104,6 +104,103 @@ const steps = [
         <circle cx="12" cy="12" r="10" />
       </svg>
     ),
+  },
+];
+
+const intakeSteps = [
+  {
+    header: "Lead Submission",
+    icon: (
+      <svg
+        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M16 12H8m0 0l4-4m-4 4l4 4" />
+      </svg>
+    ),
+    text: "A lead submits info via your website or intake form including contact, company, budget, timeline, and more.",
+  },
+  {
+    header: "Data Capture",
+    icon: (
+      <svg
+        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+        <path d="M16 3v4M8 3v4M3 11h18" />
+      </svg>
+    ),
+    text: "Our webhook captures the form data and appends it to your Google Sheet for record-keeping.",
+  },
+  {
+    header: "AI Lead Scoring",
+    icon: (
+      <svg
+        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 15v2M12 7v1" />
+      </svg>
+    ),
+    text: "An AI agent scores leads on readiness, fit, and engagement using GPT-4o-mini, generating summaries for your sales team.",
+  },
+  {
+    header: "Email Drafting",
+    icon: (
+      <svg
+        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M4 4h16v16H4z" />
+        <path d="M22 6l-10 7L2 6" />
+      </svg>
+    ),
+    text: "Personalized follow-up email drafts are created by an AI email agent using the lead’s info and score.",
+  },
+  {
+    header: "CRM Sync & Notification",
+    icon: (
+      <svg
+        className="w-10 h-10 text-[#0f3d5f] mb-2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M21 12H3" />
+        <path d="M17 16l4-4-4-4" />
+      </svg>
+    ),
+    text: "Lead data, scores, summaries, and email drafts sync to Airtable and Gmail drafts queue for your review. Notifications alert you on hot leads.",
   },
 ];
 
@@ -188,107 +285,95 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Workflow Visual */}
+        {/* Workflow + Lead Intake Section */}
         <section
           aria-labelledby="workflow-title"
-          className="max-w-7xl mx-auto text-center mb-12 px-6"
+          className="max-w-7xl mx-auto mb-20 px-6"
         >
           <h2
             id="workflow-title"
-            className="text-3xl font-bold mb-12 drop-shadow text-white"
+            className="text-3xl font-bold mb-12 drop-shadow text-center text-white"
           >
             How We Work
           </h2>
 
-          {/* Workflow cards */}
-          <div className="flex flex-col md:flex-row justify-between gap-10 mb-16">
-            {steps.map(({ title, desc, icon }, idx) => (
-              <div
-                key={title}
-                className="flex flex-col items-center bg-white bg-opacity-20 rounded-2xl p-6 shadow-lg backdrop-blur-md flex-1"
-                aria-label={`Step ${idx + 1}: ${title}`}
+          <div className="flex flex-col md:flex-row gap-16">
+            {/* Visual Workflow - Left Side */}
+            <div className="flex flex-col items-center gap-10 flex-1">
+              {steps.map(({ icon, title }, idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  {icon}
+                  <h3 className="text-lg font-semibold text-white mt-2">{title}</h3>
+                </div>
+              ))}
+
+              {/* Connecting arrows */}
+              <svg
+                className="w-full max-w-md mt-6"
+                height="60"
+                viewBox="0 0 600 60"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
-                <div className="mb-2">{icon}</div>
-                <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                <p className="text-white/90">{desc}</p>
+                {[...Array(4)].map((_, i) => {
+                  const startX = 50 + i * 140;
+                  const endX = startX + 90;
+                  return (
+                    <React.Fragment key={i}>
+                      <line
+                        x1={startX}
+                        y1="30"
+                        x2={endX}
+                        y2="30"
+                        stroke="#0f3d5f"
+                        strokeWidth="4"
+                        markerEnd="url(#arrowhead)"
+                      />
+                    </React.Fragment>
+                  );
+                })}
+                <defs>
+                  <marker
+                    id="arrowhead"
+                    markerWidth="10"
+                    markerHeight="7"
+                    refX="0"
+                    refY="3.5"
+                    orient="auto"
+                    fill="#0f3d5f"
+                  >
+                    <polygon points="0 0, 10 3.5, 0 7" />
+                  </marker>
+                </defs>
+              </svg>
+            </div>
+
+            {/* Lead Intake Explanation - Right Side */}
+            <div
+              className="flex-1 rounded-2xl p-10 shadow-lg backdrop-blur-md text-white"
+              style={{ backgroundColor: "rgba(30, 58, 110, 0.95)", lineHeight: 1.6 }}
+            >
+              <h3 className="text-2xl font-bold mb-6">Example Lead Intake Flow</h3>
+              <p className="mb-4">
+                Here’s how a lead moves through our AI-powered intake and qualification system:
+              </p>
+              <div className="space-y-8">
+                {intakeSteps.map(({ header, icon, text }, idx) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <div>{icon}</div>
+                    <div>
+                      <h4 className="font-semibold text-lg mb-1">{header}</h4>
+                      <p className="text-white/90">{text}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+              <p className="mt-8 italic text-white/70">
+                This automated workflow saves you hours of manual lead management and boosts your chances of closing deals faster with AI-assisted insights and follow-ups.
+              </p>
+            </div>
           </div>
-
-          {/* Visual Workflow Diagram */}
-          <svg
-            className="mx-auto mb-12 max-w-full"
-            width="90%"
-            height="120"
-            viewBox="0 0 900 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            role="img"
-          >
-            {[...Array(5)].map((_, i) => {
-              const cx = 90 + i * 180;
-              return (
-                <React.Fragment key={i}>
-                  <circle cx={cx} cy="60" r="40" stroke="#0f3d5f" strokeWidth="4" fill="#0a2c4d" />
-                  {i < 4 && (
-                    <path
-                      d={`M${cx + 40} 60 L${cx + 90} 60`}
-                      stroke="#0f3d5f"
-                      strokeWidth="4"
-                      markerEnd="url(#arrowhead)"
-                    />
-                  )}
-                </React.Fragment>
-              );
-            })}
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="7"
-                refX="0"
-                refY="3.5"
-                orient="auto"
-                fill="#0f3d5f"
-              >
-                <polygon points="0 0, 10 3.5, 0 7" />
-              </marker>
-            </defs>
-            <text x="90" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Discovery</text>
-            <text x="270" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Recommend</text>
-            <text x="450" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Prebuilt Bots</text>
-            <text x="630" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Custom Builds</text>
-            <text x="810" y="65" fill="#ffffff" fontSize="14" fontWeight="600" textAnchor="middle">Ongoing</text>
-          </svg>
-
-          {/* Updated Example Lead Intake Flow */}
-          <article
-            className="max-w-5xl mx-auto rounded-2xl p-10 shadow-lg backdrop-blur-md text-left text-white"
-            style={{
-              backgroundColor: "rgba(30, 58, 110, 0.95)",
-              lineHeight: 1.6,
-              boxShadow: "0 4px 12px rgba(0,0,0,0.4)"
-            }}
-          >
-            <h3 className="text-2xl font-bold mb-6">Example Lead Intake Flow</h3>
-            <p className="mb-4">
-              Here’s how a lead moves through our AI-powered intake and qualification system:
-            </p>
-            <ul className="list-disc list-inside space-y-3 text-lg">
-              <li>A lead submits their info via your website or intake form (name, company, contact, industry, budget, timeline, etc.).</li>
-              <li>Our webhook captures the form data and appends it to your Google Sheet for record-keeping.</li>
-              <li>The lead details are sent to an AI agent that scores the lead based on readiness, fit, and engagement using GPT-4o-mini.</li>
-              <li>The AI generates a summary and notes for your sales team to quickly understand the lead’s needs.</li>
-              <li>A personalized follow-up email draft is automatically created by an AI email agent using the lead’s info and score.</li>
-              <li>Lead data, scores, summaries, and email drafts are synced to Airtable for easy CRM tracking.</li>
-              <li>The personalized email draft is queued as a Gmail draft ready for review and sending.</li>
-              <li>You get notified via Slack or Google Chat when a hot lead scores highly for timely outreach.</li>
-            </ul>
-            <p className="mt-6 italic text-white/70">
-              This automated workflow saves you hours of manual lead management and boosts your chances of closing deals faster with AI-assisted insights and follow-ups.
-            </p>
-          </article>
         </section>
 
         {/* CTA Section */}
