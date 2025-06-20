@@ -35,16 +35,12 @@ export default function SleeperOpsJourney() {
           passion, and now I’m on a mission to help small businesses unlock the power of AI with no/low code GPT workflows.
         </p>
 
-        {/* Visual placeholder */}
         <div className="mx-auto max-w-3xl">
           <img
             src="/family-photo.jpg"
             alt="Adam Cantwell"
             className="rounded-xl shadow-lg mx-auto max-h-96 object-cover"
           />
-          <figcaption className="text-center text-white/70 mt-2 italic text-sm">
-            Behind the scenes: Adam working on SleeperOps automation
-          </figcaption>
         </div>
 
         <Section title="The AI Hype vs. Reality">
@@ -79,12 +75,6 @@ export default function SleeperOpsJourney() {
             normally take me hours are now automated. What might’ve taken me months juggling work and family took just a few
             weeks with AI’s help, proving you don’t have to be an expert to get started.
           </p>
-          {/* Illustration placeholder */}
-          <div className="mx-auto max-w-3xl mt-6">
-            <div className="h-48 bg-blue-700 rounded-lg flex items-center justify-center text-blue-300 italic text-lg">
-              Illustration or demo video goes here
-            </div>
-          </div>
         </Section>
 
         <Section title="Tools and Workflows That Make a Difference">
