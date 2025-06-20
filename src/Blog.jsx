@@ -1,16 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Blog from "./Blog";
-// other imports...
-
-function App() {
+export default function Blog() {
   return (
-    <Router>
-      <Routes>
-        {/* other routes */}
-        <Route path="/blog" element={<Blog />} />
-      </Routes>
-    </Router>
+    <div style={{color: "white", padding: "2rem", backgroundColor: "#0a2c4d"}}>
+      <h1>This is a test page for Blog.jsx</h1>
+      <p>If you see this, the routing and deployment are correct.</p>
+    </div>
   );
 }
-
-export default App;
