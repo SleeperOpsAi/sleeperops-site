@@ -1,5 +1,16 @@
-import SleeperOpsJourney from "./SleeperOpsJourney";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Blog from "./Blog";
+// other imports...
 
-export default function Blog() {
-  return <SleeperOpsJourney />;
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* other routes */}
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
+    </Router>
+  );
 }
+
+export default App;
