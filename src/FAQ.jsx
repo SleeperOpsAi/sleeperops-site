@@ -6,12 +6,12 @@ const faqItems = [
   {
     question: "What makes SleeperOps different from other automation services?",
     answer:
-      "We use enterprise-grade tools like n8n and OpenAI integration, Claude, Releveance AI and honestly whatever new tools get the jobs done, to build sophisticated multi-step workflows, not just basic connections. Our systems include intelligent decision-making, custom API integrations, and advanced business logic based on year of professional expertise.",
+      "We use enterprise-grade tools like n8n and OpenAI integration to build sophisticated multi-step workflows, not just basic Zapier connections. Our systems include intelligent decision-making, custom API integrations, and advanced business logic.",
   },
   {
     question: "How long does it take to build and deploy a custom workflow?",
     answer:
-      "Most custom workflows are completed within 7-14 days, depending on complexity. We provide clear timelines upfront and keep you updated throughout the process with regular check-ins and previews. I provide all clients with a clear statement of work, build documentation and follow up support post launch.",
+      "Most custom workflows are completed within 7-14 days, depending on complexity. We provide clear timelines upfront and keep you updated throughout the process with regular check-ins and previews.",
   },
   {
     question: "Do I need technical knowledge to use these automation systems?",
@@ -21,12 +21,12 @@ const faqItems = [
   {
     question: "What kind of businesses benefit most from your automation?",
     answer:
-      "Growing businesses with repetitive processes that take significant time—like lead qualification, customer intake, recruiting, data processing, or multi-step follow-ups, the possibilities are endless! If you're spending hours on tasks that follow predictable patterns, we can probably automate them. If you have more complex issues or integration needs we'd love to talk about those as well!",
+      "Growing businesses with repetitive processes that take significant time—like lead qualification, customer intake, recruiting, data processing, or multi-step follow-ups. If you're spending hours on tasks that follow predictable patterns, we can probably automate them.",
   },
   {
     question: "Can you integrate with our existing tools and systems?",
     answer:
-      "Yes! We specialize in connecting different systems through APIs and webhooks. Whether it's your CRM, HRIS system, email platform, spreadsheets, or industry-specific software, we can likely integrate it into your automated workflows.",
+      "Yes! We specialize in connecting different systems through APIs and webhooks. Whether it's your CRM, email platform, spreadsheets, or industry-specific software, we can likely integrate it into your automated workflows.",
   },
   {
     question: "What kind of ongoing support do you provide?",
@@ -36,7 +36,7 @@ const faqItems = [
   {
     question: "How do I know if automation is worth the investment?",
     answer:
-      "During our free strategy session, we'll analyze your current processes and calculate potential time savings and ROI. We only recommend automation for processes where the benefits clearly outweigh the costs. I'm not here to sell snake oil, these solutions aren't for everyone but they can be increibly impactful in the right situaiton.",
+      "During our free strategy session, we'll analyze your current processes and calculate potential time savings and ROI. We only recommend automation for processes where the benefits clearly outweigh the costs.",
   },
   {
     question: "What happens if something breaks or needs to be updated?",
@@ -132,7 +132,7 @@ export default function FAQ() {
           ))}
         </section>
 
-        {/* CTA */}
+        {/* CTA - FIXED LINK */}
         <section className="max-w-3xl mx-auto text-center mt-16">
           <h2 className="text-2xl font-bold mb-4 text-white">
             Still have questions?
