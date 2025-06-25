@@ -4,34 +4,44 @@ import { Helmet } from "react-helmet";
 
 const faqItems = [
   {
-    question: "What is AI consulting and how can it help my small business?",
+    question: "What makes SleeperOps different from other automation services?",
     answer:
-      "AI consulting helps small businesses identify and implement AI tools and workflows that save time, reduce manual tasks, and improve efficiency — all tailored to your unique needs.",
+      "We use enterprise-grade tools like n8n and OpenAI integration, Claude, Releveance AI and honestly whatever new tools get the jobs done, to build sophisticated multi-step workflows, not just basic connections. Our systems include intelligent decision-making, custom API integrations, and advanced business logic based on year of professional expertise.",
   },
   {
-    question: "Are AI tools expensive and hard to implement?",
+    question: "How long does it take to build and deploy a custom workflow?",
     answer:
-      "While some AI tools can be costly, SleeperOps focuses on practical, cost-effective solutions that deliver long-term value. We handle setup and customization so you don’t have to struggle with complex tech.",
+      "Most custom workflows are completed within 7-14 days, depending on complexity. We provide clear timelines upfront and keep you updated throughout the process with regular check-ins and previews. I provide all clients with a clear statement of work, build documentation and follow up support post launch.",
   },
   {
-    question: "How long does it take to see results from automations?",
+    question: "Do I need technical knowledge to use these automation systems?",
     answer:
-      "Results can vary depending on the complexity of workflows, but many clients see noticeable time savings and smoother operations within days to weeks after deployment.",
+      "Not at all! We handle all the technical setup and provide simple interfaces for you to interact with your systems. We also include training and documentation so you feel confident using and monitoring your automations.",
   },
   {
-    question: "Can you customize AI workflows for my specific industry?",
+    question: "What kind of businesses benefit most from your automation?",
     answer:
-      "Absolutely! We specialize in tailoring AI automations to fit industries like real estate, financial advising, insurance, and more — ensuring the solution matches your unique business needs.",
+      "Growing businesses with repetitive processes that take significant time—like lead qualification, customer intake, recruiting, data processing, or multi-step follow-ups, the possibilities are endless! If you're spending hours on tasks that follow predictable patterns, we can probably automate them. If you have more complex issues or integration needs we'd love to talk about those as well!",
   },
   {
-    question: "What kind of ongoing support do you offer?",
+    question: "Can you integrate with our existing tools and systems?",
     answer:
-      "We provide continuous support and optimization services to keep your AI systems running smoothly and adapt them as your business evolves.",
+      "Yes! We specialize in connecting different systems through APIs and webhooks. Whether it's your CRM, HRIS system, email platform, spreadsheets, or industry-specific software, we can likely integrate it into your automated workflows.",
   },
   {
-    question: "How do I get started with SleeperOps?",
+    question: "What kind of ongoing support do you provide?",
     answer:
-      "The best first step is booking a free consult through our intake form. We’ll discuss your goals and recommend the right AI solutions for your business.",
+      "All custom workflows include setup support and initial training. We also offer optional ongoing optimization and support retainers for businesses that want continuous improvements and system monitoring.",
+  },
+  {
+    question: "How do I know if automation is worth the investment?",
+    answer:
+      "During our free strategy session, we'll analyze your current processes and calculate potential time savings and ROI. We only recommend automation for processes where the benefits clearly outweigh the costs. I'm not here to sell snake oil, these solutions aren't for everyone but they can be increibly impactful in the right situaiton.",
+  },
+  {
+    question: "What happens if something breaks or needs to be updated?",
+    answer:
+      "We build robust systems with error handling and monitoring. For the first 30 days, we include free fixes and adjustments. After that, we offer support packages or can train your team on basic maintenance.",
   },
 ];
 
@@ -45,13 +55,13 @@ export default function FAQ() {
   return (
     <>
       <Helmet>
-        <title>FAQ | SleeperOps AI Consulting</title>
+        <title>FAQ | SleeperOps Advanced AI Automation</title>
         <meta
           name="description"
-          content="Frequently asked questions about SleeperOps AI consulting, automations, pricing, and support for small businesses."
+          content="Frequently asked questions about SleeperOps AI automation, custom workflows, pricing, and support for growing businesses."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://sleeperops-site.vercel.app/faq" />
+        <link rel="canonical" href="https://sleeperops.com/faq" />
       </Helmet>
 
       <main className="relative min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
@@ -72,7 +82,7 @@ export default function FAQ() {
           <Link to="/">
             <img
               src="/HeroPagelogo.png"
-              alt="SleeperOps AI Solutions Logo"
+              alt="SleeperOps Advanced AI Automation Logo"
               className="mx-auto mb-4 cursor-pointer"
               style={{
                 maxWidth: "160px",
@@ -86,7 +96,7 @@ export default function FAQ() {
             className="text-center text-white font-semibold tracking-wide select-none"
             style={{ fontSize: "1.25rem", lineHeight: "1.5" }}
           >
-            AI Solutions for Smarter Business Growth
+            Advanced AI Automation for Growing Businesses
           </p>
         </div>
 
@@ -96,7 +106,7 @@ export default function FAQ() {
         </h1>
 
         {/* FAQ Accordion */}
-        <section className="max-w-3xl mx-auto space-y-4">
+        <section className="max-w-4xl mx-auto space-y-4">
           {faqItems.map(({ question, answer }, idx) => (
             <div
               key={idx}
@@ -111,7 +121,7 @@ export default function FAQ() {
             >
               <h3 className="text-lg font-semibold text-white flex justify-between items-center">
                 {question}
-                <span className="ml-2">
+                <span className="ml-2 text-xl">
                   {activeIndex === idx ? "−" : "+"}
                 </span>
               </h3>
@@ -120,6 +130,22 @@ export default function FAQ() {
               )}
             </div>
           ))}
+        </section>
+
+        {/* CTA */}
+        <section className="max-w-3xl mx-auto text-center mt-16">
+          <h2 className="text-2xl font-bold mb-4 text-white">
+            Still have questions?
+          </h2>
+          <p className="mb-6 text-white/90">
+            Schedule a free strategy session and we'll discuss your specific needs.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
+          >
+            Book Free Strategy Session
+          </Link>
         </section>
       </main>
     </>
