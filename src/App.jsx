@@ -51,7 +51,7 @@ function HomePage() {
             From lead scoring to hiring funnels and task automation, our systems save time, reduce admin, and help you grow — without adding headcount.
           </p>
           <p className="mb-6 max-w-2xl mx-auto text-lg text-white/90 leading-relaxed">
-            We don't resell Zapier zaps. We build AI agents and custom logic tailored to how your business actually works.
+            We can build anything your business needs. Custom solutions, specialized workflows, and rapid adaptation to new challenges — that's how we stay ahead in the fast-moving AI space.
           </p>
 
           <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
@@ -271,16 +271,16 @@ function HomePage() {
           </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              <strong>Advanced Technical Stack</strong> — We use enterprise-grade tools like n8n and OpenAI, not just basic Zapier workflows
+              <strong>Complete Customization</strong> — We build exactly what your business needs, from simple automations to complex multi-step AI systems
             </div>
             <div className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              <strong>Fast Implementation</strong> — Most systems deployed within 7-14 days, with clear timelines and milestones
+              <strong>Rapid Adaptation</strong> — In the fast-moving AI space, we learn and implement new solutions quickly to keep you ahead
             </div>
             <div className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              <strong>Custom Built for You</strong> — No cookie-cutter solutions. Every workflow is designed for your specific business needs
+              <strong>Specialized Expertise</strong> — We dive deep into your industry and processes to create solutions that truly fit how you work
             </div>
             <div className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              <strong>Real Business Impact</strong> — Focus on measurable results: time saved, leads processed, revenue protected
+              <strong>Real Business Impact</strong> — Focus on measurable results: time saved, processes streamlined, growth accelerated
             </div>
           </div>
         </section>
