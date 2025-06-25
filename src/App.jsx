@@ -12,14 +12,14 @@ function HomePage() {
     <>
       {/* SEO Metadata */}
       <Helmet>
-        <title>SleeperOps | Advanced AI Automation & Custom Workflows for Growing Businesses</title>
+        <title>SleeperOps | AI Automation & Smart Systems for Small Businesses</title>
         <meta
           name="description"
-          content="Custom AI workflows that work while you sleep. From lead qualification to recruiting automation, we build intelligent systems using n8n, OpenAI, and advanced automation tools."
+          content="SleeperOps builds intelligent automation systems for small businesses using tools like n8n, OpenAI, and Claude. From lead qualification to recruiting automation, we streamline operations while you focus on growth."
         />
         <meta
           name="keywords"
-          content="AI automation, custom workflows, lead qualification, recruiting automation, n8n workflows, OpenAI integration, business process automation"
+          content="AI automation for small business, AI workflows, lead qualification automation, recruiting automation, n8n automations, OpenAI consultants"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://sleeperops.com/" />
@@ -42,19 +42,22 @@ function HomePage() {
             />
           </div>
           <h1 className="mb-2 text-4xl font-extrabold leading-tight text-shadow sm:text-5xl">
-            Your AI Systems, Built to Run While You Sleep.
+            Your Business Runs Better with Smart AI Systems.
           </h1>
           <p className="mb-6 max-w-2xl mx-auto text-lg text-white/90 leading-relaxed">
-            SleeperOps delivers real AI automation – not Zapier knockoffs. We build multi-agent workflows with tools like n8n, OpenAI, Claude, and your existing stack.
+            SleeperOps builds intelligent automations using enterprise-grade tools like n8n, OpenAI, and Claude — designed for small businesses that want big leverage.
           </p>
           <p className="mb-6 max-w-2xl mx-auto text-lg text-white/90 leading-relaxed">
-            Whether you're automating lead qualification, recruiting, or customer intake, our systems are built to scale with your growth.
+            From lead scoring to hiring funnels and task automation, our systems save time, reduce admin, and help you grow — without adding headcount.
+          </p>
+          <p className="mb-6 max-w-2xl mx-auto text-lg text-white/90 leading-relaxed">
+            We don't resell Zapier zaps. We build AI agents and custom logic tailored to how your business actually works.
           </p>
 
           <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
-            Curious how AI fits into your operations?{" "}
+            Let's explore how AI can work for you.{" "}
             <Link to="/contact" className="underline font-semibold">
-              Book your free strategy session now.
+              Book a free strategy call.
             </Link>
           </div>
 
@@ -63,13 +66,13 @@ function HomePage() {
               to="/contact"
               className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition"
             >
-              Get Your Free Strategy Session
+              Book Free Strategy Call
             </Link>
             <Link
               to="/what-we-do"
               className="inline-block rounded-2xl border border-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0f3d5f] hover:text-white transition"
             >
-              Discover Our AI Systems
+              See What We Build
             </Link>
           </div>
         </section>
@@ -318,7 +321,7 @@ function HomePage() {
             to="/contact"
             className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
           >
-            Book Free Strategy Session
+            Book Free Strategy Call
           </Link>
         </section>
       </main>
