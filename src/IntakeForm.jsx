@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const USE_TEST_WEBHOOK = false; // true = test webhook, false = production webhook
+const USE_TEST_WEBHOOK = true; // true = test webhook, false = production webhook
 
 const WEBHOOK_URL = USE_TEST_WEBHOOK
   ? "https://sleeperops.app.n8n.cloud/webhook-test/intake-form"
