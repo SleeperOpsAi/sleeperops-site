@@ -12,17 +12,17 @@ function HomePage() {
     <>
       {/* SEO Metadata */}
       <Helmet>
-        <title>SleeperOps | AI Automation & Consulting for Small Businesses</title>
+        <title>SleeperOps | Advanced AI Automation & Custom Workflows for Growing Businesses</title>
         <meta
           name="description"
-          content="SleeperOps helps small businesses reduce admin overhead and grow faster with custom AI workflows, lead qualification systems, and AI chatbots. Book your free consult today."
+          content="Custom AI workflows that work while you sleep. From lead qualification to recruiting automation, we build intelligent systems using n8n, OpenAI, and advanced automation tools."
         />
         <meta
           name="keywords"
-          content="AI automation for small business, AI consulting services, AI lead qualification, AI sales chatbot, custom AI workflows, AI voice agents"
+          content="AI automation, custom workflows, lead qualification, recruiting automation, n8n workflows, OpenAI integration, business process automation"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://sleeperops-site.vercel.app/" />
+        <link rel="canonical" href="https://sleeperops.com/" />
       </Helmet>
 
       <main className="relative min-h-screen px-6 py-16 text-white bg-gradient-to-br from-[#0a2c4d] to-[#153e75]">
@@ -33,47 +33,89 @@ function HomePage() {
         />
 
         {/* Hero Section */}
-        <section className="relative max-w-3xl mx-auto text-center bg-white bg-opacity-20 p-10 rounded-lg shadow-lg backdrop-blur-sm z-10">
+        <section className="relative max-w-4xl mx-auto text-center bg-white bg-opacity-20 p-10 rounded-lg shadow-lg backdrop-blur-sm z-10">
           <div className="inline-block p-1 rounded-md shadow-md">
             <img
               src="/HeroPagelogo.png"
-              alt="SleeperOps AI Consulting Logo"
+              alt="SleeperOps AI Automation Logo"
               className="mx-auto mb-8 w-56 h-56 sm:w-64 sm:h-64 md:w-[280px] md:h-[280px] object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
             />
           </div>
           <h1 className="mb-2 text-4xl font-extrabold leading-tight text-shadow sm:text-5xl">
-            Smarter Systems for Small Business.
+            Your AI Systems, Built to Run While You Sleep.
           </h1>
-          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            AI tools that save you time and help your business grow.
+          <p className="mb-6 max-w-2xl mx-auto text-lg text-white/90 leading-relaxed">
+            SleeperOps delivers real AI automation – not Zapier knockoffs. We build multi-agent workflows with tools like n8n, OpenAI, Claude, and your existing stack.
           </p>
-          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            From lead qualification to recruiting, sales, scheduling, and support, we build custom AI solutions tailored to your needs.
-          </p>
-          <p className="mb-6 max-w-xl mx-auto text-lg text-white/90 leading-relaxed">
-            No fluff. Just smart automations that work.
+          <p className="mb-6 max-w-2xl mx-auto text-lg text-white/90 leading-relaxed">
+            Whether you're automating lead qualification, recruiting, or customer intake, our systems are built to scale with your growth.
           </p>
 
           <div className="mb-8 text-sm text-white/70 max-w-md mx-auto">
-            Ready to see how AI can streamline your business?{" "}
+            Curious how AI fits into your operations?{" "}
             <Link to="/contact" className="underline font-semibold">
-              Book your free consult now.
+              Book your free strategy session now.
             </Link>
           </div>
 
-          <div className="mb-12 flex justify-center gap-4">
+          <div className="mb-12 flex flex-col sm:flex-row justify-center gap-4">
             <Link
               to="/contact"
               className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition"
             >
-              Claim Your Free Consult Spot
+              Get Your Free Strategy Session
             </Link>
             <Link
               to="/what-we-do"
               className="inline-block rounded-2xl border border-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0f3d5f] hover:text-white transition"
             >
-              Discover How AI Can Work For You
+              Discover Our AI Systems
             </Link>
+          </div>
+        </section>
+
+        {/* Technical Credibility Section */}
+        <section className="relative max-w-6xl mx-auto py-16 text-center">
+          <h2 className="mb-8 text-3xl font-bold text-white drop-shadow-md">
+            Built with Enterprise-Grade Tools
+          </h2>
+          <p className="mb-10 max-w-2xl mx-auto text-white/90 leading-relaxed">
+            We don't just use basic automation tools. Our systems are built with enterprise-grade platforms for reliability and sophistication.
+          </p>
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+            {[
+              {
+                title: "n8n Workflows",
+                desc: "Advanced automation platform for complex business logic",
+                icon: "⚙️"
+              },
+              {
+                title: "OpenAI Integration",
+                desc: "GPT-4 for intelligent decision-making and content",
+                icon: "🧠"
+              },
+              {
+                title: "Custom APIs",
+                desc: "Connect any system with tailored integrations",
+                icon: "🔗"
+              },
+              {
+                title: "Smart Analytics",
+                desc: "Track performance and optimize over time",
+                icon: "📊"
+              }
+            ].map(({ title, desc, icon }) => (
+              <div
+                key={title}
+                className="rounded-2xl bg-white bg-opacity-10 p-4 text-center shadow-md backdrop-blur-md"
+              >
+                <div className="text-3xl mb-3">{icon}</div>
+                <h3 className="mb-2 text-lg font-semibold text-white drop-shadow">
+                  {title}
+                </h3>
+                <p className="text-white/90 text-sm">{desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -83,13 +125,13 @@ function HomePage() {
           className="relative max-w-6xl mx-auto py-20 text-center"
         >
           <h2 className="mb-10 text-3xl font-bold text-white drop-shadow-md">
-            What We Do
+            Smart Automation That Actually Works
           </h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
-                title: "AI Tool Recommendations",
-                desc: "We start by understanding your daily work and recommend easy-to-use AI tools tailored to save you time and hassle. This first consultation is free.",
+                title: "Free Strategy Session",
+                desc: "We analyze your current workflows and recommend specific AI tools and automations that will save you the most time. This consultation is completely free.",
                 cost: "Free",
                 icon: (
                   <svg
@@ -109,8 +151,8 @@ function HomePage() {
                 ),
               },
               {
-                title: "Prebuilt Smart Helpers",
-                desc: "Plug-and-play AI assistants that handle recruiting, lead checking, intake forms, and repetitive tasks so you can focus on growing your business.",
+                title: "Ready-to-Deploy Systems",
+                desc: "Proven AI workflows for common business needs like lead qualification, recruiting funnels, and customer intake. Built with advanced tools and ready to integrate.",
                 cost: "$149–$499",
                 icon: (
                   <svg
@@ -130,9 +172,9 @@ function HomePage() {
                 ),
               },
               {
-                title: "Custom Workflow Builds",
-                desc: "Tailored AI-powered automations designed to fit your unique processes perfectly, saving you hours every week.",
-                cost: "$750–$3.5k + optional retainer",
+                title: "Custom AI Workflows",
+                desc: "Completely tailored automation systems built specifically for your business processes. Advanced multi-step workflows with intelligent decision-making.",
+                cost: "$750–$3.5k + optional support",
                 icon: (
                   <svg
                     className="mx-auto mb-4 w-10 h-10 text-white drop-shadow"
@@ -161,9 +203,9 @@ function HomePage() {
                 <h3 className="mb-2 text-xl font-semibold text-white drop-shadow">
                   {title}
                 </h3>
-                <p className="text-white/90">{desc}</p>
+                <p className="text-white/90 mb-4">{desc}</p>
                 <p className="mt-4 text-sm font-medium text-white/80">
-                  💰 Cost: {cost}
+                  💰 Investment: {cost}
                 </p>
               </div>
             ))}
@@ -173,41 +215,41 @@ function HomePage() {
         {/* Use Cases */}
         <section className="relative max-w-6xl mx-auto py-20 px-8 bg-blue-900/40 rounded-xl backdrop-blur-md text-center text-white">
           <h2 className="mb-6 text-3xl font-bold drop-shadow-md text-white">
-            Use Cases
+            What We Build
           </h2>
           <p className="mb-10 max-w-2xl mx-auto text-white/90 leading-relaxed">
-            Here are some common ways we help small businesses automate and grow.
+            Real automation systems that solve actual business problems.
           </p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {[
               {
-                title: "Recruiting Funnel Automation",
-                desc: "Automate recruiting workflows to save hours of manual work.",
+                title: "Intelligent Lead Qualification",
+                desc: "AI-powered systems that score, route, and follow up with leads automatically based on your criteria.",
               },
               {
-                title: "Knowledge Base Chatbots",
-                desc: "Build smart chatbots that answer FAQs and retrieve key info.",
+                title: "Automated Recruiting Funnels",
+                desc: "End-to-end hiring workflows that screen candidates, schedule interviews, and manage onboarding.",
               },
               {
-                title: "Lead Qualification GPTs",
-                desc: "Use AI to pre-qualify leads efficiently and accurately.",
+                title: "Smart Customer Support",
+                desc: "Knowledge base chatbots and automated response systems that handle common inquiries 24/7.",
               },
               {
-                title: "File Transformation Pipelines",
-                desc: "Streamline data processing with intelligent file workflows.",
+                title: "Process Integration",
+                desc: "Connect your CRM, email, calendar, and other tools into seamless automated workflows.",
               },
               {
-                title: "Webhooks & Integrations",
-                desc: "Connect your systems with Zapier, Make, n8n, and more.",
+                title: "Document & Data Processing",
+                desc: "Automated file transformation, data extraction, and intelligent document handling.",
               },
               {
-                title: "CRM/ATS Automation",
-                desc: "Sync and automate your CRM/ATS with platforms like AgentZoom, Notion, Airtable.",
+                title: "Custom Business Logic",
+                desc: "Multi-step decision trees and complex automation tailored to your specific processes.",
               },
             ].map(({ title, desc }) => (
               <div
                 key={title}
-                className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md"
+                className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md text-left"
               >
                 <h3 className="mb-2 font-semibold drop-shadow text-white">
                   {title}
@@ -220,22 +262,22 @@ function HomePage() {
 
         {/* Why SleeperOps */}
         <section className="relative max-w-5xl mx-auto py-20 text-center text-white">
-          <h2 className="mb-10 text-3xl font-bold drop-shadow-md">Why SleeperOps</h2>
+          <h2 className="mb-10 text-3xl font-bold drop-shadow-md">Why Choose SleeperOps</h2>
           <p className="mb-10 max-w-2xl mx-auto text-white/90 leading-relaxed">
-            Why small businesses choose SleeperOps.
+            We're not just another automation service. Here's what makes us different.
           </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              Get results fast — 7–10 day AI build timelines
+            <div className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              <strong>Advanced Technical Stack</strong> — We use enterprise-grade tools like n8n and OpenAI, not just basic Zapier workflows
             </div>
-            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              AI solutions focused on real business impact, not hype
+            <div className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              <strong>Fast Implementation</strong> — Most systems deployed within 7-14 days, with clear timelines and milestones
             </div>
-            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              Modular Systems – Prebuilt or tailored
+            <div className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              <strong>Custom Built for You</strong> — No cookie-cutter solutions. Every workflow is designed for your specific business needs
             </div>
-            <div className="rounded-2xl bg-white bg-opacity-10 p-4 shadow-md backdrop-blur-md font-semibold drop-shadow">
-              Integrated & scalable — built to grow with your operations
+            <div className="rounded-2xl bg-white bg-opacity-10 p-6 shadow-md backdrop-blur-md font-semibold drop-shadow">
+              <strong>Real Business Impact</strong> — Focus on measurable results: time saved, leads processed, revenue protected
             </div>
           </div>
         </section>
@@ -250,13 +292,13 @@ function HomePage() {
               About Adam and SleeperOps
             </h2>
             <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed">
-              Hi, my name's Adam. I started SleeperOps because I saw how small businesses struggle with time-consuming admin and disorganized systems — and I knew AI could help.
+              Hi, I'm Adam. With 10+ years in enterprise information systems including Oracle Cloud, I started SleeperOps because I saw how small businesses were struggling with manual processes that could easily be automated.
             </p>
             <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed mt-4">
-              With years of experience building business systems, I’m passionate about creating practical AI tools that make daily work easier and free you up to focus on growing your business.
+              Unlike agencies that just use basic tools, I build sophisticated automation systems using the same enterprise-grade platforms I've worked with in large organizations—but made accessible for growing businesses.
             </p>
             <p className="max-w-3xl mx-auto text-gray-900 text-lg leading-relaxed mt-4">
-              SleeperOps is my full-time passion project where I help small businesses unlock the real power of AI — no hype, just smart solutions designed to save time and boost productivity. I’m constantly learning, and I’m excited to share what AI can do for you.
+              SleeperOps is my full-time focus, and I'm passionate about creating automation that doesn't just save time—it actually makes your business run better.
             </p>
           </div>
         </section>
@@ -267,13 +309,16 @@ function HomePage() {
           className="relative max-w-3xl mx-auto py-16 text-center text-white"
         >
           <h2 className="mb-4 text-3xl font-bold drop-shadow-md">
-            Let’s build something smarter.
+            Ready to Build Something Smarter?
           </h2>
+          <p className="mb-8 text-lg text-white/90">
+            Let's discuss your workflows and see how AI automation can transform your business.
+          </p>
           <Link
             to="/contact"
             className="inline-block rounded-2xl bg-[#0f3d5f] px-6 py-3 font-semibold shadow hover:bg-[#0d3554] transition text-white"
           >
-            Book Free Consult
+            Book Free Strategy Session
           </Link>
         </section>
       </main>
