@@ -16,8 +16,8 @@ export default function SleeperOpsJourney() {
   return (
     <>
       <BlogPostLayout 
-        title="Why I Left Enterprise Systems to Help Small Businesses Eliminate Operational Bottlenecks"
-        description="The story behind SleeperOps: How 10 years of watching large organizations struggle with efficiency led me to help growing businesses gain competitive advantage through intelligent operational systems."
+        title="How My Enterprise Experience Inspired a Mission to Help Small Businesses"
+        description="The story behind SleeperOps: How my ongoing work with large organizations revealed opportunities to help growing businesses gain competitive advantage through intelligent operational systems."
         publishDate="2025-01-15"
       >
         <div className="space-y-8 text-[#2c5282] leading-relaxed">
@@ -33,27 +33,30 @@ export default function SleeperOpsJourney() {
             </p>
           </div>
 
-          <Section title="The Problem I Kept Seeing in Enterprise">
+          <Section title="What I've Learned from Enterprise Work">
             <p>
-              After 10 years working with enterprise information systems—including complex Oracle Cloud implementations—I witnessed the same frustrating pattern over and over: brilliant organizations crippled by operational inefficiencies.
+              Throughout my ongoing career in enterprise information systems—including complex Oracle Cloud implementations—I've witnessed a fascinating pattern: brilliant organizations with sophisticated technology still struggling with operational inefficiencies.
             </p>
             <p>
-              Large companies would spend millions on sophisticated technology, yet their teams were still drowning in manual processes. Sales prospects waited days for responses. Managers spent hours each week on data entry that should have been automated. Critical opportunities slipped through the cracks because information lived in disconnected silos.
+              Large companies invest millions in enterprise solutions, yet their teams often remain drowning in manual processes. Sales prospects wait days for responses. Managers spend hours each week on data entry that should be automated. Critical opportunities slip through the cracks because information lives in disconnected silos.
             </p>
             <p>
-              The irony was striking: these companies had access to enterprise-grade solutions that could solve their operational bottlenecks, but implementation was so complex and expensive that most departments just worked around the problems instead of solving them.
+              The irony is striking: these companies have access to enterprise-grade solutions that could solve their operational bottlenecks, but implementation complexity often means departments work around problems instead of solving them.
             </p>
           </Section>
 
-          <Section title="The Small Business Revelation">
+          <Section title="The Small Business Opportunity I Discovered">
             <p>
-              When I started consulting with smaller businesses, I discovered they were facing identical operational challenges—but with none of the enterprise resources to solve them. A local insurance agency owner was personally screening every job applicant, spending 15+ hours per week on recruiting alone. A real estate team was losing hot prospects because their lead response time was measured in days, not minutes.
+              While continuing my enterprise career, I started exploring how smaller businesses handle similar operational challenges. What I discovered was eye-opening: they face identical bottlenecks but with none of the enterprise resources to solve them.
             </p>
             <p>
-              These weren't technology problems—they were operational efficiency problems. The same bottlenecks I'd seen paralyze Fortune 500 companies were now strangling the growth of passionate entrepreneurs who simply didn't have the resources to implement enterprise solutions.
+              A local insurance agency owner was personally screening every job applicant, spending 15+ hours per week on recruiting alone. A real estate team was losing hot prospects because their lead response time was measured in days, not minutes. These weren't technology problems—they were operational efficiency problems.
+            </p>
+            <p>
+              The same bottlenecks I work with in large organizations were strangling the growth of passionate entrepreneurs who simply didn't have access to enterprise-level solutions.
             </p>
             <blockquote className="border-l-4 border-[#3787b9] pl-6 italic text-[#3787b9] bg-[#3787b9] bg-opacity-10 p-4 rounded-r-lg">
-              "I realized that operational efficiency shouldn't be a luxury reserved for large corporations—every growing business deserves systems that work as hard as they do."
+              "I realized I could apply my enterprise experience to help small businesses gain the same operational advantages that large companies enjoy."
             </blockquote>
           </Section>
 
