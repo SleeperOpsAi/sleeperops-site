@@ -1,4 +1,13 @@
-// Structured data for SEO
+// src/BlogPostLayout.jsx
+import { Helmet } from "react-helmet";
+
+export default function BlogPostLayout({ children, title, description, publishDate, tags = [], readTime, category }) {
+  const fullTitle = `${title} | SleeperOps Operational Efficiency Blog`;
+  const fullDescription = description || `${title} - Insights on eliminating operational bottlenecks and gaining competitive advantage through intelligent business systems.`;
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://sleeperops.com/blog';
+  const imageUrl = typeof window !== 'undefined' ? `${window.location.origin}/og-image-blog.jpg?v=2` : 'https://sleeperops.com/og-image-blog.jpg?v=2';
+  
+  // Structured data for SEO
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -23,14 +32,7 @@
       "@id": currentUrl
     },
     "keywords": tags.join(', ')
-  };// src/BlogPostLayout.jsx
-import { Helmet } from "react-helmet";
-
-export default function BlogPostLayout({ children, title, description, publishDate, tags = [], readTime, category }) {
-  const fullTitle = `${title} | SleeperOps Operational Efficiency Blog`;
-  const fullDescription = description || `${title} - Insights on eliminating operational bottlenecks and gaining competitive advantage through intelligent business systems.`;
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://sleeperops.com/blog';
-  const imageUrl = typeof window !== 'undefined' ? `${window.location.origin}/og-image-blog.jpg?v=2` : 'https://sleeperops.com/og-image-blog.jpg?v=2';
+  };
 
   return (
     <>
@@ -60,8 +62,6 @@ export default function BlogPostLayout({ children, title, description, publishDa
         <meta name="twitter:description" content={fullDescription} />
         <meta name="twitter:image" content={imageUrl} />
         <meta name="twitter:url" content={currentUrl} />
-        <meta property="twitter:site" content="@SleeperOps" />
-        <meta property="twitter:creator" content="@SleeperOps" />
         
         {/* Article specific */}
         {publishDate && <meta property="article:published_time" content={publishDate} />}
@@ -129,8 +129,6 @@ export default function BlogPostLayout({ children, title, description, publishDa
                 </span>
               )}
             </div>
-
-            {/* Removed Social Share Buttons - Keep it simple */}
           </header>
 
           {/* Article Content */}
