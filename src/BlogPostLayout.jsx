@@ -295,33 +295,6 @@ export default function BlogPostLayout({ children, title, description, publishDa
             </div>
           </section>
 
-          {/* Newsletter Signup */}
-          <section className="bg-gradient-to-r from-[#3787b9] to-[#2c5282] text-white rounded-2xl p-8">
-            <div className="text-center">
-              <h2 className="text-2xl font-semibold mb-4">
-                Get More Insights Like This
-              </h2>
-              <p className="text-lg mb-6 text-blue-100">
-                Weekly case studies, automation insights, and business intelligence delivered to your inbox. 
-                No fluff, just actionable content.
-              </p>
-              <div className="max-w-md mx-auto flex gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  aria-label="Email address for newsletter"
-                />
-                <button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition-colors whitespace-nowrap">
-                  Subscribe
-                </button>
-              </div>
-              <p className="text-sm text-blue-200 mt-3">
-                Unsubscribe anytime. We respect your inbox.
-              </p>
-            </div>
-          </section>
-
           {/* Call-to-action */}
           <section className="text-center">
             <div className="bg-[#3787b9] bg-opacity-10 rounded-2xl p-10 border border-[#3787b9] border-opacity-30">
@@ -330,16 +303,16 @@ export default function BlogPostLayout({ children, title, description, publishDa
               </h2>
               <p className="text-lg text-[#2c5282] mb-8 max-w-2xl mx-auto">
                 Let's identify exactly which manual processes are costing your business the most time and money. 
-                Book your free operational efficiency audit today.
+                Learn from our mistakes and get it right the first time.
               </p>
               <a
                 href="/contact"
                 className="inline-block rounded-xl bg-[#3787b9] text-white font-semibold px-8 py-4 shadow-lg hover:bg-[#2c5282] transition transform hover:scale-105"
               >
-                Book Free Process Audit
+                Book Paid Discovery Call
               </a>
               <p className="text-sm text-[#2c5282] mt-4">
-                15-minute call • No obligation • Immediate insights
+                15-minute initial call free • Actual discovery is paid work • No free consulting
               </p>
             </div>
           </section>
