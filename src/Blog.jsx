@@ -4,12 +4,12 @@ import BlogPostLayout from './BlogPostLayout';
 const BLOG_POSTS = [
   {
     id: 'case-study-15k-system',
-    title: 'The $15K System That Almost Didn\'t Get Paid For',
-    description: 'What I learned about building what clients need vs. what impresses developers - a case study in client discovery and avoiding the free work trap.',
-    publishDate: '2025-01-21',
-    tags: ['Case Study', 'Client Management', 'Business Automation', 'Lessons Learned'],
-    slug: 'case-study-15k-system-client-discovery',
-    excerpt: 'I built a sophisticated AI recruitment system worth $15K in development value and charged $0. Here\'s what went wrong and the business lessons every service provider needs to know.',
+    title: 'The $15K System That I Didn\'t Get Paid For',
+    description: 'How I learned the hard way about client discovery, scope creep, and why giving away free work teaches clients they don\'t need to pay for expertise.',
+    publishDate: '2025-07-21',
+    tags: ['Case Study', 'Client Management', 'Business Lessons', 'Free Work Trap'],
+    slug: 'case-study-15k-system-lessons-learned',
+    excerpt: 'I built a sophisticated AI recruitment system worth $15K in development time and never got paid. Here\'s what went wrong and the hard lessons every service provider needs to know about client boundaries.',
     readTime: '8 min read',
     category: 'Case Studies'
   },
@@ -71,7 +71,8 @@ function BlogPost({ post, onBack }) {
 
         <div className="bg-red-100 border border-red-300 p-4 rounded-lg">
           <p className="text-lg font-bold text-red-800">Development value: $10,000-15,000</p>
-          <p className="text-lg font-bold text-red-800">Amount I charged: $0 (yes, you read that right)</p>
+          <p className="text-lg font-bold text-red-800">Amount I got paid: $0</p>
+          <p className="text-sm text-red-600 mt-2">Final outcome: Went with a simple testimonial project instead</p>
         </div>
       </div>
 
@@ -148,7 +149,31 @@ function BlogPost({ post, onBack }) {
         </div>
       </div>
 
-      {/* Industry Applications */}
+      {/* The Professional Pivot */}
+      <div className="bg-gradient-to-r from-green-50 to-gray-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+        <h2 className="text-2xl font-bold text-green-800 mb-4">The Professional Pivot</h2>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          Instead of continuing the free work cycle, I made a professional decision:
+        </p>
+        
+        <div className="bg-white p-6 rounded-lg shadow-sm mb-4">
+          <h3 className="font-semibold text-gray-800 mb-3">What I Actually Did:</h3>
+          <ol className="text-gray-700 space-y-2 list-decimal list-inside">
+            <li><strong>Acknowledged the mismatch professionally</strong> - No blame, just recognition that we weren't aligned</li>
+            <li><strong>Walked away from the project</strong> - Sometimes the best business decision is not working together</li>
+            <li><strong>They went with a simple testimonial approach</strong> - Much better fit for their actual needs</li>
+            <li><strong>I got paid $0</strong> - But gained invaluable business lessons worth much more</li>
+          </ol>
+        </div>
+
+        <div className="bg-green-100 border border-green-300 p-4 rounded-lg">
+          <p className="font-semibold text-green-800 mb-2">The Outcome:</p>
+          <p className="text-green-700">
+            No burning bridges. No bitter emails. Just professional recognition that we weren't the right fit. 
+            They got a simple solution that worked for them. I learned to qualify clients better and charge for discovery from day one.
+          </p>
+        </div>
+      </div>
       <div className="bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-400 p-6 rounded-r-lg">
         <h2 className="text-2xl font-bold text-purple-800 mb-4">Industry Applications</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -182,11 +207,14 @@ function BlogPost({ post, onBack }) {
           </div>
         </div>
 
-        <div className="mt-4 bg-purple-100 border border-purple-300 p-4 rounded-lg">
-          <p className="font-semibold text-purple-800">
-            Universal truth: Match the solution complexity to the business need, not the technical possibilities.
-          </p>
-        </div>
+          <div className="mt-4 bg-purple-100 border border-purple-300 p-4 rounded-lg">
+            <p className="font-semibold text-purple-800 mb-2">
+              The final outcome: They went with a much simpler testimonial-based approach instead of the sophisticated AI system.
+            </p>
+            <p className="text-purple-700">
+              Universal truth: Match the solution complexity to the business need, not the technical possibilities.
+            </p>
+          </div>
       </div>
 
       {/* ROI Framework */}
@@ -223,34 +251,42 @@ function BlogPost({ post, onBack }) {
         </div>
       </div>
 
-      {/* Call to Action */}
+      {/* Call to Action - Removed Newsletter for Now */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-xl">
         <h2 className="text-3xl font-bold mb-4">Ready to Avoid These Mistakes?</h2>
         <p className="text-xl mb-6 text-blue-100">
-          Our discovery process ensures you get exactly what your business needs:
+          Our discovery process ensures you get exactly what your business needs - no free work, no scope creep:
         </p>
         
         <div className="grid md:grid-cols-3 gap-4 mb-6">
           <div className="bg-white bg-opacity-20 p-4 rounded-lg backdrop-blur-sm">
-            <h3 className="font-semibold mb-2">✅ Free 15-minute process audit</h3>
-            <p className="text-sm text-blue-100">Identify your biggest automation opportunities</p>
+            <h3 className="font-semibold mb-2">✅ Paid Discovery Phase</h3>
+            <p className="text-sm text-blue-100">We charge for understanding your needs - because discovery is valuable work</p>
           </div>
           <div className="bg-white bg-opacity-20 p-4 rounded-lg backdrop-blur-sm">
-            <h3 className="font-semibold mb-2">✅ Custom ROI analysis</h3>
-            <p className="text-sm text-blue-100">Calculate exact time and cost savings</p>
+            <h3 className="font-semibold mb-2">✅ Clear Scope & Pricing</h3>
+            <p className="text-sm text-blue-100">Know exactly what you're getting and what it costs before we build anything</p>
           </div>
           <div className="bg-white bg-opacity-20 p-4 rounded-lg backdrop-blur-sm">
-            <h3 className="font-semibold mb-2">✅ Implementation roadmap</h3>
-            <p className="text-sm text-blue-100">Clear timeline and investment requirements</p>
+            <h3 className="font-semibold mb-2">✅ Build What You Need</h3>
+            <p className="text-sm text-blue-100">Solutions matched to your actual workflow, not what's technically impressive</p>
           </div>
         </div>
 
         <p className="text-center text-lg mb-6">
           <strong>No free work. No scope creep. No technical complexity for complexity's sake.</strong>
         </p>
-        <p className="text-center text-xl font-semibold">
-          Just intelligent automation that solves real business problems.
-        </p>
+        <div className="text-center">
+          <a
+            href="/contact"
+            className="inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-yellow-300 transition-colors text-lg"
+          >
+            Book Paid Discovery Call
+          </a>
+          <p className="text-sm text-blue-200 mt-4">
+            15-minute initial call free • Discovery phase is paid • No surprises
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -377,10 +413,10 @@ export default function Blog() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
               <h2 className="text-3xl font-bold text-[#0a2c4d] mb-4">
-                {BLOG_POSTS[0].title}
+                The $15K System That I Didn't Get Paid For
               </h2>
               <p className="text-lg text-[#2c5282] mb-6 leading-relaxed">
-                {BLOG_POSTS[0].excerpt}
+                I built a sophisticated AI recruitment system worth $15K in development time and never got paid. Here's what went wrong and the hard lessons every service provider needs to know about client boundaries.
               </p>
               <div className="flex items-center gap-4 mb-4">
                 <span className="text-sm text-[#3787b9]">{BLOG_POSTS[0].readTime}</span>
@@ -420,27 +456,22 @@ export default function Blog() {
           <BlogGrid posts={BLOG_POSTS} onSelectPost={setSelectedPost} />
         </section>
 
-        {/* Newsletter Signup */}
+        {/* Ready to Start Section */}
         <section className="bg-gradient-to-r from-[#3787b9] to-[#2c5282] text-white rounded-2xl p-10 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Get Insights Delivered Weekly
+            Ready to Avoid These Mistakes?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Real automation case studies, client lessons, and business intelligence insights. 
-            No fluff, just actionable content for growing businesses.
+            Learn from our failures. Get your automation project done right the first time with proper discovery and clear boundaries.
           </p>
-          <div className="max-w-md mx-auto flex gap-4">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-xl text-gray-900"
-            />
-            <button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition-colors">
-              Subscribe
-            </button>
-          </div>
+          <a
+            href="/contact"
+            className="inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-yellow-300 transition-colors text-lg"
+          >
+            Book Paid Discovery Call
+          </a>
           <p className="text-sm text-blue-200 mt-4">
-            Unsubscribe anytime. We respect your inbox.
+            15-minute initial call free • Discovery phase is paid • No free consulting
           </p>
         </section>
       </div>
