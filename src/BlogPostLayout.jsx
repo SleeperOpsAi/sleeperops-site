@@ -345,3 +345,6 @@ export default function BlogPostLayout({ children, title, description, publishDa
           </section>
         </article>
       </main>
+    </>
+  );
+}
