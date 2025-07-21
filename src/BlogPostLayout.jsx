@@ -4,7 +4,8 @@ import { Helmet } from "react-helmet";
 export default function BlogPostLayout({ children, title, description, publishDate, tags = [], readTime, category }) {
   const fullTitle = `${title} | SleeperOps Operational Efficiency Blog`;
   const fullDescription = description || `${title} - Insights on eliminating operational bottlenecks and gaining competitive advantage through intelligent business systems.`;
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://sleeperops.com/blog';
+  const imageUrl = typeof window !== 'undefined' ? `${window.location.origin}/og-image-blog.jpg` : 'https://sleeperops.com/og-image-blog.jpg';
   
   // Structured data for SEO
   const structuredData = {
@@ -34,14 +35,14 @@ export default function BlogPostLayout({ children, title, description, publishDa
   };
 
   const handleShare = (platform) => {
-    const url = encodeURIComponent(currentUrl);
+    const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(title);
     const description = encodeURIComponent(fullDescription);
     
     const shareUrls = {
       twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=SleeperOps`,
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`
     };
     
     if (shareUrls[platform]) {
@@ -63,7 +64,7 @@ export default function BlogPostLayout({ children, title, description, publishDa
         <meta property="og:description" content={fullDescription} />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:site_name" content="SleeperOps" />
-        <meta property="og:image" content="/og-image-blog.jpg" />
+        <meta property="og:image" content={imageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         
@@ -72,7 +73,7 @@ export default function BlogPostLayout({ children, title, description, publishDa
         <meta property="twitter:url" content={currentUrl} />
         <meta property="twitter:title" content={fullTitle} />
         <meta property="twitter:description" content={fullDescription} />
-        <meta property="twitter:image" content="/og-image-blog.jpg" />
+        <meta property="twitter:image" content={imageUrl} />
         <meta property="twitter:site" content="@SleeperOps" />
         <meta property="twitter:creator" content="@SleeperOps" />
         
