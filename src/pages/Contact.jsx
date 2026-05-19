@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Icon from '../Icon.jsx';
 
 const FORWARD_EMAIL = 'Adam_cantwell@sleeperops.com';
-const WEBHOOK_URL = 'https://formsubmit.co/ajax/' + FORWARD_EMAIL;
 
 const HELP_OPTIONS = [
   'Getting more out of leads',
@@ -18,62 +18,24 @@ const CONTACT_PREF = [
   { key: 'call', label: 'Schedule a call' },
 ];
 
-const buildMailtoFallback = (form) => {
-  const subject = encodeURIComponent(`SleeperOps inquiry — ${form.name || 'new contact'}`);
-  const body = encodeURIComponent(
-    `Name: ${form.name}\n` +
-    `Email: ${form.email}\n` +
-    `Company: ${form.company || '—'}\n` +
-    `Topic: ${form.help}\n` +
-    `Preferred next step: ${form.pref}\n\n` +
-    `${form.note}`
-  );
-  return `mailto:${FORWARD_EMAIL}?subject=${subject}&body=${body}`;
-};
-
 export default function Contact({ go }) {
-  const [form, setForm] = useState({
-    name: '', email: '', company: '', help: '', note: '', pref: 'email',
-  });
-  const [status, setStatus] = useState('idle');
+  const [state, handleSubmit] = useForm('xdajagdp');
+  const [pref, setPref] = useState('email');
+  const [firstName, setFirstName] = useState('');
 
-  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
-  const setPref = (key) => setForm({ ...form, pref: key });
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('sending');
-    try {
-      const res = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          ...form,
-          _subject: `SleeperOps inquiry — ${form.name || 'new contact'}`,
-          _template: 'table',
-          submittedAt: new Date().toISOString(),
-          source: 'sleeperops.com',
-        }),
-      });
-      if (!res.ok) throw new Error('Webhook returned ' + res.status);
-      setStatus('sent');
-    } catch (err) {
-      console.warn('[contact] webhook failed, falling back to mailto:', err);
-      setStatus('error');
-    }
-  };
-
-  if (status === 'sent') {
+  if (state.succeeded) {
     return (
       <main>
         <section className="page-intro" style={{ borderBottom: 'none', paddingBottom: 0 }}>
           <div className="wrap-narrow">
             <div className="eyebrow">Got it. Thank you.</div>
             <h1 style={{ maxWidth: 'none' }}>
-              Thanks, {form.name.split(' ')[0] || 'friend'}. <em>I'll be in touch.</em>
+              Thanks, {firstName || 'friend'}. <em>I'll be in touch.</em>
             </h1>
             <p>
-              Your note is on its way. You'll hear back from <strong>{FORWARD_EMAIL}</strong> within one business day — usually a lot sooner. If it sounds like a fit, the next step is just a thirty-minute conversation.
+              Your note is on its way. You'll hear back from <strong>{FORWARD_EMAIL}</strong> within
+              one business day — usually a lot sooner. If it sounds like a fit, the next step is just
+              a thirty-minute conversation.
             </p>
           </div>
         </section>
@@ -97,52 +59,86 @@ export default function Contact({ go }) {
             A quick note. <em>A real reply.</em>
           </h1>
           <p>
-            Tell me what's slowing your business down. I'll get back to you within one business day — from a real person, not a CRM — and tell you honestly whether I think I can help.
+            Tell me what's slowing your business down. I'll get back to you within one business day —
+            from a real person, not a CRM — and tell you honestly whether I think I can help.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="wrap contact-grid">
-          <form className="card" onSubmit={onSubmit} style={{ padding: 'clamp(28px, 4vw, 48px)' }}>
+          <form className="card" onSubmit={handleSubmit} style={{ padding: 'clamp(28px, 4vw, 48px)' }}>
             <div className="form-grid">
               <div className="field">
-                <label>Your name</label>
-                <input type="text" required value={form.name} onChange={set('name')} placeholder="First and last" />
+                <label htmlFor="name">Your name</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="First and last"
+                  onChange={(e) => setFirstName(e.target.value.split(' ')[0])}
+                />
+                <ValidationError field="name" errors={state.errors} style={{ color: 'var(--clay)', fontSize: 13 }} />
               </div>
+
               <div className="field">
-                <label>Email</label>
-                <input type="email" required value={form.email} onChange={set('email')} placeholder="you@company.com" />
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@company.com"
+                />
+                <ValidationError field="email" errors={state.errors} style={{ color: 'var(--clay)', fontSize: 13 }} />
               </div>
+
               <div className="field span-2">
-                <label>Company or practice (optional)</label>
-                <input type="text" value={form.company} onChange={set('company')} placeholder="What you're running" />
+                <label htmlFor="company">Company or practice (optional)</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="What you're running"
+                />
               </div>
+
               <div className="field span-2">
-                <label>What you'd like help with</label>
-                <select required value={form.help} onChange={set('help')}>
+                <label htmlFor="help">What you'd like help with</label>
+                <select id="help" name="help" required>
                   <option value="">Pick whatever's closest (we can refine later)</option>
                   {HELP_OPTIONS.map((o) => <option key={o} value={o}>{o}</option>)}
                 </select>
+                <ValidationError field="help" errors={state.errors} style={{ color: 'var(--clay)', fontSize: 13 }} />
               </div>
+
               <div className="field span-2">
-                <label>What's going on?</label>
+                <label htmlFor="message">What's going on?</label>
                 <textarea
-                  value={form.note}
-                  onChange={set('note')}
+                  id="message"
+                  name="message"
                   placeholder="What's slowing you down? What have you already tried? What would great look like?"
                 />
+                <ValidationError field="message" errors={state.errors} style={{ color: 'var(--clay)', fontSize: 13 }} />
               </div>
+
               <div className="field span-2">
                 <label>Preferred next step</label>
                 <div className="radio-row">
                   {CONTACT_PREF.map((p) => (
                     <label
                       key={p.key}
-                      className={form.pref === p.key ? 'selected' : ''}
+                      className={pref === p.key ? 'selected' : ''}
                       onClick={(e) => { e.preventDefault(); setPref(p.key); }}
                     >
-                      <input type="radio" name="pref" value={p.key} checked={form.pref === p.key} readOnly />
+                      <input
+                        type="radio"
+                        name="preferred_next_step"
+                        value={p.label}
+                        checked={pref === p.key}
+                        readOnly
+                      />
                       {p.label}
                     </label>
                   ))}
@@ -150,24 +146,20 @@ export default function Contact({ go }) {
               </div>
             </div>
 
-            {status === 'error' && (
+            {state.errors && state.errors.length > 0 && !state.errors.some(e => e.field) && (
               <div style={{ marginTop: 28, padding: '16px 18px', background: 'var(--paper-2)', border: '1px solid var(--clay)', borderRadius: 3, fontSize: 14.5, color: 'var(--ink-2)' }}>
-                <strong style={{ color: 'var(--clay-deep, var(--clay))' }}>Couldn't reach the inbox just now.</strong>{' '}
-                Send your note directly:{' '}
-                <a href={buildMailtoFallback(form)} style={{ color: 'var(--ink)', borderBottom: '1px solid var(--ink)' }}>
-                  open in mail
-                </a>{' '}
-                or email{' '}
+                <strong style={{ color: 'var(--clay)' }}>Something went wrong.</strong>{' '}
+                Please try again or email{' '}
                 <a href={'mailto:' + FORWARD_EMAIL} style={{ color: 'var(--ink)', borderBottom: '1px solid var(--ink)' }}>
                   {FORWARD_EMAIL}
-                </a>.
+                </a> directly.
               </div>
             )}
 
             <div style={{ marginTop: 32, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-              <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Sending…' : 'Send it over'}
-                {status !== 'sending' && <Icon name="arrow-right" size={16} className="arrow" />}
+              <button type="submit" className="btn btn-primary" disabled={state.submitting}>
+                {state.submitting ? 'Sending…' : 'Send it over'}
+                {!state.submitting && <Icon name="arrow-right" size={16} className="arrow" />}
               </button>
               <span className="label-s">No mailing list. No drip campaign. Just a reply.</span>
             </div>
