@@ -150,7 +150,7 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: -0.01em;
 }
 .brand-logo {
-  height: 100px;
+  height: 90px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -535,12 +535,11 @@ button { font-family: inherit; cursor: pointer; }
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: clamp(32px, 5vw, 80px);
-  align-items: start;
+  align-items: end;
   margin-bottom: clamp(40px, 5vw, 64px);
 }
 @media (max-width: 760px) {
   .section-head { grid-template-columns: 1fr; gap: 16px; }
-  .section-head .head-sub { grid-column: 1; }
 }
 .section-head .eyebrow { margin-bottom: 0; }
 .section-head h2 {
@@ -555,7 +554,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 .section-head h2 em { font-style: italic; color: var(--clay); font-weight: 400; }
 .section-head .head-sub {
-  grid-column: 2;
   font-size: 17px;
   color: var(--ink-2);
   margin: 16px 0 0;
