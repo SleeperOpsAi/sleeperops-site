@@ -533,7 +533,7 @@ button { font-family: inherit; cursor: pointer; }
 /* ---------- shared: section heading ---------- */
 .section-head {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 5vw, 80px);
   align-items: end;
   margin-bottom: clamp(40px, 5vw, 64px);

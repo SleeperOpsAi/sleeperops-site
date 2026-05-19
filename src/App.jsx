@@ -25,7 +25,6 @@ function Nav({ view, go }) {
           onClick={(e) => { e.preventDefault(); go('home'); }}
         >
           <img src="/HeroPagelogo.png" alt="SleeperOps" className="brand-logo" />
-          <span>SleeperOps</span>
         </a>
         <button
           className="nav-mobile-toggle"
