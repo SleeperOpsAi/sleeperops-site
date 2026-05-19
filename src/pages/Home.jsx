@@ -47,9 +47,11 @@ export default function Home({ go }) {
 
             <div className="hero-portrait-wrap">
               <div className="hero-portrait">
-                <div className="photo-placeholder">
-                  <span>Portrait of Adam — to replace</span>
-                </div>
+                <img
+                  src="/family-photo.jpg"
+                  alt="Adam Cantwell"
+                  className="hero-photo"
+                />
               </div>
               <div className="hero-portrait-caption">
                 <span className="name">Adam Cantwell</span>
