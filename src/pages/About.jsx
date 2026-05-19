@@ -22,9 +22,11 @@ export default function About({ go }) {
           <div className="founder-grid">
             <div>
               <div className="founder-portrait">
-                <div className="photo-placeholder">
-                  <span>Portrait — to replace</span>
-                </div>
+                <img
+                  src="/family-photo.jpg"
+                  alt="Adam Cantwell"
+                  className="founder-photo"
+                />
               </div>
               <div className="founder-meta-row">
                 <div className="founder-meta-item">

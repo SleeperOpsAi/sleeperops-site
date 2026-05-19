@@ -24,7 +24,7 @@ function Nav({ view, go }) {
           className="brand"
           onClick={(e) => { e.preventDefault(); go('home'); }}
         >
-          <span className="brand-mark">s</span>
+          <img src="/HeroPagelogo.png" alt="SleeperOps" className="brand-logo" />
           <span>SleeperOps</span>
         </a>
         <button
@@ -64,8 +64,8 @@ function Footer({ go }) {
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <h4>SleeperOps</h4>
-            <p className="footer-display">
+            <img src="/HeroPagelogo.png" alt="SleeperOps" className="footer-logo" />
+            <p className="footer-display" style={{ marginTop: 16 }}>
               A small practice, with <em>big-company thinking behind it.</em>
             </p>
             <p style={{ color: 'rgba(244,239,227,0.6)', fontSize: 14, marginTop: 8 }}>
