@@ -150,7 +150,7 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: -0.01em;
 }
 .brand-logo {
-  height: 60px;
+  height: 70px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -263,14 +263,15 @@ button { font-family: inherit; cursor: pointer; }
 .hero-portrait-wrap {
   position: relative;
   max-width: 480px;
+  border-radius: 2px;
+  box-shadow: 0 24px 60px -28px rgba(20,30,42,0.45);
+  overflow: hidden;
 }
 .hero-portrait {
   aspect-ratio: 4/5;
-  border-radius: 2px;
   background: linear-gradient(135deg, #DDCDB6, #B89C7A);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 24px 60px -28px rgba(20,30,42,0.45);
 }
 .hero-portrait-caption {
   display: flex;
@@ -376,6 +377,9 @@ button { font-family: inherit; cursor: pointer; }
   display: block;
   image-rendering: auto;
   max-width: 100%;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .founder-meta-row {
   display: grid;
@@ -531,11 +535,12 @@ button { font-family: inherit; cursor: pointer; }
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: clamp(32px, 5vw, 80px);
-  align-items: end;
+  align-items: start;
   margin-bottom: clamp(40px, 5vw, 64px);
 }
 @media (max-width: 760px) {
   .section-head { grid-template-columns: 1fr; gap: 16px; }
+  .section-head h2 { margin: 16px 0 0 0; padding-left: 0; }
 }
 .section-head .eyebrow { margin-bottom: 0; }
 .section-head h2 {
@@ -545,7 +550,8 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.04;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin: 0;
+  margin: 64px 0 0 0;
+  padding-left: 50px;
   text-wrap: balance;
 }
 .section-head h2 em { font-style: italic; color: var(--clay); font-weight: 400; }
