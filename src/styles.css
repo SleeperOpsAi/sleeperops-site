@@ -150,7 +150,7 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: -0.01em;
 }
 .brand-logo {
-  height: 70px;
+  height: 100px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -540,7 +540,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 @media (max-width: 760px) {
   .section-head { grid-template-columns: 1fr; gap: 16px; }
-  .section-head h2 { margin: 16px 0 0 0; padding-left: 0; }
+  .section-head .head-sub { grid-column: 1; }
 }
 .section-head .eyebrow { margin-bottom: 0; }
 .section-head h2 {
@@ -550,12 +550,12 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.04;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin: 64px 0 0 0;
-  padding-left: 50px;
+  margin: 0;
   text-wrap: balance;
 }
 .section-head h2 em { font-style: italic; color: var(--clay); font-weight: 400; }
 .section-head .head-sub {
+  grid-column: 2;
   font-size: 17px;
   color: var(--ink-2);
   margin: 16px 0 0;
