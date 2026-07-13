@@ -93,7 +93,7 @@ export default function Home({ go }) {
           <div className="section-head">
             <div className="eyebrow">What this means for you</div>
             <h2>
-              Most tech consultants come from agencies. <em>I came from the other side of the desk.</em>
+              I spent ten years on the client's side of the desk, not the agency's.
             </h2>
             <p className="head-sub">
               For ten years I've been the person inside large companies making technology decisions, building the systems, and watching what works. Here's what you get from someone with that background — working at your scale, not theirs.
@@ -129,7 +129,7 @@ export default function Home({ go }) {
               <span className="callout-num">04.</span>
               <h3>I love learning. That saves you money.</h3>
               <p>
-                I'm a tinkerer. I spend my off-hours trying new tools and building little apps for my own family and business. Every new thing I learn means a better-fit solution for the next client at a friendlier price. Curiosity is the cheap part of this job.
+                In my off-hours I build things a lot more serious than "personal projects" makes them sound. One is a sports-analytics platform: position-specific machine-learning models that project player performance across a decade of seasons, with a calibration framework that backtests every projection against the market's consensus rankings — so I can prove whether a new feature actually closes the gap to the market, not just whether it flatters some number I invented. Another is a game-prediction app running models over 3,000+ historical games, with a weekly data pipeline, a live odds-API integration, an analytics dashboard, and a six-gate release check every change has to clear before it ships. That range is what makes the next client's build faster and cheaper. Curiosity is the cheap part of this job.
               </p>
             </article>
           </div>
@@ -144,7 +144,7 @@ export default function Home({ go }) {
           <div className="section-head">
             <div className="eyebrow">What I build</div>
             <h2>
-              Real software, <em>doing real work right now.</em>
+              Software that's already doing the work.
             </h2>
             <p className="head-sub">
               Two systems already running every day. Beyond those, the grid below is a snapshot of the kinds of problems I can take off your plate — not a menu to pick from. The actual build gets shaped around your specific situation.
@@ -211,7 +211,7 @@ export default function Home({ go }) {
         <div className="wrap">
           <div className="section-head">
             <div className="eyebrow">How working together actually works</div>
-            <h2>Three steps. <em>No surprises.</em></h2>
+            <h2>The whole thing is three steps.</h2>
           </div>
 
           <div className="grid grid-3" style={{ gap: 0 }}>

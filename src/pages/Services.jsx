@@ -55,7 +55,7 @@ export default function Services({ go }) {
         <div className="wrap">
           <div className="eyebrow">What I work on</div>
           <h1>
-            Real software <em>for the real work piling up.</em>
+            Four kinds of work I take on.
           </h1>
           <p>
             I don't sell packages or subscriptions. We work together one project at a time, and I'll tell you up front if I'm not the right person for it. Here's a feel for the shape of the work.
@@ -187,7 +187,7 @@ export default function Services({ go }) {
       <section className="section">
         <div className="wrap-narrow center">
           <h2 className="display display-l" style={{ marginBottom: 24 }}>
-            Wonder if I could <em className="italic" style={{ color: 'var(--clay)' }}>help with yours?</em>
+            Think I could help with yours?
           </h2>
           <p className="lead" style={{ maxWidth: 540, margin: '0 auto 32px' }}>
             Send a quick note describing what's slowing you down. I'll reply personally, and I'll tell you honestly if it's something I can help with.

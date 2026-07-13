@@ -8,7 +8,7 @@ export default function About({ go }) {
         <div className="wrap">
           <div className="eyebrow">A little about Adam</div>
           <h1>
-            The person <em>doing the work.</em>
+            Who you're actually hiring.
           </h1>
           <p>
             SleeperOps is one person. Here's who that person is, where the experience comes from, and why this practice exists at all.
@@ -42,7 +42,7 @@ export default function About({ go }) {
 
             <div>
               <h2 className="display display-l" style={{ marginTop: 0, marginBottom: 28 }}>
-                Adam Cantwell. <em className="italic" style={{ color: 'var(--clay)' }}>Builder, product manager, neighbor.</em>
+                Adam Cantwell — builder, product manager, neighbor.
               </h2>
               <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--ink-2)', marginTop: 0 }}>
                 For the last ten years I've built software inside companies of every shape and size. A 200-person business. A 700-person mid-market firm. And now a global company of 300,000+ employees. The same kinds of problems show up at every scale — they just dress up differently.
@@ -66,7 +66,7 @@ export default function About({ go }) {
         <div className="wrap">
           <div className="section-head">
             <div className="eyebrow">Where the experience comes from</div>
-            <h2>The work history, <em>in plain English.</em></h2>
+            <h2>Where did all this experience come from?</h2>
           </div>
 
           <div className="grid grid-2" style={{ gap: 32 }}>
@@ -110,7 +110,7 @@ export default function About({ go }) {
               </h3>
               <div>
                 <p style={{ color: 'var(--ink-2)', fontSize: 17, lineHeight: 1.65, margin: '0 0 14px' }}>
-                  I'm a tinkerer. I spend my evenings trying new AI tools, building little apps for our family and our day-to-day, and watching where this whole landscape is going. It's moving fast.
+                  On my own time I build things a good deal more involved than "little apps." One is a sports-analytics platform — position-specific machine-learning models that project player performance, trained and validated across ten seasons of historical data, plus a calibration framework that backtests each projection against the industry-consensus rankings so I can honestly tell whether a new feature closes the gap to the market or just flatters an internal metric. Another is a game-prediction app running ML models over 3,000+ historical games, fed by a weekly ETL pipeline and a third-party odds API, surfaced through a multi-page dashboard, and shipped behind a six-gate release process — automated tests, lint, type-checks, model validation, a data-integrity audit, and a smoke test — that every change has to pass before it merges.
                 </p>
                 <p style={{ color: 'var(--ink-2)', fontSize: 17, lineHeight: 1.65, margin: 0 }}>
                   The practical upside for you: I'm not married to one platform or one trick. Every new thing I learn means a better-fit fix for the next client — at a friendlier price. Curiosity is the cheap part of this job.
@@ -128,7 +128,7 @@ export default function About({ go }) {
             <div>
               <div className="eyebrow" style={{ marginBottom: 18 }}>The personal part</div>
               <h2 className="display display-l" style={{ margin: 0, fontSize: 'clamp(36px, 4.5vw, 60px)', lineHeight: 1.05 }}>
-                Why I do <em className="italic" style={{ color: 'var(--clay)' }}>any of this.</em>
+                Why I do any of this.
               </h2>
             </div>
             <div>
@@ -160,7 +160,7 @@ export default function About({ go }) {
       <section className="section">
         <div className="wrap-narrow center">
           <h2 className="display display-l" style={{ marginBottom: 24 }}>
-            Want to <em className="italic" style={{ color: 'var(--clay)' }}>talk it through?</em>
+            Want to talk it through?
           </h2>
           <p className="lead" style={{ maxWidth: 540, margin: '0 auto 32px' }}>
             Thirty minutes, no agenda. Worst case, you get a second opinion. Best case, we figure out what's worth building.

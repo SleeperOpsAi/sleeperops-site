@@ -72,7 +72,7 @@ export default function FAQ({ go }) {
         <div className="wrap">
           <div className="eyebrow">Common questions</div>
           <h1>
-            Honest answers to <em>the questions you'd actually ask.</em>
+            Straight answers to the real questions.
           </h1>
           <p>
             If yours isn't here, just ask it directly — that's a faster way to get a real answer.
