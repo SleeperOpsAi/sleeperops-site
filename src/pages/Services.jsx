@@ -137,34 +137,37 @@ export default function Services({ go }) {
         </div>
       </section>
 
-      {/* WHAT YOU GET */}
+      {/* WHAT YOU GET — the tangible deliverables, not the process */}
       <section className="section">
         <div className="wrap">
           <div className="section-head">
             <div className="eyebrow">What you actually get</div>
-            <h2>One person. <em>One proposal.</em> One working system.</h2>
+            <h2>One person. One proposal. One working system that's yours to keep.</h2>
+            <p className="head-sub">
+              Not a slide deck and an invoice. Here's the actual stuff that ends up in your hands.
+            </p>
           </div>
 
           <div className="grid" style={{ gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
             <div style={{ padding: '24px 32px 24px 0', borderRight: '1px solid var(--rule)' }}>
-              <div className="eyebrow muted" style={{ marginBottom: 14 }}>Step one</div>
-              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px', lineHeight: 1.15 }}>A clear, plain-English proposal</h3>
+              <div className="eyebrow muted" style={{ marginBottom: 14 }}>In your inbox</div>
+              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px', lineHeight: 1.15 }}>A written proposal, yours to keep</h3>
               <p style={{ color: 'var(--ink-2)', fontSize: 15.5, lineHeight: 1.6, margin: 0 }}>
-                Before any work starts: a short document. What the problem is, what I'd build, how long it'll take, what it'll cost. Fixed price. If we don't both feel good about it, no one's signing anything.
+                A short document you can actually hold onto — the problem in plain English, exactly what I'd build, a timeline, and one fixed price. Sit on it, share it with a partner, or shop it around. It's yours whether or not we work together.
               </p>
             </div>
             <div style={{ padding: '24px 32px', borderRight: '1px solid var(--rule)' }}>
-              <div className="eyebrow muted" style={{ marginBottom: 14 }}>Step two</div>
-              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px', lineHeight: 1.15 }}>I build it. You watch.</h3>
+              <div className="eyebrow muted" style={{ marginBottom: 14 }}>As it's built</div>
+              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px', lineHeight: 1.15 }}>A working system you test with your own data</h3>
               <p style={{ color: 'var(--ink-2)', fontSize: 15.5, lineHeight: 1.6, margin: 0 }}>
-                Real progress at real intervals — not a black-box month and a big reveal. You test it with your actual data, and you sign off before it goes live.
+                Not a black-box month and a big reveal — running software you can log into at real checkpoints. You put your actual leads, applicants, or paperwork through it, and you sign off before anything goes live.
               </p>
             </div>
             <div style={{ padding: '24px 0 24px 32px' }}>
-              <div className="eyebrow muted" style={{ marginBottom: 14 }}>Step three</div>
-              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px', lineHeight: 1.15 }}>Handoff &amp; a soft landing</h3>
+              <div className="eyebrow muted" style={{ marginBottom: 14 }}>At handoff</div>
+              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px', lineHeight: 1.15 }}>A handoff package, not a dependency</h3>
               <p style={{ color: 'var(--ink-2)', fontSize: 15.5, lineHeight: 1.6, margin: 0 }}>
-                A written guide, your team trained, and me reachable for thirty days while it settles in. After that, we decide together whether ongoing support makes sense.
+                A plain-English guide to how it all works, your team walked through it, and thirty days of me on call while it settles in. When it's done, the system and its documentation are yours to own outright.
               </p>
             </div>
           </div>

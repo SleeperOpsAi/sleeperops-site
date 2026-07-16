@@ -823,3 +823,118 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 880px) {
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- case studies (Home, editorial one-at-a-time) ---------- */
+.case {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  padding: clamp(40px, 6vw, 72px) 0;
+  border-top: 1px solid var(--rule);
+}
+.case:last-child { border-bottom: 1px solid var(--rule); }
+.case-index {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  color: var(--clay);
+  margin-bottom: 18px;
+}
+.case-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+.case-desc {
+  font-size: clamp(16.5px, 1.4vw, 19px);
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0;
+  max-width: 48ch;
+}
+.case-stat {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--clay);
+  padding: clamp(28px, 3vw, 40px);
+}
+.case-stat-num {
+  font-family: var(--serif);
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--clay);
+}
+.case-stat-label {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-top: 12px;
+}
+.case-stat-foot {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+@media (max-width: 760px) {
+  .case { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ---------- career timeline (About) ---------- */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 clamp(32px, 4vw, 48px) clamp(30px, 4vw, 44px);
+  border-left: 1.5px solid var(--rule);
+}
+.timeline-item:last-child {
+  padding-bottom: 4px;
+  border-left-color: transparent;
+}
+.timeline-marker {
+  position: absolute;
+  left: -8.5px;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--clay);
+  border: 3px solid var(--paper-2);
+}
+.timeline-date {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 8px;
+}
+.timeline-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+.timeline-desc {
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 660px;
+}

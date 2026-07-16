@@ -56,7 +56,7 @@ export default function Contact({ go }) {
         <div className="wrap">
           <div className="eyebrow">Let's talk</div>
           <h1>
-            A quick note. <em>A real reply.</em>
+            You'll hear back from a real person.
           </h1>
           <p>
             Tell me what's slowing your business down. I'll get back to you within one business day —

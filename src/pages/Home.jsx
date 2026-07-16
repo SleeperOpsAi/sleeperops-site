@@ -151,31 +151,39 @@ export default function Home({ go }) {
             </p>
           </div>
 
-          {/* Recently shipped */}
-          <div className="systems" style={{ marginBottom: 56 }}>
-            <div className="system-row">
-              <div className="system-num">01</div>
-              <div>
-                <div className="system-title">Real estate lead system</div>
-                <div className="label-s" style={{ marginTop: 8 }}>For a residential team</div>
+          {/* Recently shipped — editorial, one case at a time */}
+          <div style={{ marginBottom: 56 }}>
+            <article className="case">
+              <div className="case-body">
+                <div className="case-index">01</div>
+                <div className="eyebrow muted" style={{ marginBottom: 14 }}>In production · For a residential real estate team</div>
+                <h3 className="case-title">Real estate lead system</h3>
+                <p className="case-desc">
+                  Every new lead gets sorted and scored 1–10 the moment it comes in — budget, timeline, location — and the hottest ones get a personal-sounding follow-up before the agent has even seen the email.
+                </p>
               </div>
-              <div className="system-desc">
-                Every new lead gets sorted and scored 1–10 the moment it comes in — budget, timeline, location — and the hottest ones get a personal-sounding follow-up before the agent has even seen the email. Less manual triage, fewer cold leads slipping through.
+              <div className="case-stat">
+                <div className="case-stat-num">1–10</div>
+                <div className="case-stat-label">Every lead scored the moment it lands</div>
+                <div className="case-stat-foot">Replaces manual triage — no more cold leads slipping through the cracks.</div>
               </div>
-              <div className="system-tag">In production</div>
-            </div>
+            </article>
 
-            <div className="system-row">
-              <div className="system-num">02</div>
-              <div>
-                <div className="system-title">Insurance agency résumé screener</div>
-                <div className="label-s" style={{ marginTop: 8 }}>For an independent agency</div>
+            <article className="case">
+              <div className="case-body">
+                <div className="case-index">02</div>
+                <div className="eyebrow muted" style={{ marginBottom: 14 }}>In production · For an independent insurance agency</div>
+                <h3 className="case-title">Insurance agency résumé screener</h3>
+                <p className="case-desc">
+                  Applicants get scored on six things that matter for the role — experience, fit, availability, location, communication, intent — before anyone on the team opens a résumé.
+                </p>
               </div>
-              <div className="system-desc">
-                Applicants get scored on six things that matter for the role — experience, fit, availability, location, communication, intent — before anyone on the team opens a résumé. The team only sees the candidates worth their time.
+              <div className="case-stat">
+                <div className="case-stat-num">6</div>
+                <div className="case-stat-label">Signals scored on every applicant</div>
+                <div className="case-stat-foot">Replaces reading every résumé by hand — the team only sees the ones worth their time.</div>
               </div>
-              <div className="system-tag">In production</div>
-            </div>
+            </article>
           </div>
 
           {/* Range of patterns */}
@@ -206,37 +214,17 @@ export default function Home({ go }) {
         </div>
       </section>
 
-      {/* HOW WE WORK */}
-      <section className="section">
-        <div className="wrap">
-          <div className="section-head">
-            <div className="eyebrow">How working together actually works</div>
-            <h2>The whole thing is three steps.</h2>
-          </div>
-
-          <div className="grid grid-3" style={{ gap: 0 }}>
-            <div style={{ padding: '32px 32px 32px 0', borderRight: '1px solid var(--rule)' }}>
-              <div className="display display-m italic" style={{ color: 'var(--clay)', marginBottom: 16 }}>01</div>
-              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px' }}>We talk it through</h3>
-              <p style={{ color: 'var(--ink-2)', fontSize: 16, margin: 0 }}>
-                Tell me what's piling up. I'll tell you honestly whether it's worth solving with software, with a quick process change, or by leaving it alone for now.
-              </p>
-            </div>
-            <div style={{ padding: '32px', borderRight: '1px solid var(--rule)' }}>
-              <div className="display display-m italic" style={{ color: 'var(--clay)', marginBottom: 16 }}>02</div>
-              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px' }}>A short, plain-English proposal</h3>
-              <p style={{ color: 'var(--ink-2)', fontSize: 16, margin: 0 }}>
-                A one-pager: the problem, what I'd build, how long it'll take, and a fixed price. If it doesn't make sense, we don't move forward. No recurring fees.
-              </p>
-            </div>
-            <div style={{ padding: '32px 0 32px 32px' }}>
-              <div className="display display-m italic" style={{ color: 'var(--clay)', marginBottom: 16 }}>03</div>
-              <h3 style={{ fontFamily: 'var(--serif)', fontWeight: 400, fontSize: 24, margin: '0 0 12px' }}>I build it, you own it</h3>
-              <p style={{ color: 'var(--ink-2)', fontSize: 16, margin: 0 }}>
-                I build it, show your team how it works, and stick around while it settles in. When I'm done, it's yours. You're not buying a subscription to me.
-              </p>
-            </div>
-          </div>
+      {/* HOW WE WORK — the full three-step process lives on the Contact page */}
+      <section className="section-tight">
+        <div className="wrap-narrow center">
+          <div className="eyebrow center" style={{ marginBottom: 16 }}>How working together actually works</div>
+          <p className="display display-s" style={{ margin: '0 auto 26px', maxWidth: 620, textWrap: 'balance', color: 'var(--ink)' }}>
+            The whole thing is three honest steps — no retainers, no black-box month.
+          </p>
+          <button className="btn btn-secondary" onClick={() => go('contact')}>
+            Here's exactly how it works
+            <Icon name="arrow-right" size={16} className="arrow" />
+          </button>
         </div>
       </section>
 

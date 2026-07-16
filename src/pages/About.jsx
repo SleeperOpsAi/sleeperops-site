@@ -69,36 +69,40 @@ export default function About({ go }) {
             <h2>Where did all this experience come from?</h2>
           </div>
 
-          <div className="grid grid-2" style={{ gap: 32 }}>
-            <div className="card">
-              <div className="label-s">Sr. Tech Product Manager · 2025—present</div>
-              <h3>Leading a big HR rebuild</h3>
-              <p style={{ color: 'var(--ink-2)', fontSize: 16, lineHeight: 1.6 }}>
+          <ol className="timeline">
+            <li className="timeline-item">
+              <span className="timeline-marker" />
+              <div className="timeline-date">Sr. Tech Product Manager · 2025—present</div>
+              <h3 className="timeline-title">Leading a big HR rebuild</h3>
+              <p className="timeline-desc">
                 Running a years-long project to move a 300,000-employee company's compensation system off its old platform and onto Oracle Cloud. Strategy, configuration, governance, the lot. The kind of project that teaches you exactly how decisions get made — and where they go wrong.
               </p>
-            </div>
-            <div className="card">
-              <div className="label-s">Sr. Software Engineer · 2022—2025</div>
-              <h3>Five compensation cycles, end to end</h3>
-              <p style={{ color: 'var(--ink-2)', fontSize: 16, lineHeight: 1.6 }}>
+            </li>
+            <li className="timeline-item">
+              <span className="timeline-marker" />
+              <div className="timeline-date">Sr. Software Engineer · 2022—2025</div>
+              <h3 className="timeline-title">Five compensation cycles, end to end</h3>
+              <p className="timeline-desc">
                 Built and ran five full annual compensation cycles for a global workforce. Deep, hands-on technical work in one of the most complex corners of enterprise HR software — the kind of role where edge cases find <em>you</em>.
               </p>
-            </div>
-            <div className="card">
-              <div className="label-s">HRIS Manager · 2019—2022</div>
-              <h3>Running comp for 270,000 people</h3>
-              <p style={{ color: 'var(--ink-2)', fontSize: 16, lineHeight: 1.6 }}>
+            </li>
+            <li className="timeline-item">
+              <span className="timeline-marker" />
+              <div className="timeline-date">HRIS Manager · 2019—2022</div>
+              <h3 className="timeline-title">Running comp for 270,000 people</h3>
+              <p className="timeline-desc">
                 Owned compensation setup, releases, and reporting at a 270,000-employee company. Before that: administering Oracle ERP across HR, Finance, CRM, and Procurement; rolling out absence-management for companies from 700 to 23,000 employees.
               </p>
-            </div>
-            <div className="card">
-              <div className="label-s">Recent initiative</div>
-              <h3>Built a brand-new product role</h3>
-              <p style={{ color: 'var(--ink-2)', fontSize: 16, lineHeight: 1.6 }}>
+            </li>
+            <li className="timeline-item">
+              <span className="timeline-marker" />
+              <div className="timeline-date">Recent initiative</div>
+              <h3 className="timeline-title">Built a brand-new product role</h3>
+              <p className="timeline-desc">
                 Spotted that AI in HR needed a dedicated product owner inside a large enterprise. Made the internal case, advocated for it, and the role was created. That instinct — see a gap, fill it — is what I bring to client projects too.
               </p>
-            </div>
-          </div>
+            </li>
+          </ol>
 
           {/* Toolbox */}
           <div className="card" style={{ marginTop: 32, padding: '40px 44px' }}>
